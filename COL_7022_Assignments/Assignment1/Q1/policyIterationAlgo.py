@@ -2,7 +2,7 @@ from env import FootballSkillsEnv
 from model import model
 import numpy as np
 
-def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, degrade_pitch = False):
+def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, degrade_pitch = False, discount_factor = 0.95):
     print("Starting Policy Iteration Algorithm")
     '''
     Implements the Policy Iteration algorithm to find the optimal policy for the 
@@ -27,7 +27,12 @@ def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, 
     4. Repeat steps 2-3 until policy converges
     '''
     model = model()
-    env = envr(render_mode='gif')
+    model.setDiscountFactor(discount_factor)
+    
+    if degrade_pitch == False:
+        env = envr(render_mode='gif')
+    else:
+        env = envr(render_mode='gif', degrade_pitch=True)
     
     # get all states
     allStateTuples = model.generateAllStates(env)
@@ -36,7 +41,7 @@ def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, 
     numInnerIterations = 0
     
     # initialize policy
-    policy, valueFn = model.initialize()
+    policy, valueFn = model.initialize(degrade_pitch)
     # policy will say for any state, which is the right action to perform
     # valueFn will be give the sum of the accumulated rewards from step s 
 
@@ -46,17 +51,22 @@ def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, 
         numOuterIterations += 1
         
         # Policy Evaluation
-        valueFn, numInnerIterationsCurr = model.performPolicyEvaluation(allStateTuples, policy, valueFn, env)
+        valueFn, numInnerIterationsCurr = model.performPolicyEvaluationForPI(allStateTuples, policy, valueFn, degrade_pitch, env)
         numInnerIterations += numInnerIterationsCurr
 
         # Policy Improvement
-        policy, policyStable = model.performPolicyImprovement(allStateTuples, policy, valueFn, actionIndexes, env)
+        policy, policyStable = model.performPolicyImprovementForPI(allStateTuples, policy, valueFn, actionIndexes, degrade_pitch, env)
         if policyStable == True:
             break
     
-    callsToGetTransistion = len(allStateTuples)*numInnerIterations + len(allStateTuples)*len(actionIndexes)*numOuterIterations
-    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", callsToGetTransistion)
-    
     # 6
-    env.get_gif(policy, filename = "PIOutput.gif") 
+    if degrade_pitch == False:
+        env.get_gif(policy, filename = "PIOutputStationary.gif") 
+        callsToGetTransistion = len(allStateTuples)*numInnerIterations + len(allStateTuples)*len(actionIndexes)*numOuterIterations
+    else:
+        env.get_gif(policy, filename = "PIOutputNonStationary.gif") 
+        callsToGetTransistion = len(allStateTuples)*(model.non_stationary_horizon)*numInnerIterations + len(allStateTuples)*(model.non_stationary_horizon)*len(actionIndexes)*numOuterIterations
+        
+    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", callsToGetTransistion)
+        
     return policy, valueFn, numOuterIterations, numInnerIterations, callsToGetTransistion

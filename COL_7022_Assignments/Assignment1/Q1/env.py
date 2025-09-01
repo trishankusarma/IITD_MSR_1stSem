@@ -438,7 +438,7 @@ class FootballSkillsEnv(gym.Env):
         
         if not self.degrade_pitch:
             return self.T.get((state, action), [])
-
+   
         elif self.degrade_pitch and time_step is None:
             _, _, _ , _ ,_=self.step(0)
             transitions = self._transition_for(state, action)

@@ -2,7 +2,7 @@ from env import FootballSkillsEnv
 from model import model
 import numpy as np
 
-def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, degrade_pitch = False):
+def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, degrade_pitch = False, passTimeStamp = True, discount_factor = 0.95):
     '''
     Implements the Value Iteration algorithm to find the optimal policy for the 
     Football Skills Environment.
@@ -22,48 +22,38 @@ def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, d
     4. Evaluate the optimal policy from the optimal value function
     '''
     model = model()
-    env = envr(render_mode='gif')
+    model.setDiscountFactor(discount_factor)
+    
+    if degrade_pitch == False:
+        env = envr(render_mode='gif')
+    else:
+        env = envr(render_mode='gif', degrade_pitch=True)
     
     # get all states
     allStateTuples = model.generateAllStates(env)
     actionIndexes = model.generateAllActionIndexes(env)
-    numIterations = 0
     
     # initialize policy
-    policy, valueFn = model.initialize()
+    policy, valueFn = model.initialize(degrade_pitch)
     # policy will say for any state, which is the right action to perform
     # valueFn will be give the sum of the accumulated rewards from step s
     
-    while(True):
-        numIterations += 1
-        
-        maxAbsDiff = 0
-        for currStateTuple in allStateTuples:
-                
-            currStateIndex = env.state_to_index(currStateTuple)
-            currentValueFn = valueFn[currStateIndex]
-            
-            if env._is_terminal(currStateTuple):
-                continue
-            
-            _, valueFn[currStateIndex] = model.evaluateArgMax(currStateTuple, actionIndexes ,valueFn ,env)
-            maxAbsDiff = max(maxAbsDiff, abs(valueFn[currStateIndex] - currentValueFn))
-        
-#         if logEnabled:
-#             print("numIterations : ", numIterations, " :: maxAbsDiff :: ", maxAbsDiff)
-            
-        if maxAbsDiff < model.threshold:
-            break
-    
-    # evaluate the optimal policy
-    for currStateTuple in allStateTuples:
-        
-        currStateIndex = env.state_to_index(currStateTuple)
-        policy[currStateIndex], _ = model.evaluateArgMax(currStateTuple, actionIndexes ,valueFn ,env)
-    
-    callsToGetTransisionsFn = len(actionIndexes)*len(allStateTuples)*(numIterations + 1)
-    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", callsToGetTransisionsFn)
+    valueFn, numIterations = model.performValueFunctionImprovementForVI(allStateTuples, actionIndexes, valueFn, degrade_pitch, passTimeStamp, env)
+    policy = model.performPolicyImprovementForVI(allStateTuples, actionIndexes, valueFn, policy, degrade_pitch, passTimeStamp, env)
     
     # 6
-    env.get_gif(policy, seed = 20, filename = "VIOutput.gif")
+    if degrade_pitch == False:
+        env.get_gif(policy, filename = "VIOutputStationary.gif") 
+        callsToGetTransisionsFn = len(actionIndexes)*len(allStateTuples)*(numIterations + 1)
+    elif degrade_pitch == True:
+        
+        if passTimeStamp == True:
+            env.get_gif(policy, filename = "VIOutputNonStationary.gif")
+        else:
+            env.get_gif(policy, filename = "VIOutputNonStationaryWithoutPassingTimeStamp.gif")
+        
+        callsToGetTransisionsFn = len(actionIndexes)*(model.non_stationary_horizon)*len(allStateTuples)*(numIterations + 1)
+    
+    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", callsToGetTransisionsFn)
+    
     return policy, valueFn, 1, numIterations, callsToGetTransisionsFn
