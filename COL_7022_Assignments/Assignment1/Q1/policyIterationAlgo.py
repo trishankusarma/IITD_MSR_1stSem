@@ -39,6 +39,7 @@ def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, 
     actionIndexes = model.generateAllActionIndexes(env)
     numOuterIterations = 0
     numInnerIterations = 0
+    numCallsToGetTransition = 0
     
     # initialize policy
     policy, valueFn = model.initialize(degrade_pitch)
@@ -51,22 +52,22 @@ def policyIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, 
         numOuterIterations += 1
         
         # Policy Evaluation
-        valueFn, numInnerIterationsCurr = model.performPolicyEvaluationForPI(allStateTuples, policy, valueFn, degrade_pitch, env)
+        valueFn, numCallsToGetTransitionInner1, numInnerIterationsCurr = model.performPolicyEvaluationForPI(allStateTuples, policy, valueFn, degrade_pitch, env)
         numInnerIterations += numInnerIterationsCurr
+        numCallsToGetTransition += numCallsToGetTransitionInner1
 
         # Policy Improvement
-        policy, policyStable = model.performPolicyImprovementForPI(allStateTuples, policy, valueFn, actionIndexes, degrade_pitch, env)
+        policy, policyStable, numCallsToGetTransitionInner2 = model.performPolicyImprovementForPI(allStateTuples, policy, valueFn, actionIndexes, degrade_pitch, env)
+        numCallsToGetTransition += numCallsToGetTransitionInner2
         if policyStable == True:
             break
     
     # 6
     if degrade_pitch == False:
         env.get_gif(policy, filename = "PIOutputStationary.gif") 
-        callsToGetTransistion = len(allStateTuples)*numInnerIterations + len(allStateTuples)*len(actionIndexes)*numOuterIterations
     else:
         env.get_gif(policy, filename = "PIOutputNonStationary.gif") 
-        callsToGetTransistion = len(allStateTuples)*(model.non_stationary_horizon)*numInnerIterations + len(allStateTuples)*(model.non_stationary_horizon)*len(actionIndexes)*numOuterIterations
         
-    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", callsToGetTransistion)
+    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", numCallsToGetTransition)
         
-    return policy, valueFn, numOuterIterations, numInnerIterations, callsToGetTransistion
+    return policy, valueFn, numOuterIterations, numInnerIterations, numCallsToGetTransition

@@ -2,7 +2,7 @@ from env import FootballSkillsEnv
 from model import model
 import numpy as np
 
-def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, degrade_pitch = False, passTimeStamp = True, discount_factor = 0.95):
+def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, degrade_pitch = False, passTimeStamp = True, discount_factor = 0.95, modified_VI =  False):
     '''
     Implements the Value Iteration algorithm to find the optimal policy for the 
     Football Skills Environment.
@@ -38,22 +38,33 @@ def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, d
     # policy will say for any state, which is the right action to perform
     # valueFn will be give the sum of the accumulated rewards from step s
     
-    valueFn, numIterations = model.performValueFunctionImprovementForVI(allStateTuples, actionIndexes, valueFn, degrade_pitch, passTimeStamp, env)
+    if modified_VI == True:
+        model.generatePredecessorMatrixForStationaryEnv(allStateTuples, actionIndexes, env)
+    
+    # Step 1
+    if modified_VI == False:
+        valueFn, numCallsToGetTransition, numIterations = model.performValueFunctionImprovementForVI(allStateTuples, actionIndexes, valueFn, degrade_pitch, passTimeStamp, env)
+    else :
+        valueFn, numCallsToGetTransition, numIterations = model.performModifiedValueFunctionEvaluation(allStateTuples, actionIndexes, valueFn, env)
+    
+    # Step 2 :: Final one
     policy = model.performPolicyImprovementForVI(allStateTuples, actionIndexes, valueFn, policy, degrade_pitch, passTimeStamp, env)
+    numCallsToGetTransition += len(allStateTuples)*len(actionIndexes)
     
     # 6
-    if degrade_pitch == False:
-        env.get_gif(policy, filename = "VIOutputStationary.gif") 
-        callsToGetTransisionsFn = len(actionIndexes)*len(allStateTuples)*(numIterations + 1)
-    elif degrade_pitch == True:
+#     if degrade_pitch == False:
         
-        if passTimeStamp == True:
-            env.get_gif(policy, filename = "VIOutputNonStationary.gif")
-        else:
-            env.get_gif(policy, filename = "VIOutputNonStationaryWithoutPassingTimeStamp.gif")
+#         if modified_VI == False:
+#             env.get_gif(policy, filename = "VIOutputStationary.gif") 
+#         else :
+#             env.get_gif(policy, filename = "ModifiedVIOutputStationary.gif") 
+#     elif degrade_pitch == True:
         
-        callsToGetTransisionsFn = len(actionIndexes)*(model.non_stationary_horizon)*len(allStateTuples)*(numIterations + 1)
+#         if passTimeStamp == True:
+#             env.get_gif(policy, filename = "VIOutputNonStationary.gif")
+#         else:
+#             env.get_gif(policy, filename = "VIOutputNonStationaryWithoutPassingTimeStamp.gif")
     
-    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", callsToGetTransisionsFn)
+    print("Count of total number of calls made to the  env.get_transitions_at_time is : ", numCallsToGetTransition)
     
-    return policy, valueFn, 1, numIterations, callsToGetTransisionsFn
+    return policy, valueFn, 1, numIterations, numCallsToGetTransition

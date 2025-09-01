@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import heapq
 
 class model():
     def __init__(self):
@@ -8,6 +9,7 @@ class model():
         self.maxStateSize = 800  # max possible states in stationary env
         self.episodeCount = 20
         self.non_stationary_horizon = 40
+        self.predecessor_matrix = {}
     
     def setDiscountFactor(self, discount_factor):
         self.discount_factor = discount_factor
@@ -48,6 +50,22 @@ class model():
 
         print(f"Shape of policy matrix {policy.shape} and shape of valueFn {valueFn.shape}")
         return policy, valueFn
+    
+    def generatePredecessorMatrixForStationaryEnv(self, allStateTuples, actionIndexes, env):
+        
+        self.predecessor_matrix = np.empty(self.maxStateSize, dtype=object)
+        
+        for currStateTuple in allStateTuples:
+            currStateIndex = env.state_to_index(currStateTuple)
+            for action in actionIndexes:
+                nextStateTransitions = env.get_transitions_at_time(currStateTuple, action)
+                for prob, nextStateTuple in nextStateTransitions:
+                    nextStateIndex = env.state_to_index(nextStateTuple)
+                    
+                    if not self.predecessor_matrix[nextStateIndex]:
+                        self.predecessor_matrix[nextStateIndex] = []
+                    
+                    self.predecessor_matrix[nextStateIndex].append(currStateIndex)
     
     def getReward(self, nextState, currState, action, env):
         # since ball moves ahead of the player and the action is what he takes
@@ -101,6 +119,7 @@ class model():
     def performPolicyEvaluationForPIStationaryEnv(self, allStateTuples, policy, valueFunction, degrade_pitch, env, logEnabled):
         
         numInnerIterations = 0
+        numCallsToGetTransition = 0
         
         while(True):
             numInnerIterations += 1
@@ -117,6 +136,7 @@ class model():
 
                 # get the new updated valueFunction for that policy
                 valueFunction[currStateIndex] = self.evaluateValueFunction(currStateTuple, policyForCurrState, valueFunction, degrade_pitch, env)
+                numCallsToGetTransition += 1
                 maxAbsDiff = max(maxAbsDiff, abs(valueFunction[currStateIndex] - oldValueFunction))
 
             if logEnabled:
@@ -125,12 +145,13 @@ class model():
             if maxAbsDiff < self.threshold:
                 break
         
-        return valueFunction, numInnerIterations
+        return valueFunction, numCallsToGetTransition, numInnerIterations
     
     # Given the policy return the value function upon convergence
     def performPolicyEvaluationForPINonStationaryEnv(self, allStateTuples, policy, valueFunction, degrade_pitch, env, logEnabled = False):
         
         numInnerIterations = 0
+        numCallsToGetTransition = 0
         
         while(True):
             numInnerIterations += 1
@@ -150,6 +171,7 @@ class model():
 
                     # get the new updated valueFunction for that policy
                     valueFunction[currTimeStamp][currStateIndex] = self.evaluateValueFunction(currStateTuple, policyForCurrState, valueFunction, degrade_pitch, env, currTimeStamp)
+                    numCallsToGetTransition += 1
                     maxAbsDiff = max(maxAbsDiff, abs(valueFunction[currTimeStamp][currStateIndex] - oldValueFunction))
 
             if logEnabled:
@@ -158,7 +180,7 @@ class model():
             if maxAbsDiff < self.threshold:
                 break
         
-        return valueFunction, numInnerIterations
+        return valueFunction, numCallsToGetTransition, numInnerIterations
     
     # ------------evaluateArgMax------------------ #
     
@@ -227,24 +249,27 @@ class model():
     def performPolicyImprovementForPIStationaryEnv(self, allStateTuples, policy, valueFunction, actionIndexes, degrade_pitch, env):
         policyStable = True
         errors = 0
+        numCallsToGetTransition = 0
         
         for currStateTuple in allStateTuples:
             
             currStateIndex = env.state_to_index(currStateTuple)
             oldPolicyOfCurrState = policy[currStateIndex]
             policy[currStateIndex], _ = self.evaluateArgMax(currStateTuple, actionIndexes ,valueFunction ,degrade_pitch, env)
+            numCallsToGetTransition += len(actionIndexes)
             
             if oldPolicyOfCurrState != policy[currStateIndex]:
                 policyStable = False
                 errors += 1
         
         print("Errors in policy_state :", errors)
-        return policy, policyStable
+        return policy, policyStable, numCallsToGetTransition
     
     # Given the value function update the policy upon convergence
     def performPolicyImprovementForPINonStationaryEnv(self, allStateTuples, policy, valueFunction, actionIndexes, degrade_pitch, env):
         policyStable = True
         errors = 0
+        numCallsToGetTransition = 0
         
         for currTimeStamp in reversed(range(self.non_stationary_horizon)):
             for currStateTuple in allStateTuples:
@@ -252,40 +277,50 @@ class model():
                 currStateIndex = env.state_to_index(currStateTuple)
                 oldPolicyOfCurrState = policy[currTimeStamp][currStateIndex]
                 policy[currTimeStamp][currStateIndex], _ = self.evaluateArgMax(currStateTuple, actionIndexes ,valueFunction ,degrade_pitch, env, currTimeStamp)
+                numCallsToGetTransition += len(actionIndexes)
 
                 if oldPolicyOfCurrState != policy[currTimeStamp][currStateIndex]:
                     policyStable = False
                     errors += 1
         
         print("Errors in policy_state :", errors)
-        return policy, policyStable
+        return policy, policyStable, numCallsToGetTransition
     
     # ---------performValueFunctionForVI----------- #
+    def performBellmanBackUp(self, currStateTuple, currStateIndex, actionIndexes, valueFn, degrade_pitch, env):
+        currentValueFn = valueFn[currStateIndex]
+
+        _, updatedFunctionVal = self.evaluateArgMax(currStateTuple, actionIndexes ,valueFn ,degrade_pitch, env)
+        return updatedFunctionVal, abs(updatedFunctionVal - currentValueFn)
+        
     def performValueFunctionImprovementForVIStationaryEnv(self, allStateTuples, actionIndexes, valueFn, degrade_pitch, env):
         numIterations = 0
+        numCallsToGetTransition = 0
         while(True):
             numIterations += 1
 
             maxAbsDiff = 0
             for currStateTuple in allStateTuples:
-
-                currStateIndex = env.state_to_index(currStateTuple)
-                currentValueFn = valueFn[currStateIndex]
-
+                
                 if env._is_terminal(currStateTuple):
                     continue
-
-                _, valueFn[currStateIndex] = self.evaluateArgMax(currStateTuple, actionIndexes ,valueFn ,degrade_pitch, env)
-                maxAbsDiff = max(maxAbsDiff, abs(valueFn[currStateIndex] - currentValueFn))
+ 
+                currStateIndex = env.state_to_index(currStateTuple)
+                valueFn[currStateIndex], delta = self.performBellmanBackUp(currStateTuple, currStateIndex, actionIndexes, valueFn, degrade_pitch, env)
+                
+                numCallsToGetTransition += len(actionIndexes)
+                maxAbsDiff = max(maxAbsDiff, delta)
             
             print(f"maxAbsDiff after iteration : {numIterations} is {maxAbsDiff}")
             
             if maxAbsDiff < self.threshold:
                 break
-        return valueFn, numIterations
+        return valueFn, numCallsToGetTransition, numIterations
     
     def performValueFunctionImprovementForVINonStationaryEnv(self, allStateTuples, actionIndexes, valueFn, degrade_pitch, passTimeStamp, env):
         numIterations = 0
+        numCallsToGetTransition = 0
+        
         while(True):
             numIterations += 1
             maxAbsDiff = 0
@@ -301,6 +336,8 @@ class model():
                         continue
 
                     _, newValueFnAtST = self.evaluateArgMax(currStateTuple, actionIndexes ,valueFn ,degrade_pitch, env, currTimeStamp, passTimeStamp)
+                    
+                    numCallsToGetTransition += len(actionIndexes)
                     oldValueFn[currTimeStamp][currStateIndex] = newValueFnAtST
                     maxAbsDiff = max(maxAbsDiff, abs(newValueFnAtST - oldValueFnAtST))
 
@@ -308,7 +345,7 @@ class model():
             valueFn  = oldValueFn
             if maxAbsDiff < self.threshold:
                 break
-        return valueFn, numIterations
+        return valueFn, numCallsToGetTransition, numIterations
     
     # ---------performPolicyImprovementForVI----------- # 
     def performPolicyImprovementForVIStationaryEnv(self, allStateTuples, actionIndexes, valueFn, policy, degrade_pitch, env):
@@ -367,6 +404,59 @@ class model():
         if degrade_pitch == False:
             return self.performPolicyImprovementForVIStationaryEnv(allStateTuples, actionIndexes, valueFn, policy, degrade_pitch, env)
         return self.performPolicyImprovementForVINonStationaryEnv(allStateTuples, actionIndexes, valueFn, policy, degrade_pitch, passTimeStamp, env)
+    
+    # This is to be implement only for the stationary environment
+    def performModifiedValueFunctionEvaluation(self,allStateTuples, actionIndexes, valueFn, env):
+        degrade_pitch = False
+        numCallsToGetTransition = 0
+        numIterations = 0
+        # First create a priority queue, do one round of belmann value funtion evaluation(maxm one) push the states with the maxDiff based on the current initialization
+        # Priority queue (negative priority because heapq is min-heap)
+        pq = []
+        for currStateTuple in allStateTuples:
+            
+            if env._is_terminal(currStateTuple):
+                continue
+
+            # Updating inline here will allow me to do one round of sweep to the goal state 
+            currStateIndex = env.state_to_index(currStateTuple)
+            updatedValueFnForCurrState, currDelta = self.performBellmanBackUp(currStateTuple, currStateIndex, actionIndexes, valueFn, degrade_pitch, env)
+            valueFn[currStateIndex] = updatedValueFnForCurrState  # <-- one initial sweep update
+            numCallsToGetTransition += len(actionIndexes)
+            
+            if currDelta >= self.threshold:
+                heapq.heappush(pq, (-currDelta, currStateTuple))   
+                # state in the priority queue = ( -delta, currStateTuple ) -> top element will be the one with maxm delta
+        
+        # Next step is to iterate the queue
+        while pq:
+            delta, currStateTuple = heapq.heappop(pq)
+            delta *= (-1)
+            numIterations += 1
+            
+            if env._is_terminal(currStateTuple):
+                continue
+            
+            # step 3: perform bellman back up and update valueFn[currStateIndex]
+            currStateIndex = env.state_to_index(currStateTuple)
+            
+            updatedValueFnForCurrState, updatedDelta = self.performBellmanBackUp(currStateTuple, currStateIndex, actionIndexes, valueFn, degrade_pitch, env)
+            valueFn[currStateIndex] = updatedValueFnForCurrState
+            numCallsToGetTransition += len(actionIndexes)
+    
+            if updatedDelta > self.threshold:
+                # step 4: Update predecessors if significant change
+                for prevStateIndex in self.predecessor_matrix[currStateIndex]:
+                    prevStateTuple = env.index_to_state(prevStateIndex)
+                    
+                    if env._is_terminal(prevStateTuple):
+                        continue
+                    heapq.heappush(pq, (-updatedDelta, prevStateTuple))                         
+            
+            if numIterations%1000 == 0:
+                print(f"Curr iteration : {numCallsToGetTransition}")
+        
+        return valueFn, numCallsToGetTransition, numIterations
     
     def print_policy(self, policy, grid_shape, terminal_states=[]):
         """Pretty print the football policy with text symbols"""
