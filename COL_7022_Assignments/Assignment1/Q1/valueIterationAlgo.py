@@ -40,12 +40,14 @@ def valueIterationAlgo(envr=FootballSkillsEnv, model=model, logEnabled = True, d
     
     if modified_VI == True:
         model.generatePredecessorMatrixForStationaryEnv(allStateTuples, actionIndexes, env)
+        numCallsToGetTransition = len(allStateTuples)*len(actionIndexes)
     
     # Step 1
     if modified_VI == False:
         valueFn, numCallsToGetTransition, numIterations = model.performValueFunctionImprovementForVI(allStateTuples, actionIndexes, valueFn, degrade_pitch, passTimeStamp, env)
     else :
-        valueFn, numCallsToGetTransition, numIterations = model.performModifiedValueFunctionEvaluation(allStateTuples, actionIndexes, valueFn, env)
+        valueFn, numCallsToGetTransition1, numIterations = model.performModifiedValueFunctionEvaluation(allStateTuples, actionIndexes, valueFn, env)
+        numCallsToGetTransition += numCallsToGetTransition1
     
     # Step 2 :: Final one
     policy = model.performPolicyImprovementForVI(allStateTuples, actionIndexes, valueFn, policy, degrade_pitch, passTimeStamp, env)
