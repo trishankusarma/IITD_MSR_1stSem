@@ -2,10 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import mode
 from or_gym.envs.classic_or.knapsack import OnlineKnapsackEnv
+import random
 
 class PolicyIterationOnlineKnapsack:
-    def __init__(self, env=OnlineKnapsackEnv, gamma=0.95, epsilon=1e-4, episodeLength = 50, maxmKnapsackWeight = 200, numItems = 200, maxIterations = 1000):
-        self.env = OnlineKnapsackEnv()
+    def __init__(self, env, gamma=0.95, epsilon=1e-4, episodeLength = 50, maxmKnapsackWeight = 200, numItems = 200, maxIterations = 1000):
+        self.env = env
         self.discount_factor = gamma
         self.threshold = epsilon
         self.episodeLength = episodeLength
@@ -21,6 +22,7 @@ class PolicyIterationOnlineKnapsack:
         return policy, valueFn 
 
     def get_reward_and_done(self, current_weight, item_idx, action):
+        # returns reward, done, next_weight
         
         if action == 0:
             return 0, False, current_weight
@@ -29,19 +31,20 @@ class PolicyIterationOnlineKnapsack:
         value = self.env.item_values[item_idx]
         
         if( (weight + current_weight) > self.maxmKnapsackWeight ):
-            return float('-inf'), True, current_weight
+            # this would ensure that he don't choose this action
+            return -1e9, True, current_weight
         
         return value, False, current_weight + weight
     
-    def evaluateQValuesForBothAction(self, valueFn, stateTuple, action):
+    def evaluateQValuesForBothAction(self, valueFn, stateTuple, action, expectedQValueFromFutureStates = None):
         
         timeRemaining, usedCapacity, itemIdx = stateTuple
         
+        if expectedQValueFromFutureStates == None:
+            expectedQValueFromFutureStates = self.discount_factor * np.dot( self.env.item_probs,valueFn[timeRemaining-1, usedCapacity, :])
+        
         if action == 0:
-            return self.discount_factor * np.dot(
-                self.env.item_probs,
-                valueFn[timeRemaining-1, usedCapacity, :]
-            )
+            return expectedQValueFromFutureStates
     
         reward, done, updatedUsedCapacity = self.get_reward_and_done(usedCapacity, itemIdx, 1)
         
@@ -52,24 +55,34 @@ class PolicyIterationOnlineKnapsack:
     
     def policy_evaluation(self, policy, valueFn):
         
-        delta = 0
-        
-        # evaluate valueFn for the given policy
-        for timeRemaining in range(self.episodeLength):
-            for usedCapacity in reversed(range(self.maxmKnapsackWeight)):
-                for itemIdx in range(self.numItems):
-                        
-                    oldValueFn = valueFn[timeRemaining][usedCapacity][itemIdx]
-                    stateTuple = ( timeRemaining, usedCapacity, itemIdx )
-                        
-                    action = policy[timeRemaining][usedCapacity][itemIdx]
-                        
-                    Q_value = self.evaluateQValuesForBothAction(valueFn, stateTuple, action)
+        while(True):
             
-                    valueFn[timeRemaining][usedCapacity][itemIdx] = Q_value
-                    delta = max(delta, abs(Q_value - oldValueFn))
+            delta = 0
+
+            # evaluate valueFn for the given policy
+            # looping backward from timeRemaining 1 to timeRemaining 50
+            # and at timeRemaining 0 -> it is a terminal state -> so value should be 0
+            for timeRemaining in range(1, self.episodeLength+1):
+                # usedCapacity = 200 -> we can only do one action -> reject the item
+                for usedCapacity in range(self.maxmKnapsackWeight+1):
+                    
+                    expectedQValueFromFutureStates = self.discount_factor * np.dot( self.env.item_probs,valueFn[timeRemaining-1, usedCapacity, :])
+                    for itemIdx in range(self.numItems):
+
+                        oldValueFn = valueFn[timeRemaining, usedCapacity, itemIdx]
+                        stateTuple = ( timeRemaining, usedCapacity, itemIdx )
+
+                        action = policy[timeRemaining, usedCapacity, itemIdx]
+
+                        Q_value = self.evaluateQValuesForBothAction(valueFn, stateTuple, action, expectedQValueFromFutureStates = expectedQValueFromFutureStates)
+
+                        valueFn[timeRemaining][usedCapacity][itemIdx] = Q_value
+                        delta = max(delta, abs(Q_value - oldValueFn))
+
+            print(f"delta : {delta}")
             
-        print(f"delta : {delta}")
+            if delta < self.threshold :
+                break
         return valueFn
 
     def policy_improvement(self, policy, valueFn):
@@ -77,14 +90,16 @@ class PolicyIterationOnlineKnapsack:
         errors = 0
         
         # get all states
-        for timeRemaining in range(self.episodeLength):
-                for usedCapacity in reversed(range(self.maxmKnapsackWeight)):
+        for timeRemaining in range(1, self.episodeLength+1):
+                for usedCapacity in range(self.maxmKnapsackWeight + 1):
+                    
+                    expectedQValueFromFutureStates = self.discount_factor * np.dot( self.env.item_probs,valueFn[timeRemaining-1, usedCapacity, :])
                     for itemIdx in range(self.numItems):
                         
                         oldPolicy = policy[timeRemaining][usedCapacity][itemIdx]
                         stateTuple = ( timeRemaining, usedCapacity, itemIdx )
                         
-                        newPolicyForCurrState = self.get_action(stateTuple, valueFn)
+                        newPolicyForCurrState = self.get_action(stateTuple, valueFn, expectedQValueFromFutureStates = expectedQValueFromFutureStates)
                         
                         policy[timeRemaining][usedCapacity][itemIdx] = newPolicyForCurrState
                         if newPolicyForCurrState != oldPolicy:
@@ -94,15 +109,26 @@ class PolicyIterationOnlineKnapsack:
         print(f"Errors in policy : {errors}")
         return policyStable, policy
 
-    def get_action(self, stateTuple, valueFn):
-        Q_reject = self.evaluateQValuesForBothAction(valueFn, stateTuple, 0)
+    def get_action(self, stateTuple, valueFn, expectedQValueFromFutureStates = None):
+        timeRemaining, usedCapacity, itemIdx = stateTuple
+        
+        reward, _, _ = self.get_reward_and_done(usedCapacity, itemIdx, 1)
+        
+        # this handles the condition for out-bounds
+        if(reward < -1e8):
+            return 0
+        
+        if expectedQValueFromFutureStates == None:
+            expectedQValueFromFutureStates = self.discount_factor * np.dot( self.env.item_probs,valueFn[timeRemaining-1, usedCapacity, :])
+        
+        Q_reject = self.evaluateQValuesForBothAction(valueFn, stateTuple, 0, expectedQValueFromFutureStates = expectedQValueFromFutureStates)
         Q_accept = self.evaluateQValuesForBothAction(valueFn, stateTuple, 1)
                         
-        if Q_reject > Q_accept:
+        if Q_reject >= Q_accept:
             return 0
         return 1
     
-    def run_policy_iteration(self, max_iterations=1000):   
+    def run_policy_iteration(self, seed = 0, max_iterations=1000):   
 
         print(f"Shape of item_values : {self.env.item_values.shape}")
         
