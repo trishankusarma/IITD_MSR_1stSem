@@ -13,9 +13,10 @@ class PolicyIterationOnPortfolioOptimization:
                 ):
         self.model = model
         self.threshold = epsilon
+        self.errorLogs = []
         pass
     
-    def policy_evaluation(self, policy, valueFn):
+    def policy_evaluation(self, policy, valueFn, logDelta = False):
         
         while(True):
             
@@ -38,8 +39,12 @@ class PolicyIterationOnPortfolioOptimization:
                         delta = max(delta, abs(valueFn[timeStamp, cashOnHold, assetsOnHold] - oldValueFn))
             
             print(f"delta : {delta}")
+            
             if delta < self.threshold :
                 break
+                
+            if logDelta == True:
+                self.errorLogs.append(delta)
         return valueFn
 
     def policy_improvement(self, policy, valueFn):
@@ -65,7 +70,7 @@ class PolicyIterationOnPortfolioOptimization:
         print(f"Errors in policy : {errors}")
         return policyStable, policy
     
-    def run_policy_iteration(self, seed = 0, max_iterations=1000):  
+    def run_policy_iteration(self, seed = 0, max_iterations=1000, logDelta = False):  
         
         self.model.maxmCash = int(self.model.getMaxmCashPossible())
         
@@ -77,12 +82,13 @@ class PolicyIterationOnPortfolioOptimization:
         print("Start evaluating policies...policy_size : ", policy.shape)
         
         num_iterations = 0
+        self.errorLogs = []
         
         while(True):
             num_iterations += 1
             
             # policy_evaluation
-            valueFn = self.policy_evaluation(policy, valueFn)
+            valueFn = self.policy_evaluation(policy, valueFn, logDelta = logDelta)
             
             # policy_iteration
             policy_stable, policy = self.policy_improvement(policy, valueFn)

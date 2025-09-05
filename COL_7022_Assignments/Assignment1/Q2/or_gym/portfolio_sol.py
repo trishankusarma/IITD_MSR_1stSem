@@ -55,14 +55,14 @@ class PortFolioModel:
         # during buying time
         if type == 1:
             
-            newCash = cashOnHold - k*(self.prices[timeStamp] + self.txnCost)
+            newCash = cashOnHold - (k*self.prices[timeStamp] + self.txnCost)
             # one should have 2*price[timeStamp] + self.txnCost <= cashOnHold and (assetsOnHold + 2) <= self.maxmAssetLimit
             if( newCash < 0  or ((assetsOnHold + k) > self.maxmAssetLimit)):
                 return self.penalty, (-1, -1, -1), 1
             return self.discount_factor*valueFn[timeStamp+1, newCash, assetsOnHold + k], (timeStamp+1, newCash, assetsOnHold + k), 0
         
         # during selling time
-        newCash = cashOnHold+k*(self.prices[timeStamp]-self.txnCost)
+        newCash = cashOnHold+(k*self.prices[timeStamp]-self.txnCost)
         if( assetsOnHold < k or newCash > self.maxmCash):
             return self.penalty, (-1, -1, -1), 1
         
@@ -169,14 +169,13 @@ class PortFolioModel:
             trajectory_cash.append(currCash)
             trajectory_holdings.append(currAssets)
             trajectory_wealth.append(currCash + currAssets * self.prices[min(currTimeStamp, len(self.prices)-1)])
+            
+            action = policy[currTimeStamp, currCash, currAssets]
+            print(f"At state : {currState}, best action u can take is {mapForAction[action]}")
 
-            if i < self.episodeLength:
-                action = policy[currTimeStamp, currCash, currAssets]
-                print(f"At state : {currState}, best action u can take is {mapForAction[action]}")
-
-                nextState, reward, done = self.get_next_action_reward_and_done(currState, action, valueFn)
-                currState = nextState
-                totalRewards += reward
+            nextState, reward, done = self.get_next_action_reward_and_done(currState, action, valueFn)
+            currState = nextState
+            totalRewards += reward
 
         print(f"[{method}] Final Wealth: {trajectory_wealth[-1]}")
         print(f"[{method}] Total Reward: {totalRewards}")
@@ -193,32 +192,7 @@ class PortFolioModel:
         plt.plot(holdings, label="Holdings", marker="^")
         plt.xlabel("Time Step")
         plt.ylabel("Value")
-        plt.title(f"Portfolio Evolution ({method})")
+        plt.title(f"Portfolio Evolution ({method}) for gamma = {self.discount_factor}, prices = {self.prices}")
         plt.legend()
         plt.grid(True)
         plt.show()
-
-
-# development I am doing in kernel notebook :: will add here once completed
-if __name__=="__main__":
-    start_time=time.time()
-
-
-    ###Part 1 and Part 2
-    ####Please train the value and policy iteration training algo for the given three sequences of prices
-    ####Config1
-    env = DiscretePortfolioOptEnv(prices=[1, 3, 5, 5 , 4, 3, 2, 3, 5, 8])
-
-    ####Config2
-    env = DiscretePortfolioOptEnv(prices=[2, 2, 2, 4 ,2, 2, 4, 2, 2, 2])
-
-    ####Config3
-    env = DiscretePortfolioOptEnv(prices=[4, 1, 4, 1 ,4, 4, 4, 1, 1, 4])
-
-
-
-    ####Run the evaluation on the following prices and save the plots.
-
-
-    ###Part 3. (Portfolio Optimizaton)
-    env = DiscretePortfolioOptEnv(variance=1)
