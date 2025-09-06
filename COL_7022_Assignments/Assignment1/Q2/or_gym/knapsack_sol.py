@@ -3,7 +3,7 @@ from or_gym.envs.classic_or.knapsack import OnlineKnapsackEnv
 import matplotlib.pyplot as plt
 from scipy.stats import mode
 
-# development I am doing in kernel notebook :: will add here once completed
+# development I am doing in kernel notebook 
 # this file is not getting used
 if __name__=="__main__":
     env=OnlineKnapsackEnv()
