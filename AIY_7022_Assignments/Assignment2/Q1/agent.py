@@ -12,7 +12,8 @@ from dataclasses import dataclass
 from collections import defaultdict
 from frozenlake import DiagonalFrozenLake
 from cliff import MultiGoalCliffWalkingEnv
-from utils.algoUtils import run_algorithm, SARSA_UPDATE_RULE, Q_UPDATE_RULE, EXPECTED_SARSA_UPDATE_RULE
+from utils.cliffAlgoUtils import run_algorithm, SARSA_UPDATE_RULE, Q_UPDATE_RULE, EXPECTED_SARSA_UPDATE_RULE
+from utils.frozenLakeUtils import run_monte_carlo_frozen_lake
 
 def SARSA(env, **kwargs):
     '''
@@ -45,20 +46,17 @@ def expected_SARSA(env, **kwargs):
     return run_algorithm(env, EXPECTED_SARSA_UPDATE_RULE, **kwargs)
 
 
-def monte_carlo(env):
+def monte_carlo(env, **kwargs):
     '''
     Implement the Monte Carlo algorithm to find the optimal policy for the given environment.
     Return Q table.
     return: Q table -> np.array of shape (num_states, num_actions)
     return: episode_rewards -> []
-    return: _ 
-    return: _ 
+    return: Q, episode_rewards, _, 
     '''
-    pass
+    return run_monte_carlo_frozen_lake(env, **kwargs)
 
-    return Q, episode_rewards, _, _
-
-def q_learning_for_frozenlake(env):
+def q_learning_for_frozenlake(env, **kwargs):
     '''
     Implement the Q-learning algorithm to find the optimal policy for the given environment.
     return: Q table -> np.array of shape (num_states, num_actions)
@@ -66,4 +64,6 @@ def q_learning_for_frozenlake(env):
     '''
     pass
 
-    return Q, episode_rewards, _, _
+    return run_algorithm(
+        env, Q_UPDATE_RULE, **kwargs 
+    )

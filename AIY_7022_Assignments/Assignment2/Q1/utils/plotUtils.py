@@ -2,15 +2,21 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 
-def plot_graph(metaData, rewards):
+def plot_graph(metaData, rewards, window = 1):
     title, label, filename = metaData["title"], metaData["label"], metaData["filename"]
 
     # make sure plots folder exists
     os.makedirs("plots", exist_ok=True)
 
-    # Plot episode rewards
-    plt.figure(figsize=(10, 6))
-    plt.plot(rewards, label=label)
+    # Use moving average with window=2
+    if len(rewards) > window:
+        smoothed = np.convolve(rewards, np.ones(window)/window, mode='valid')
+        x = np.arange(window, len(smoothed) + window)
+        plt.figure(figsize=(10, 6))
+        plt.plot(x, smoothed, label=f"{label} (Window={window})")
+    else:
+        plt.figure(figsize=(10, 6))
+        plt.plot(rewards, label=label)
     plt.title(title)
     plt.xlabel("Episodes")
     plt.ylabel("Average Reward")
@@ -23,6 +29,7 @@ def plot_graph(metaData, rewards):
     print(f"Plot saved at: {save_path}")
 
     plt.show()
+
 
 def plot_average_goal_visits(results, algorithms):
     """

@@ -10,6 +10,13 @@ def get_decayed_epsilon(episode, start_epsilon=1.0, decay_rate=0.997, min_epsilo
 def get_decayed_alpha(episode, start_alpha=0.999, decay_rate=0.9997, min_alpha=0.6):
     return max(min_alpha, start_alpha * (decay_rate ** episode)) 
 
+def epsilon_greedy(Q, state, episode, num_episodes):
+    # decaying epsilon schedule
+    eps = get_decayed_epsilon(episode)
+    if np.random.rand() < eps:
+        return np.random.randint(Q.shape[1])  # explore
+    return np.argmax(Q[state])  # exploit
+
 def summarize_performance(rewards):
     interimMean = np.mean(rewards[:500])     # first 500
     asymptoticMean = np.mean(rewards[-1000:])  # last 1000
@@ -19,13 +26,6 @@ def summarize_performance(rewards):
     print(f"Asymptotic mean reward (last 1000 episodes): {asymptoticMean}")
     print(f"Asymptotic variance in reward (last 1000 episodes): {asymptoticVariance}")
     pass
-
-def epsilon_greedy(Q, state, episode, num_episodes):
-    # decaying epsilon schedule
-    eps = get_decayed_epsilon(episode)
-    if np.random.rand() < eps:
-        return np.random.randint(Q.shape[1])  # explore
-    return np.argmax(Q[state])  # exploit
 
 def SARSA_UPDATE_RULE(Q, obs, action, reward, next_obs, next_action, terminated, **kwargs):
     alpha, gamma = kwargs["alpha"], kwargs["gamma"]
@@ -60,7 +60,9 @@ def run_algorithm(env,
                   training_seeds=[0,10,20,30,40,50,60,70,80,90], # Question 1.1 :: Train over 10 different random seeds
                   num_episodes=20000,
                   gamma=0.99, 
-                  max_steps=1000
+                  max_steps=1000,
+                  filename = None,
+                  window = 1
                  ):
     num_states = env.observation_space.n
     num_actions = env.action_space.n
@@ -125,7 +127,10 @@ def run_algorithm(env,
     print(f"max mean episode reward across seeds: {max(episode_rewards)}")
     
     # Question 1.2.2 :: Plot these average rewards v/s episodes for each algorithm :: this will show the average learning progress over time
-    plot_graph(get_meta_data(update_rule), episode_rewards)
+    meta_data = get_meta_data(update_rule)
+    if filename is not None:
+        meta_data["filename"] = filename
+    plot_graph(meta_data, episode_rewards, window = window)
     
     safe_visits = np.mean(all_safe)
     risky_visits = np.mean(all_risky)
