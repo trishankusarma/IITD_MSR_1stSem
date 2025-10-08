@@ -10,15 +10,15 @@ def get_decayed_epsilon(episode, decay_rate, min_epsilon, extreme, found_success
             return 0.99
     return max(min_epsilon, start_epsilon * (decay_rate ** episode))
 
-def get_decayed_alpha(episode, start_alpha=0.7, decay_rate=0.99997, min_alpha=0.5):
-    return max(min_alpha, start_alpha * (decay_rate ** episode))
-
 def adaptive_alpha(episode, recent_success_count, start_alpha=0.2, max_alpha=0.8, min_alpha=0.4,
                    success_threshold=10, alpha_decay_rate=0.9995):
     ramp = 1 / (1 + np.exp(-(recent_success_count - success_threshold) / (success_threshold + 1e-5)))
     alpha_now = start_alpha + (max_alpha - start_alpha) * ramp
     alpha_now = max(min_alpha, alpha_now * (alpha_decay_rate ** episode))
     return alpha_now
+
+def get_decayed_alpha(episode, start_alpha=0.7, decay_rate=0.99997, min_alpha=0.5):
+    return max(min_alpha, start_alpha * (decay_rate ** episode))
 
 def extreme_alpha(ep, found_success, episode_success, start_alpha=0.2, max_alpha=0.8, min_alpha=0.4, alpha_decay_rate=0.9995):
     if not found_success:

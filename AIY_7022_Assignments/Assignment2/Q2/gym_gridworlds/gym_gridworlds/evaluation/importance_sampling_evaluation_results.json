@@ -1,27 +1,26 @@
-// these are just sample values
 {
     "TD0_ImportanceSampling(0.0)": {
-        "mean": 1.0,
-        "std": 1.0
+        "mean": 1.705,
+        "std": 1.0456935497553765
     },
     "TD0_ImportanceSampling(0.1)": {
-        "mean": 1.0,
-        "std": 1.0
+        "mean": 1.75,
+        "std": 1.299038105676658
     },
     "TD0_ImportanceSampling(0.01)": {
-        "mean": 1.0,
-        "std": 1.0
+        "mean": 1.65,
+        "std": 1.2757350822173072
     },
     "MC_ImportanceSampling(0.0)": {
-        "mean": 1.0,
-        "std": 1.0
+        "mean": 1.8430000000000002,
+        "std": 0.7639705491705815
     },
     "MC_ImportanceSampling(0.1)": {
-        "mean": 1.0,
-        "std": 1.0
+        "mean": 1.855,
+        "std": 0.6399023362982825
     },
     "MC_ImportanceSampling(0.01)": {
-        "mean": 1.0,
-        "std": 1.0
+        "mean": 1.93,
+        "std": 0.5339475629684997
     }
 }

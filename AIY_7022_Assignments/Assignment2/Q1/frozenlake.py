@@ -133,16 +133,13 @@ class DiagonalFrozenLake(gym.Env):
                            self.cell_size // 3)
 
         self.window.blit(canvas, (0, 0))
-        pygame.event.pump()
         pygame.display.update()
-        self.clock.tick(self.metadata["render_fps"])
 
         if self.render_mode == "rgb_array":
-            return np.transpose(np.array(pygame.surfarray.pixels3d(canvas)), axes=(1, 0, 2))
+            canvas = pygame.surfarray.array3d(self.window)
+            return np.transpose(canvas, (1, 0, 2))
 
     def close(self):
         if self.window is not None:
-            pygame.display.quit()
             pygame.quit()
             self.window = None
-            self.clock = None

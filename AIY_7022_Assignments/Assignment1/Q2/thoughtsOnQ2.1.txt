@@ -1,0 +1,44 @@
+The MDP I am setting here has 3 parameters in the state-tuple
+
+- time remaining to converge -- initial value will be maximum Length Of Episode = 50
+- the current weight in the knapsack -- initial value will be 0
+- index of the item chosen at that time stamp - initial value will be 0
+
+So we will start from ( 50, 0, 0) -> 
+-> will start enumerating over all item indexes from 0 to 200-1:
+
+# we will know the action in policy iteration step 
+action = policy[state]
+
+Choose the action taken for that state :
+-> Q_reject = what is the expectation over choosing the next states and reward we get
+== so what are the next states?
+== we can get any item index from 0 to 199 with the timeRemaining - 1 and same current weight
+== we know the prob of getting the next item i from env.item_probs -> an 1D array for sure
+== and what is the ValueFunction[ timeRemaining -1, same current_weight, : ] -> another 1D array for sure
+== and rewards = 0
+Q_reject = prob*( gamma*ValueFunction[ timeRemaining -1, same current_weight, : ])
+
+Q_accept = What is the expectation over choosing the next states and reward we get on accepting the current item
+== so what is the next states?
+== we can get any item index from 0 to 199 with the timeRemaining - 1 and currentWeight + weight[currentItemIndex]
+== Same here also we will be getting the prob of getting the next item i from env.item_probs -> 1D array
+== and what is the valueFunction[ timeRemaining - 1, currentWeight + weight[ currentItemIndex , : ] -> another 1D array for sure
+== and rewards = value[currentItemIndex] if current_capacity + weight[currentItemIndex] <= maxmWeight 
+:: else it will reject the item
+Q_accept = prob*( rewards + gamma* ValueFunction[ timeRemaining -1, current_weight + weight[currentItemIndex], : ]
+
+In policy iteration,
+V[ currentState ] = Q_value of the current state
+
+In value iteration,
+V[ currentState ] = max( Q_reject, Q_accept )
+
+Next step to figure out how to traverse the loop:
+-> best way would be to loop from timeRemaining 1 to timeRemaining 50
+-> and for usedCapacity, the best way would be to loop from 200 usedCapacity to 0
+-> and itemIndex any fashion -> here we are taking it to be forward
+
+Base cases :
+1. when timeRemaining = 0 -> we no longer get any input -- so we can escape that iteration
+2. When usedCapacity = maxmCapacity, we can no longer accept any input/ improve our value function 
