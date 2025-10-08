@@ -8,66 +8,96 @@ from nltk.stem.porter import PorterStemmer # library for stemming
 stop_words = set(stopwords.words('english'))
 stemmer = PorterStemmer()
 
-def tokenizeAndGetTrainingAndTestingData(df_train, df_test, window = 1):
-    text_col, vocabulary = getTokenizedContentAndVocabulary(df_train["content"], window = window, need_vocabulary = True)
-    class_col = df_train["label"]
+def tokenizeAndRemoveStopWordsOrStemAndReturnVocabulary(
+    df, 
+    input_col, 
+    target_col="Tokenized Description", 
+    remove_stop_words=True, 
+    with_stemming=True, 
+    window=1
+):
+    tokenizedColumn = []
+    vocabulary = {}
+    vocabulary_index = 0
+
+    for raw_text in df[input_col]:
+        # 1. Tokenize
+        token_list = getTokensFromString(raw_text, window=1)
+
+        # 2. Normalize, stopword removal, stemming
+        tokens = []
+        for token in token_list:
+            token = token.lower()
+            if remove_stop_words and token in stop_words:
+                continue
+            if with_stemming:
+                token = stemmer.stem(token)
+            tokens.append(token)
+
+        # 3. Generate n-grams
+        if window > 1:
+            final_tokens = [
+                ' '.join(tokens[i:i+window])
+                for i in range(len(tokens) - window + 1)
+            ]
+        else:
+            final_tokens = tokens
+
+        # 4. Append to tokenized column
+        tokenizedColumn.append(final_tokens)
+
+        # 5. Build vocabulary
+        for token in final_tokens:
+            if token not in vocabulary:
+                vocabulary[token] = vocabulary_index
+                vocabulary_index += 1
+
+    # 6. Add to dataframe
+    df[target_col] = tokenizedColumn
+
+    return df, vocabulary
+
+def getTrainingAndTestingData(df_train, df_test, target_field = "Tokenized Title"):
+    class_col_train = df_train["label"]
 
     trainingData = pd.DataFrame({
-        'Tokenized Description': text_col,
-        'Class Index': class_col
+        target_field: df_train[target_field],
+        'Class Index': class_col_train
     })
 
     print("trainingData.head()")
     print(trainingData.head())
 
-    text_col, _ = getTokenizedContentAndVocabulary(df_test["content"], window = window, need_vocabulary = False)
-    class_col = df_test["label"]
+    class_col_test = df_test["label"]
 
     testingData = pd.DataFrame({
-        'Tokenized Description': text_col,
-        'Class Index': class_col
+        target_field: df_test[target_field],
+        'Class Index': class_col_test
     })
 
     print("testingData.head()")
     print(testingData.head())
     
-    return vocabulary, trainingData, testingData
+    return trainingData, testingData
 
-def run_model(model, vocabulary, trainingData, testingData, smoothening = 1.0):
+def run_model(model, vocabulary, trainingData, testingData, smoothening = 1.0, text_col="Tokenized Description"):
     # Build the Naive Bayes Model
     model.setVocabulary(vocabulary)
 
     # Training
-    model.fit(trainingData, smoothening) # laplace smoothening parameter used : 1.0
+    model.fit(trainingData, smoothening, text_col = text_col) # laplace smoothening parameter used : 1.0
     # Predict on trained data
-    model.predict(trainingData)
+    model.predict(trainingData, text_col = text_col)
     print("Evauating on train data...")
     # Evaluate the training data
     model.evaluate(trainingData["Predicted"], trainingData["Class Index"], trainingData.shape[0])
 
     # Predict the testing data
-    model.predict(testingData)
+    model.predict(testingData, text_col = text_col)
     # evaluate the predictions
     print("Evauating on test data...")
     model.evaluate(testingData["Predicted"], testingData["Class Index"], testingData.shape[0])
     pass
-
-def removeStopWordsAndStem(token_list, remove_stop_words = True, with_stemming = True):
-    """
-    token_list: a list of tokens for a single document
-    returns: a list of tokens after stopword removal and stemming
-    """
-    if with_stemming:
-        if remove_stop_words:
-            filtered_tokens = [stemmer.stem(token.lower()) for token in token_list if token.lower() not in stop_words]
-        else:
-            filtered_tokens = [stemmer.stem(token.lower()) for token in token_list]
-    else:
-        if remove_stop_words:
-            filtered_tokens = [token.lower() for token in token_list if token.lower() not in stop_words]
-        else:
-            filtered_tokens = [token.lower() for token in token_list]
-    return filtered_tokens
 
 def getTokensFromString(text, window = 1):
     words = text.split()
