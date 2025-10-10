@@ -2,6 +2,7 @@ import numpy as np
 
 # For single text field (e.g., Description only)
 def run_model(model, vocabulary, trainingData, testingData, smoothening=1.0, text_col="Tokenized Description"):
+    results = {}
     # Build the Naive Bayes Model
     model.setVocabulary(vocabulary)
 
@@ -11,35 +12,34 @@ def run_model(model, vocabulary, trainingData, testingData, smoothening=1.0, tex
     # Predict on training data
     model.predict(trainingData, text_col=text_col)
     print("Evaluating on train data...")
-    evaluate(trainingData["Predicted"], trainingData["Class Index"], trainingData.shape[0])
+    results["train"] = evaluate(trainingData["Predicted"], trainingData["Class Index"], trainingData.shape[0])
 
     # Predict on testing data
     model.predict(testingData, text_col=text_col)
     print("Evaluating on test data...")
-    evaluate(testingData["Predicted"], testingData["Class Index"], testingData.shape[0])
-    pass
-
+    results["test"] = evaluate(testingData["Predicted"], testingData["Class Index"], testingData.shape[0])
+    return results
 
 # For considering both Title and Content separately
 def run_model2(model, vocabularyTitle, vocabularyContent, trainingData, testingData,
-               smoothening=1.0, text_col1="Tokenized Title", text_col2="Tokenized Description"):
+               smoothening=1.0, text_col1="Tokenized Title", text_col2="Tokenized Description", new_feature_cols=[]):
+    results = {}
     # Build the Naive Bayes Model
     model.setVocabulary(vocabularyTitle, vocabularyContent)
 
     # Training
-    model.fit(trainingData, smoothening, text_col1=text_col1, text_col2=text_col2)
+    model.fit(trainingData, smoothening, text_col1=text_col1, text_col2=text_col2, new_feature_cols=new_feature_cols)
 
     # Predict on training data
     model.predict(trainingData, text_col1=text_col1, text_col2=text_col2)
     print("Evaluating on train data...")
-    evaluate(trainingData["Predicted"], trainingData["Class Index"], trainingData.shape[0])
+    results["train"] = evaluate(trainingData["Predicted"], trainingData["Class Index"], trainingData.shape[0])
 
     # Predict on testing data
     model.predict(testingData, text_col1=text_col1, text_col2=text_col2)
     print("Evaluating on test data...")
-    evaluate(testingData["Predicted"], testingData["Class Index"], testingData.shape[0])
-    pass
-
+    results["test"] =  evaluate(testingData["Predicted"], testingData["Class Index"], testingData.shape[0])
+    return results
 
 def getProbsParameters(df, smoothening, num_words, num_classes, num_examples, class_col, text_col, vocabulary):
     """
@@ -69,7 +69,7 @@ def getProbsParameters(df, smoothening, num_words, num_classes, num_examples, cl
 
 def evaluate(predicted_col, actual_col, num_test_examples):
     """
-    Evaluate model predictions using accuracy, precision, recall, F1, and macro F1.
+    Evaluate model predictions using accuracy, precision, recall, F1, macro F1, and overall recall.
     """
     print(f"Evaluating on {num_test_examples} examples")
 
@@ -118,11 +118,27 @@ def evaluate(predicted_col, actual_col, num_test_examples):
 
     # Macro-average F1
     macro_f1 = sum(f1_list) / len(f1_list)
+
+    # Compute overall (micro-averaged) precision, recall, and F1
+    total_tp = sum(true_positive.values())
+    total_fp = sum(false_positive.values())
+    total_fn = sum(false_negative.values())
+
+    overall_precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0
+    overall_recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0
+    overall_f1 = (2 * overall_precision * overall_recall) / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
+
     print("\nMacro-Average F1 Score: {:.4f}".format(macro_f1))
+    print("Overall Precision: {:.4f}".format(overall_precision))
+    print("Overall Recall: {:.4f}".format(overall_recall))
+    print("Overall F1 Score: {:.4f}".format(overall_f1))
 
     # Return metrics as dictionary
     metrics = {
         'overall_accuracy': accuracy,
+        'overall_precision': overall_precision,
+        'overall_recall': overall_recall,
+        'overall_f1': overall_f1,
         'per_class': metrics_per_class,
         'macro_f1': macro_f1
     }

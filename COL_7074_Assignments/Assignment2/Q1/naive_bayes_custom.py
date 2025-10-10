@@ -21,7 +21,8 @@ class NaiveBayesCustom:
         smoothening, 
         class_col="Class Index", 
         text_col1="Tokenized Title", 
-        text_col2="Tokenized Description"
+        text_col2="Tokenized Description",
+        new_feature_cols=[]
     ):
         """
         Learn separate parameters θ(title) and θ(content) for each class.
@@ -46,10 +47,22 @@ class NaiveBayesCustom:
             class_col, text_col2, self.vocabularyContent
         )
 
+        # Compute Gaussian parameters for each numeric new_feature
+        new_feature_stats = {col: [] for col in new_feature_cols}
+        for c in classes:
+            subset = df[df[class_col] == c]
+            for col in new_feature_cols:
+                vals = subset[col].values
+                mean = np.mean(vals)
+                std = np.std(vals) + 1e-6
+                new_feature_stats[col].append((mean, std))
+
         self.params = {
             "phi_y": phi_y,
             "phi_j_given_y_title": phi_j_given_y_title,
-            "phi_j_given_y_content": phi_j_given_y_content
+            "phi_j_given_y_content": phi_j_given_y_content,
+            "new_feature_stats": new_feature_stats,
+            "new_feature_cols": new_feature_cols
         }
 
     def predict(
@@ -66,6 +79,8 @@ class NaiveBayesCustom:
         phi_y = self.params["phi_y"]
         phi_j_given_y_title = self.params["phi_j_given_y_title"]
         phi_j_given_y_content = self.params["phi_j_given_y_content"]
+        new_feature_stats = self.params["new_feature_stats"]
+        new_feature_cols = self.params["new_feature_cols"]
 
         num_classes = len(phi_y)
         predictions = []
@@ -93,6 +108,16 @@ class NaiveBayesCustom:
                         log_prob += np.log(phi_j_given_y_content[class_index][idx])
                     else:
                         log_prob += np.log(1e-10)
+
+                # Numeric new_feature likelihoods (Gaussian)
+                for col in new_feature_stats:
+                    val = row[col]
+                    mean, std = new_feature_stats[col][class_index]
+                    gaussian_loglik = (
+                        -0.5 * np.log(2 * np.pi * std**2)
+                        - ((val - mean) ** 2) / (2 * std**2)
+                    )
+                    log_prob += gaussian_loglik
 
                 log_probs[class_index] = log_prob
 

@@ -6,6 +6,9 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import re
+from tabulate import tabulate  
+import os
+import matplotlib.pyplot as plt
 
 # Ensure NLTK stopwords are available
 nltk.download('stopwords', quiet=True)
@@ -40,7 +43,7 @@ def tokenizeAndRemoveStopWordsOrStemAndReturnVocabulary(
             token = token.lower().strip()
             if remove_stop_words and token in stop_words:
                 continue
-            token = re.sub(r'^\(|\)$', '', token) # removing the unwanted paranthesis if any
+            # token = re.sub(r'^\(|\)$', '', token) # removing the unwanted paranthesis if any
             if with_stemming:
                 token = stemmer.stem(token)
             tokens_cleaned.append(token)
@@ -165,7 +168,7 @@ def getFreq(tokenizedDocs):
 
 
 def plot_wordclouds_per_class(df, text_col="Tokenized Description", class_col="Class Index",
-                              data_type="Train", maxWords=200, width=800, height=400):
+                              data_type="Train", maxWords=200, width=800, height=400, saveToLocal = False, basePath = "wordCloud"):
     """
     Generate and plot a WordCloud for each class based on token frequencies.
     """
@@ -194,4 +197,36 @@ def plot_wordclouds_per_class(df, text_col="Tokenized Description", class_col="C
         plt.imshow(wordcloud, interpolation="bilinear")
         plt.axis("off")
         plt.title(f"Class {cls} — Top Words ({data_type})", fontsize=14)
+
+        if saveToLocal:
+            # Save before showing
+            save_path = os.path.join("plots", basePath+str(cls))
+            plt.savefig(save_path, dpi=300, bbox_inches="tight")
+
         plt.show()
+
+def display_results_table(results):
+    """
+    Display a comparison table (Train vs Test) for each model in 'results'.
+    """
+    for model_name, metrics in results.items():
+        print(f"\n{'='*90}")
+        print(f"Model: {model_name}")
+        print(f"{'='*90}")
+
+        train = metrics['train']
+        test = metrics['test']
+
+        table_data = [
+            ["Overall Accuracy (%)", f"{train['overall_accuracy']:.2f}", f"{test['overall_accuracy']:.2f}"],
+            ["Overall Precision", f"{train['overall_precision']:.4f}", f"{test['overall_precision']:.4f}"],
+            ["Overall Recall", f"{train['overall_recall']:.4f}", f"{test['overall_recall']:.4f}"],
+            ["Overall F1 Score", f"{train['overall_f1']:.4f}", f"{test['overall_f1']:.4f}"],
+            ["Macro F1 Score", f"{train['macro_f1']:.4f}", f"{test['macro_f1']:.4f}"],
+        ]
+
+        print(tabulate(
+            table_data,
+            headers=["Metric", "Train", "Test"],
+            tablefmt="fancy_grid"
+        ))
