@@ -29,13 +29,23 @@ def buildDataset(basePath="", inputClasses=None):
     """
     if inputClasses is None or len(inputClasses) < 2:
         raise ValueError("inputClasses must be a list of atleast two class indices.")
+
+    if len(inputClasses) > 2:
+        isMultiClassClassification = True
+    else:
+        isMultiClassClassification = False
     
     data_x = []
     data_y = []
 
     for idx, class_idx in enumerate(inputClasses):
         class_label = class_names[class_idx]
-        label_value = +1 if idx == 0 else -1   # first class → +1, second → -1
+
+        if isMultiClassClassification:
+            label_value = class_idx
+        else:
+            label_value = +1 if idx == 0 else -1   # first class → +1, second → -1
+            
         X, y = load_images_from_folder(os.path.join(basePath, class_label), label_value)
 
         print(f"Loaded {class_label} → X: {X.shape}, y: {y.shape}")

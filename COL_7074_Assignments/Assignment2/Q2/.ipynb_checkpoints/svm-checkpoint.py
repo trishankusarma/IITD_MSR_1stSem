@@ -26,6 +26,9 @@ class SupportVectorMachine:
         return np.dot(x1, x2.T)
 
     def _gaussian_kernel(self, x1, x2):
+        x1 = np.array(x1)
+        x2 = np.array(x2)
+        
         if x1.ndim == 1:
             x1 = x1[np.newaxis, :]
         if x2.ndim == 1:
