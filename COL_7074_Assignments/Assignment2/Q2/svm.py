@@ -1,138 +1,115 @@
 import numpy as np
-import cvxopt
-
+from cvxopt import matrix, solvers
+# ===============================
+# Support Vector Machine
+# ===============================
 class SupportVectorMachine:
-    """
-    Binary Classifier using Support Vector Machine (SVM)
-    Solved via Quadratic Programming using CVXOPT.
-    Works for both linear and Gaussian (RBF) kernels.
-    """
-
     def __init__(self):
+        self.w = None
+        self.bias = None
         self.alphas = None
         self.support_vectors = None
-        self.support_labels = None
-        self.bias = 0
+        self.support_vector_labels = None
         self.kernel = None
-        self.C = None
         self.gamma = None
-        self.w = None
+        self.C = None
         self.support_indices = None
 
-    # ----------------------------
-    # Kernels
-    # ----------------------------
-    def _linear_kernel(self, x1, x2):
-        return np.dot(x1, x2.T)
+    def _linear_kernel(self, X1, X2):
+        return np.dot(X1, X2.T)
 
-    def _gaussian_kernel(self, x1, x2):
-        x1 = np.array(x1)
-        x2 = np.array(x2)
-        
-        if x1.ndim == 1:
-            x1 = x1[np.newaxis, :]
-        if x2.ndim == 1:
-            x2 = x2[np.newaxis, :]
-        
-        # Efficiently compute squared distances without creating 3D arrays
-        x1_sq = np.sum(x1 ** 2, axis=1).reshape(-1, 1)
-        x2_sq = np.sum(x2 ** 2, axis=1).reshape(1, -1)
-        sq_dists = x1_sq + x2_sq - 2 * np.dot(x1, x2.T)
-    
-        # Ensure no negative values due to numerical errors
-        sq_dists = np.maximum(sq_dists, 0.0)
-    
-        return np.exp(-self.gamma * sq_dists)
+    def _gaussian_kernel(self, X1, X2, gamma):
+        X1 = np.array(X1)
+        X2 = np.array(X2)
+        if X1.ndim == 1:
+            X1 = X1[np.newaxis, :]
+        if X2.ndim == 1:
+            X2 = X2[np.newaxis, :]
+        sq_dists = np.sum(X1**2, axis=1).reshape(-1, 1) + np.sum(X2**2, axis=1) - 2 * np.dot(X1, X2.T)
+        return np.exp(-gamma * sq_dists)
 
-    # ----------------------------
-    # Fit
-    # ----------------------------
-    def fit(self, X, y, kernel='linear', C=1.0, gamma=0.001):
+    def fit(self, X, y, kernel='linear', C=1.0, gamma=0.001, K_precomputed=None):
         """
-        Train SVM model using CVXOPT solver.
-        Args:
-            X: np.array, shape (N, D)
-            y: np.array, shape (N,)
-            kernel: 'linear' or 'gaussian'
-            C: Soft margin regularization parameter
-            gamma: RBF kernel parameter (used only if kernel='gaussian')
+        Train the SVM using QP (CVXOPT)
         """
-        X = np.array(X, dtype=np.float64)
-        y = np.array(y, dtype=np.float64)
-
-        # Convert labels only if necessary
-        if np.any(np.isin(y, [0, 1])):
-            y[y == 0] = -1
-
-        n_samples, n_features = X.shape
+        X = np.array(X)
+        y = np.array(y)
         self.kernel = kernel
-        self.C = C
         self.gamma = gamma
+        self.C = C
+        n_samples, n_features = X.shape
 
-        # Compute kernel matrix
-        if kernel == 'linear':
+        # ----------------------------------
+        # Kernel matrix (cached if provided)
+        # ----------------------------------
+        if K_precomputed is not None:
+            K = K_precomputed
+        elif kernel == 'linear':
             K = self._linear_kernel(X, X)
         elif kernel == 'gaussian':
-            K = self._gaussian_kernel(X, X)
+            K = self._gaussian_kernel(X, X, gamma)
         else:
-            raise ValueError("Unsupported kernel type: use 'linear' or 'gaussian'")
+            raise ValueError("Unknown kernel")
 
-        # Quadratic Programming setup
-        P = cvxopt.matrix(np.outer(y, y) * K + 1e-10 * np.eye(n_samples))
-        q = cvxopt.matrix(-np.ones(n_samples))
-        A = cvxopt.matrix(y, (1, n_samples), tc='d')
-        b = cvxopt.matrix(0.0)
+        # Quadratic programming formulation
+        P = matrix(np.outer(y, y) * K)
+        q = matrix(-np.ones((n_samples, 1)))
+        A = matrix(y.astype(float), (1, n_samples))
+        bias = matrix(0.0)
 
-        G_std = np.diag(-np.ones(n_samples))
-        h_std = np.zeros(n_samples)
-        G_slack = np.diag(np.ones(n_samples))
-        h_slack = np.ones(n_samples) * C
+        if C is None or C == np.inf:
+            G = matrix(-np.eye(n_samples))
+            h = matrix(np.zeros(n_samples))
+        else:
+            G = matrix(np.vstack((-np.eye(n_samples), np.eye(n_samples))))
+            h = matrix(np.hstack((np.zeros(n_samples), np.ones(n_samples) * C)))
 
-        G = cvxopt.matrix(np.vstack((G_std, G_slack)))
-        h = cvxopt.matrix(np.hstack((h_std, h_slack)))
+        # ----------------------------------
+        # Relax CVXOPT tolerances for speed
+        # ----------------------------------
+        solvers.options['show_progress'] = False
+        solvers.options['abstol'] = 1e-3
+        solvers.options['reltol'] = 1e-3
+        solvers.options['feastol'] = 1e-3
 
         # Solve QP
-        cvxopt.solvers.options['show_progress'] = False
-        solution = cvxopt.solvers.qp(P, q, G, h, A, b)
-
+        solution = solvers.qp(P, q, G, h, A, bias)
         alphas = np.ravel(solution['x'])
 
         # Support vectors
-        sv = alphas > 1e-5
-        self.alphas = alphas[sv]
-        self.support_vectors = X[sv]
-        self.support_labels = y[sv]
-        self.support_indices = np.where(sv)[0]   # <-- store indices relative to training set
+        sv_mask = alphas > 1e-5
+        self.alphas = alphas[sv_mask]
+        self.support_vectors = X[sv_mask]
+        self.support_vector_labels = y[sv_mask]
+        self.support_indices = np.where(sv_mask)[0]   # <-- store indices relative to training set
 
-        # Compute bias and weight
+        # Compute bias term (bias)
         if kernel == 'linear':
             self.w = np.sum(
-                self.alphas[:, None] * self.support_labels[:, None] * self.support_vectors,
-                axis=0,
+                (self.alphas * self.support_vector_labels)[:, None] * self.support_vectors,
+                axis=0
             )
             self.bias = np.mean(
-                self.support_labels - np.dot(self.support_vectors, self.w)
+                self.support_vector_labels - np.dot(self.support_vectors, self.w)
             )
         else:
-            self.bias = np.mean([
-                self.support_labels[i] - np.sum(
-                    self.alphas * self.support_labels *
-                    self._gaussian_kernel(self.support_vectors[i], self.support_vectors)
-                )
-                for i in range(len(self.alphas))
-            ])
-            self.bias = np.clip(self.bias, -10, 10)  # stability
-        
+            self.w = None
+            K_sv = K[np.ix_(sv_mask, sv_mask)]
+            self.bias = np.mean(
+                self.support_vector_labels -
+                np.sum((self.alphas * self.support_vector_labels)[:, None] * K_sv, axis=0)
+            )
 
-    # ----------------------------
-    # Predict
-    # ----------------------------
-    def predict(self, X):
-        X = np.array(X, dtype=np.float64)
+    def project(self, X):
+        X = np.array(X)
         if self.kernel == 'linear':
-            y_pred = np.dot(X, self.w) + self.bias
+            return np.dot(X, self.w) + self.bias
         else:
-            K = self._gaussian_kernel(X, self.support_vectors)
-            y_pred = np.sum(self.alphas * self.support_labels * K, axis=1) + self.bias
+            K = self._gaussian_kernel(X, self.support_vectors, self.gamma)
+            return np.sum(
+                (self.alphas * self.support_vector_labels) * K,
+                axis=1
+            ) + self.bias
 
-        return np.sign(y_pred)  # outputs +1 / -1
+    def predict(self, X):
+        return np.sign(self.project(X))

@@ -4,73 +4,62 @@ import time
 from collections import defaultdict, Counter
 from svm import SupportVectorMachine
 
+# ===============================
+# One-vs-One Multi-class Wrapper
+# ===============================
 class OneVsOneSVM:
-    """
-    One-vs-One Multi-Class SVM using CVXOPT-based binary SVMs
-    """
-
-    def __init__(self, C=1.0, gamma=0.001):
+    def __init__(self, C=1.0, gamma=0.001, kernel='gaussian'):
         self.C = C
         self.gamma = gamma
+        self.kernel = kernel
         self.models = {}
-        self.pairs = []
+        self.pairs = None
         self.classes_ = None
 
-    def fit(self, X, y, kernel='gaussian', C=1.0):
-        """
-        Train a binary SVM for every pair of classes
-        """
-        self.C = C
+    def fit(self, X, y):
+        X = np.array(X)
+        y = np.array(y)
         self.classes_ = np.unique(y)
         self.pairs = list(itertools.combinations(self.classes_, 2))
         print(f"Training {len(self.pairs)} One-vs-One classifiers...")
-        start = time.time()
 
+        # ----------------------------------
+        # Cache Gaussian kernel for all data
+        # ----------------------------------
+        if self.kernel == 'gaussian':
+            K_full = np.exp(
+                -self.gamma * (
+                    np.sum(X**2, axis=1).reshape(-1, 1)
+                    + np.sum(X**2, axis=1)
+                    - 2 * np.dot(X, X.T)
+                )
+            )
+        else:
+            K_full = None
+
+        # Train each binary classifier
         for (ci, cj) in self.pairs:
-            print(f"\n Training classifier for ({ci} vs {cj})")
             mask = np.logical_or(y == ci, y == cj)
             X_pair, y_pair = X[mask], y[mask]
             y_pair = np.where(y_pair == ci, 1, -1)
 
-            svm = SupportVectorMachine()
-            svm.fit(X_pair, y_pair, kernel="gaussian", C=C, gamma=self.gamma)
-            self.models[(ci, cj)] = svm
+            # Slice cached kernel for this pair
+            if K_full is not None:
+                idx = np.where(mask)[0]
+                K_pair = K_full[np.ix_(idx, idx)]
+            else:
+                K_pair = None
 
-        end = time.time()
-        print(f"\nOne-vs-One training completed in {end - start:.2f}s")
+            model = SupportVectorMachine()
+            model.fit(X_pair, y_pair, kernel=self.kernel, C=self.C, gamma=self.gamma, K_precomputed=K_pair)
+            self.models[(ci, cj)] = model
 
     def predict(self, X):
-        """
-        Predict using majority voting across all pairwise classifiers
-        """
-        n_samples = X.shape[0]
-        votes = np.zeros((n_samples, len(self.classes_)))
-        decision_scores = np.zeros_like(votes)
+        votes = np.zeros((X.shape[0], len(self.classes_)))
 
-        for (ci, cj), svm in self.models.items():
-            # compute decision function values for each test sample
-            K = svm._gaussian_kernel(X, svm.support_vectors)
-            decision_values = np.sum(svm.alphas * svm.support_labels * K, axis=1) + svm.bias
+        for (ci, cj), model in self.models.items():
+            pred = model.predict(X)
+            votes[:, np.where(self.classes_ == ci)[0][0]] += (pred > 0).astype(int)
+            votes[:, np.where(self.classes_ == cj)[0][0]] += (pred < 0).astype(int)
 
-            # assign votes
-            for idx, val in enumerate(decision_values):
-                if val > 0:
-                    votes[idx, np.where(self.classes_ == ci)[0][0]] += 1
-                    decision_scores[idx, np.where(self.classes_ == ci)[0][0]] += val
-                else:
-                    votes[idx, np.where(self.classes_ == cj)[0][0]] += 1
-                    decision_scores[idx, np.where(self.classes_ == cj)[0][0]] += -val
-
-        # handle ties — pick label with highest total decision score
-        preds = np.zeros(n_samples, dtype=int)
-        for i in range(n_samples):
-            max_votes = np.max(votes[i])
-            candidates = np.where(votes[i] == max_votes)[0]
-            if len(candidates) == 1:
-                preds[i] = self.classes_[candidates[0]]
-            else:
-                # tie-break using decision scores
-                best_idx = candidates[np.argmax(decision_scores[i, candidates])]
-                preds[i] = self.classes_[best_idx]
-
-        return preds
+        return self.classes_[np.argmax(votes, axis=1)]
