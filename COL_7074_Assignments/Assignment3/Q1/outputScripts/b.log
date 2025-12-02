@@ -1,0 +1,57 @@
+yscl4@yscl4:~/trishanku/IITD_MSR_1stSem/ML_ASSIGNMENT_A3/Q1/question_b$ python3 b.py ../data/train.csv ../data/validation.csv ../data/test.csv ../outputs/predictionB.csv
+Loading CSV files
+Train shape      : (7827, 14)
+Validation shape : (870, 14)
+Test shape       : (967, 14)
+Performing One-Hot Encoding...
+categorical_cols ['team', 'opp', 'host', 'month', 'day_match']
+multi_cat_cols ['team', 'opp', 'host', 'month', 'day_match']
+Preprocessing continuous features...
+After pre-processing
+Shape of trainDataX is : (7827, 75)
+Shape of trainDataY is : (7827,)
+Shape of testDataX is : (967, 75)
+Shape of testDataY is : (967,)
+Shape of validationDataX is : (870, 75)
+Shape of validationDataY is : (870,)
+Total categorical cols after processing: 70
+
+ Testing Decision Tree with maxDepth = 15
+→ Training model
+→ Predicting Train Data
+Accuracy : 0.788, Precision: 0.840, Recall: 0.714, F1-Score: 0.772
+→ Predicting Validation Data
+Accuracy : 0.614, Precision: 0.620, Recall: 0.583, F1-Score: 0.601
+→ Predicting Test Data
+Accuracy : 0.608, Precision: 0.600, Recall: 0.517, F1-Score: 0.556
+
+ Testing Decision Tree with maxDepth = 25
+→ Training model
+→ Predicting Train Data
+Accuracy : 0.936, Precision: 0.972, Recall: 0.899, F1-Score: 0.934
+→ Predicting Validation Data
+Accuracy : 0.580, Precision: 0.584, Recall: 0.555, F1-Score: 0.569
+→ Predicting Test Data
+Accuracy : 0.620, Precision: 0.600, Recall: 0.594, F1-Score: 0.597
+
+ Testing Decision Tree with maxDepth = 35
+→ Training model
+→ Predicting Train Data
+Accuracy : 0.982, Precision: 0.997, Recall: 0.968, F1-Score: 0.982
+→ Predicting Validation Data
+Accuracy : 0.584, Precision: 0.584, Recall: 0.578, F1-Score: 0.581
+→ Predicting Test Data
+Accuracy : 0.626, Precision: 0.603, Recall: 0.614, F1-Score: 0.608
+
+ Testing Decision Tree with maxDepth = 45
+→ Training model
+→ Predicting Train Data
+Accuracy : 0.991, Precision: 0.998, Recall: 0.984, F1-Score: 0.991
+→ Predicting Validation Data
+Accuracy : 0.579, Precision: 0.579, Recall: 0.576, F1-Score: 0.577
+→ Predicting Test Data
+Accuracy : 0.625, Precision: 0.601, Recall: 0.618, F1-Score: 0.609
+
+Generating plot...
+Best validation accuracy is coming to be 0.6137931034482759 and for the depth 15
+ Saved predictions to ../outputs/predictionB.csv

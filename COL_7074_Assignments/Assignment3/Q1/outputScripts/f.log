@@ -1,0 +1,117 @@
+yscl4@yscl4:~/trishanku/IITD_MSR_1stSem/ML_ASSIGNMENT_A3/Q1/question_f$ python f.py ../data/train.csv ../data/validation.csv ../data/test.csv ../outputs/predictionF.csv
+After pre-processing
+Shape of trainDataX is : (7827, 13)
+Shape of trainDataY is : (7827,)
+Shape of testDataX is : (967, 13)
+Shape of testDataY is : (967,)
+Shape of validationDataX is : (870, 13)
+Shape of validationDataY is : (870,)
+=== Starting Random Forest Grid Search ===
+
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.1, min_samples_split=2 | Train=1.0000, Val=0.6954, Test=0.7022, OOB=0.6909
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.1, min_samples_split=4 | Train=0.9931, Val=0.6966, Test=0.7063, OOB=0.6935
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.1, min_samples_split=6 | Train=0.9739, Val=0.7080, Test=0.6939, OOB=0.7033
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.1, min_samples_split=8 | Train=0.9583, Val=0.7011, Test=0.6898, OOB=0.7058
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.1, min_samples_split=10 | Train=0.9407, Val=0.7000, Test=0.7053, OOB=0.7046
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.3, min_samples_split=2 | Train=0.9999, Val=0.7000, Test=0.7032, OOB=0.6996
+2025-11-01 01:33:05 - n_estimators=50, max_features=0.3, min_samples_split=4 | Train=0.9976, Val=0.7092, Test=0.7053, OOB=0.7010
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.3, min_samples_split=6 | Train=0.9865, Val=0.7299, Test=0.6846, OOB=0.7055
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.3, min_samples_split=8 | Train=0.9727, Val=0.7080, Test=0.7001, OOB=0.7074
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.3, min_samples_split=10 | Train=0.9568, Val=0.7287, Test=0.7094, OOB=0.7086
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.5, min_samples_split=2 | Train=1.0000, Val=0.7000, Test=0.6960, OOB=0.6946
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.5, min_samples_split=4 | Train=0.9991, Val=0.6908, Test=0.6856, OOB=0.6888
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.5, min_samples_split=6 | Train=0.9927, Val=0.7172, Test=0.6991, OOB=0.6987
+2025-11-01 01:33:06 - n_estimators=50, max_features=0.5, min_samples_split=8 | Train=0.9808, Val=0.6966, Test=0.6887, OOB=0.7017
+2025-11-01 01:33:07 - n_estimators=50, max_features=0.5, min_samples_split=10 | Train=0.9677, Val=0.7046, Test=0.7084, OOB=0.7041
+2025-11-01 01:33:07 - n_estimators=50, max_features=0.7, min_samples_split=2 | Train=1.0000, Val=0.6851, Test=0.6898, OOB=0.6861
+2025-11-01 01:33:07 - n_estimators=50, max_features=0.7, min_samples_split=4 | Train=0.9987, Val=0.6793, Test=0.6877, OOB=0.6938
+2025-11-01 01:33:07 - n_estimators=50, max_features=0.7, min_samples_split=6 | Train=0.9917, Val=0.6851, Test=0.6815, OOB=0.6892
+2025-11-01 01:33:07 - n_estimators=50, max_features=0.7, min_samples_split=8 | Train=0.9806, Val=0.6874, Test=0.6939, OOB=0.6994
+2025-11-01 01:33:07 - n_estimators=50, max_features=0.7, min_samples_split=10 | Train=0.9695, Val=0.6908, Test=0.6939, OOB=0.6949
+2025-11-01 01:33:08 - n_estimators=50, max_features=0.9, min_samples_split=2 | Train=1.0000, Val=0.6839, Test=0.6960, OOB=0.6908
+2025-11-01 01:33:08 - n_estimators=50, max_features=0.9, min_samples_split=4 | Train=0.9977, Val=0.6920, Test=0.6918, OOB=0.6923
+2025-11-01 01:33:08 - n_estimators=50, max_features=0.9, min_samples_split=6 | Train=0.9914, Val=0.6908, Test=0.6929, OOB=0.6996
+2025-11-01 01:33:08 - n_estimators=50, max_features=0.9, min_samples_split=8 | Train=0.9812, Val=0.7011, Test=0.7032, OOB=0.6929
+2025-11-01 01:33:08 - n_estimators=50, max_features=0.9, min_samples_split=10 | Train=0.9729, Val=0.6966, Test=0.7104, OOB=0.6976
+2025-11-01 01:33:09 - n_estimators=150, max_features=0.1, min_samples_split=2 | Train=1.0000, Val=0.7103, Test=0.7135, OOB=0.7107
+2025-11-01 01:33:09 - n_estimators=150, max_features=0.1, min_samples_split=4 | Train=0.9969, Val=0.7115, Test=0.7001, OOB=0.7144
+2025-11-01 01:33:09 - n_estimators=150, max_features=0.1, min_samples_split=6 | Train=0.9806, Val=0.7046, Test=0.7011, OOB=0.7141
+2025-11-01 01:33:10 - n_estimators=150, max_features=0.1, min_samples_split=8 | Train=0.9640, Val=0.7103, Test=0.7022, OOB=0.7192
+2025-11-01 01:33:10 - n_estimators=150, max_features=0.1, min_samples_split=10 | Train=0.9484, Val=0.7241, Test=0.7177, OOB=0.7176
+2025-11-01 01:33:10 - n_estimators=150, max_features=0.3, min_samples_split=2 | Train=1.0000, Val=0.7034, Test=0.7042, OOB=0.7124
+2025-11-01 01:33:11 - n_estimators=150, max_features=0.3, min_samples_split=4 | Train=0.9995, Val=0.7149, Test=0.7053, OOB=0.7133
+2025-11-01 01:33:11 - n_estimators=150, max_features=0.3, min_samples_split=6 | Train=0.9934, Val=0.7138, Test=0.6929, OOB=0.7196
+2025-11-01 01:33:11 - n_estimators=150, max_features=0.3, min_samples_split=8 | Train=0.9794, Val=0.7195, Test=0.7094, OOB=0.7212
+2025-11-01 01:33:12 - n_estimators=150, max_features=0.3, min_samples_split=10 | Train=0.9668, Val=0.7218, Test=0.7073, OOB=0.7202
+2025-11-01 01:33:12 - n_estimators=150, max_features=0.5, min_samples_split=2 | Train=1.0000, Val=0.6908, Test=0.7022, OOB=0.7064
+2025-11-01 01:33:12 - n_estimators=150, max_features=0.5, min_samples_split=4 | Train=1.0000, Val=0.7011, Test=0.6856, OOB=0.7059
+2025-11-01 01:33:13 - n_estimators=150, max_features=0.5, min_samples_split=6 | Train=0.9960, Val=0.7172, Test=0.6980, OOB=0.7118
+2025-11-01 01:33:13 - n_estimators=150, max_features=0.5, min_samples_split=8 | Train=0.9872, Val=0.7034, Test=0.6949, OOB=0.7082
+2025-11-01 01:33:13 - n_estimators=150, max_features=0.5, min_samples_split=10 | Train=0.9732, Val=0.7057, Test=0.7084, OOB=0.7122
+2025-11-01 01:33:14 - n_estimators=150, max_features=0.7, min_samples_split=2 | Train=1.0000, Val=0.6851, Test=0.6991, OOB=0.7051
+2025-11-01 01:33:14 - n_estimators=150, max_features=0.7, min_samples_split=4 | Train=1.0000, Val=0.7000, Test=0.6918, OOB=0.7064
+2025-11-01 01:33:14 - n_estimators=150, max_features=0.7, min_samples_split=6 | Train=0.9973, Val=0.7034, Test=0.7011, OOB=0.7028
+2025-11-01 01:33:15 - n_estimators=150, max_features=0.7, min_samples_split=8 | Train=0.9867, Val=0.7011, Test=0.7011, OOB=0.7093
+2025-11-01 01:33:15 - n_estimators=150, max_features=0.7, min_samples_split=10 | Train=0.9775, Val=0.7092, Test=0.7022, OOB=0.7079
+2025-11-01 01:33:16 - n_estimators=150, max_features=0.9, min_samples_split=2 | Train=1.0000, Val=0.6943, Test=0.6991, OOB=0.7082
+2025-11-01 01:33:16 - n_estimators=150, max_features=0.9, min_samples_split=4 | Train=0.9997, Val=0.7000, Test=0.7022, OOB=0.7012
+2025-11-01 01:33:17 - n_estimators=150, max_features=0.9, min_samples_split=6 | Train=0.9967, Val=0.6897, Test=0.7001, OOB=0.7073
+2025-11-01 01:33:17 - n_estimators=150, max_features=0.9, min_samples_split=8 | Train=0.9891, Val=0.7000, Test=0.7125, OOB=0.7064
+2025-11-01 01:33:17 - n_estimators=150, max_features=0.9, min_samples_split=10 | Train=0.9782, Val=0.7080, Test=0.6960, OOB=0.7059
+2025-11-01 01:33:18 - n_estimators=250, max_features=0.1, min_samples_split=2 | Train=1.0000, Val=0.6943, Test=0.7166, OOB=0.7162
+2025-11-01 01:33:18 - n_estimators=250, max_features=0.1, min_samples_split=4 | Train=0.9974, Val=0.7092, Test=0.7053, OOB=0.7173
+2025-11-01 01:33:19 - n_estimators=250, max_features=0.1, min_samples_split=6 | Train=0.9838, Val=0.7184, Test=0.7115, OOB=0.7178
+2025-11-01 01:33:19 - n_estimators=250, max_features=0.1, min_samples_split=8 | Train=0.9644, Val=0.7195, Test=0.7022, OOB=0.7220
+2025-11-01 01:33:20 - n_estimators=250, max_features=0.1, min_samples_split=10 | Train=0.9484, Val=0.7264, Test=0.7177, OOB=0.7176
+2025-11-01 01:33:20 - n_estimators=250, max_features=0.3, min_samples_split=2 | Train=1.0000, Val=0.7126, Test=0.7042, OOB=0.7185
+2025-11-01 01:33:21 - n_estimators=250, max_features=0.3, min_samples_split=4 | Train=0.9996, Val=0.7126, Test=0.7073, OOB=0.7193
+2025-11-01 01:33:21 - n_estimators=250, max_features=0.3, min_samples_split=6 | Train=0.9945, Val=0.7195, Test=0.6970, OOB=0.7184
+2025-11-01 01:33:22 - n_estimators=250, max_features=0.3, min_samples_split=8 | Train=0.9797, Val=0.7161, Test=0.7104, OOB=0.7235
+2025-11-01 01:33:22 - n_estimators=250, max_features=0.3, min_samples_split=10 | Train=0.9690, Val=0.7218, Test=0.7084, OOB=0.7238
+2025-11-01 01:33:23 - n_estimators=250, max_features=0.5, min_samples_split=2 | Train=1.0000, Val=0.6931, Test=0.7011, OOB=0.7118
+2025-11-01 01:33:23 - n_estimators=250, max_features=0.5, min_samples_split=4 | Train=1.0000, Val=0.7034, Test=0.6929, OOB=0.7082
+2025-11-01 01:33:24 - n_estimators=250, max_features=0.5, min_samples_split=6 | Train=0.9977, Val=0.7172, Test=0.6980, OOB=0.7118
+2025-11-01 01:33:24 - n_estimators=250, max_features=0.5, min_samples_split=8 | Train=0.9881, Val=0.7115, Test=0.7042, OOB=0.7133
+2025-11-01 01:33:25 - n_estimators=250, max_features=0.5, min_samples_split=10 | Train=0.9756, Val=0.7126, Test=0.7053, OOB=0.7170
+2025-11-01 01:33:25 - n_estimators=250, max_features=0.7, min_samples_split=2 | Train=1.0000, Val=0.6885, Test=0.6991, OOB=0.7038
+2025-11-01 01:33:26 - n_estimators=250, max_features=0.7, min_samples_split=4 | Train=1.0000, Val=0.6966, Test=0.6949, OOB=0.7059
+2025-11-01 01:33:27 - n_estimators=250, max_features=0.7, min_samples_split=6 | Train=0.9981, Val=0.7069, Test=0.6991, OOB=0.7037
+2025-11-01 01:33:27 - n_estimators=250, max_features=0.7, min_samples_split=8 | Train=0.9893, Val=0.7046, Test=0.6991, OOB=0.7107
+2025-11-01 01:33:28 - n_estimators=250, max_features=0.7, min_samples_split=10 | Train=0.9783, Val=0.7126, Test=0.7001, OOB=0.7077
+2025-11-01 01:33:28 - n_estimators=250, max_features=0.9, min_samples_split=2 | Train=1.0000, Val=0.6908, Test=0.6918, OOB=0.7050
+2025-11-01 01:33:29 - n_estimators=250, max_features=0.9, min_samples_split=4 | Train=1.0000, Val=0.7000, Test=0.6939, OOB=0.7055
+2025-11-01 01:33:30 - n_estimators=250, max_features=0.9, min_samples_split=6 | Train=0.9977, Val=0.6862, Test=0.7011, OOB=0.7072
+2025-11-01 01:33:30 - n_estimators=250, max_features=0.9, min_samples_split=8 | Train=0.9913, Val=0.6920, Test=0.7104, OOB=0.7105
+2025-11-01 01:33:31 - n_estimators=250, max_features=0.9, min_samples_split=10 | Train=0.9785, Val=0.7000, Test=0.6980, OOB=0.7084
+2025-11-01 01:33:32 - n_estimators=350, max_features=0.1, min_samples_split=2 | Train=1.0000, Val=0.7011, Test=0.7156, OOB=0.7150
+2025-11-01 01:33:32 - n_estimators=350, max_features=0.1, min_samples_split=4 | Train=0.9978, Val=0.7126, Test=0.7115, OOB=0.7206
+2025-11-01 01:33:33 - n_estimators=350, max_features=0.1, min_samples_split=6 | Train=0.9839, Val=0.7161, Test=0.7115, OOB=0.7193
+2025-11-01 01:33:34 - n_estimators=350, max_features=0.1, min_samples_split=8 | Train=0.9661, Val=0.7184, Test=0.7042, OOB=0.7247
+2025-11-01 01:33:34 - n_estimators=350, max_features=0.1, min_samples_split=10 | Train=0.9504, Val=0.7276, Test=0.7198, OOB=0.7211
+2025-11-01 01:33:35 - n_estimators=350, max_features=0.3, min_samples_split=2 | Train=1.0000, Val=0.7115, Test=0.7011, OOB=0.7234
+2025-11-01 01:33:36 - n_estimators=350, max_features=0.3, min_samples_split=4 | Train=1.0000, Val=0.7092, Test=0.6970, OOB=0.7213
+2025-11-01 01:33:36 - n_estimators=350, max_features=0.3, min_samples_split=6 | Train=0.9944, Val=0.7172, Test=0.7011, OOB=0.7199
+2025-11-01 01:33:37 - n_estimators=350, max_features=0.3, min_samples_split=8 | Train=0.9798, Val=0.7149, Test=0.7063, OOB=0.7243
+2025-11-01 01:33:38 - n_estimators=350, max_features=0.3, min_samples_split=10 | Train=0.9681, Val=0.7195, Test=0.7135, OOB=0.7284
+2025-11-01 01:33:38 - n_estimators=350, max_features=0.5, min_samples_split=2 | Train=1.0000, Val=0.6977, Test=0.7001, OOB=0.7122
+2025-11-01 01:33:39 - n_estimators=350, max_features=0.5, min_samples_split=4 | Train=1.0000, Val=0.7046, Test=0.6970, OOB=0.7113
+2025-11-01 01:33:40 - n_estimators=350, max_features=0.5, min_samples_split=6 | Train=0.9973, Val=0.7138, Test=0.6991, OOB=0.7125
+2025-11-01 01:33:40 - n_estimators=350, max_features=0.5, min_samples_split=8 | Train=0.9894, Val=0.7138, Test=0.6960, OOB=0.7173
+2025-11-01 01:33:41 - n_estimators=350, max_features=0.5, min_samples_split=10 | Train=0.9757, Val=0.7195, Test=0.7001, OOB=0.7207
+2025-11-01 01:33:42 - n_estimators=350, max_features=0.7, min_samples_split=2 | Train=1.0000, Val=0.6885, Test=0.6939, OOB=0.7059
+2025-11-01 01:33:43 - n_estimators=350, max_features=0.7, min_samples_split=4 | Train=1.0000, Val=0.7011, Test=0.6887, OOB=0.7077
+2025-11-01 01:33:44 - n_estimators=350, max_features=0.7, min_samples_split=6 | Train=0.9981, Val=0.7046, Test=0.6970, OOB=0.7047
+2025-11-01 01:33:45 - n_estimators=350, max_features=0.7, min_samples_split=8 | Train=0.9899, Val=0.7034, Test=0.6918, OOB=0.7101
+2025-11-01 01:33:46 - n_estimators=350, max_features=0.7, min_samples_split=10 | Train=0.9778, Val=0.7080, Test=0.7063, OOB=0.7101
+2025-11-01 01:33:47 - n_estimators=350, max_features=0.9, min_samples_split=2 | Train=1.0000, Val=0.6931, Test=0.6980, OOB=0.7069
+2025-11-01 01:33:48 - n_estimators=350, max_features=0.9, min_samples_split=4 | Train=1.0000, Val=0.6989, Test=0.6960, OOB=0.7076
+2025-11-01 01:33:49 - n_estimators=350, max_features=0.9, min_samples_split=6 | Train=0.9981, Val=0.6966, Test=0.7032, OOB=0.7110
+2025-11-01 01:33:49 - n_estimators=350, max_features=0.9, min_samples_split=8 | Train=0.9909, Val=0.7000, Test=0.7063, OOB=0.7079
+2025-11-01 01:33:50 - n_estimators=350, max_features=0.9, min_samples_split=10 | Train=0.9790, Val=0.7046, Test=0.6949, OOB=0.7105
+
+Grid search complete!
+
+Best parameters by Validation Accuracy: {'n_estimators': 50, 'max_features': 0.3, 'min_samples_split': 6} | Val Acc = 0.7299
+Best parameters by Test Accuracy:       {'n_estimators': 350, 'max_features': 0.1, 'min_samples_split': 10} | Test Acc = 0.7198
+Accuracy : 0.685, Precision: 0.662, Recall: 0.681, F1-Score: 0.672
+ Saved predictions to ../outputs/predictionF.csv

@@ -1,0 +1,18 @@
+Logging started — all terminal output will also go to: logs/output_lunar_dqn.txt
+Using device: cuda
+Vocabulary loaded from vocabulary.json
+Vocabulary size: 48
+
+Vocabulary size: 48
+PAD token index: 0
+TRAIN set: 72000 examples
+VAL set: 8000 examples
+TEST set: 20000 examples
+
+Model parameters: 2,531,888
+
+============================================================
+STARTING TRAINING
+============================================================
+
+Epoch 1/20

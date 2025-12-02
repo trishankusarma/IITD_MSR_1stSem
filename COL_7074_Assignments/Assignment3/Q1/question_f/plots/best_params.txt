@@ -1,0 +1,2 @@
+Best parameters by Validation Accuracy: {'n_estimators': 50, 'max_features': 0.3, 'min_samples_split': 6} | Val Acc = 0.7299
+Best parameters by Test Accuracy:       {'n_estimators': 350, 'max_features': 0.1, 'min_samples_split': 10} | Test Acc = 0.7198

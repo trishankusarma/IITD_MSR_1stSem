@@ -1,0 +1,233 @@
+(sb3_rl) [aiy257584@scai03 ~/scratch/RL_A4/A4/Q3/stable_baselines_starter_code]
+$ ./run_batch_gif_creation.sh
+==========================================
+Starting Batch GIF Generation
+==========================================
+
+Environment: InvertedPendulum-v4
+----------------------------------------
+Generating GIF: a2c on InvertedPendulum-v4
+
+Generating GIF for A2C on InvertedPendulum-v4...
+Model directory: models/a2c/InvertedPendulum-v4/seed_123
+Loading model from: models/a2c/InvertedPendulum-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run A2C on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment InvertedPendulum-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+Loading VecNormalize from: models/a2c/InvertedPendulum-v4/seed_123/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1000.00, Steps = 1000
+  Episode 2: Reward = 1000.00, Steps = 1000
+  Episode 3: Reward = 1000.00, Steps = 1000
+
+Saving GIF to gifs/a2c_InvertedPendulum-v4_seed123.gif...
+GIF created successfully!
+Mean Reward: 1000.00 ± 0.00
+Total frames: 3000
+✓ GIF created: gifs/a2c_InvertedPendulum-v4_seed123.gif
+
+Generating GIF: ppo on InvertedPendulum-v4
+
+Generating GIF for PPO on InvertedPendulum-v4...
+Model directory: models/ppo/InvertedPendulum-v4/seed_123
+Loading model from: models/ppo/InvertedPendulum-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment InvertedPendulum-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+Loading VecNormalize from: models/ppo/InvertedPendulum-v4/seed_123/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1000.00, Steps = 1000
+  Episode 2: Reward = 1000.00, Steps = 1000
+  Episode 3: Reward = 1000.00, Steps = 1000
+
+Saving GIF to gifs/ppo_InvertedPendulum-v4_seed123.gif...
+GIF created successfully!
+Mean Reward: 1000.00 ± 0.00
+Total frames: 3000
+✓ GIF created: gifs/ppo_InvertedPendulum-v4_seed123.gif
+
+Generating comparison GIF for InvertedPendulum-v4
+
+Generating comparison GIF for InvertedPendulum-v4...
+Loading A2C model from: models/a2c/InvertedPendulum-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run A2C on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Loading PPO model from: models/ppo/InvertedPendulum-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment InvertedPendulum-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+
+Recording 1 comparison episodes...
+  Episode 1: A2C = 1000.00, PPO = 1000.00
+
+Saving comparison GIF to gifs/comparison_InvertedPendulum-v4_seed123.gif...
+Comparison GIF created successfully!
+Total frames: 1000
+✓ Comparison GIF created: gifs/comparison_InvertedPendulum-v4_seed123.gif
+
+==========================================
+
+Environment: Hopper-v4
+----------------------------------------
+Generating GIF: a2c on Hopper-v4
+
+Generating GIF for A2C on Hopper-v4...
+Model directory: models/a2c/Hopper-v4/seed_123
+Loading model from: models/a2c/Hopper-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run A2C on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment Hopper-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+Loading VecNormalize from: models/a2c/Hopper-v4/seed_123/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1002.67, Steps = 1000
+  Episode 2: Reward = 1002.27, Steps = 1000
+  Episode 3: Reward = 1000.63, Steps = 1000
+
+Saving GIF to gifs/a2c_Hopper-v4_seed123.gif...
+GIF created successfully!
+Mean Reward: 1001.86 ± 0.88
+Total frames: 3000
+✓ GIF created: gifs/a2c_Hopper-v4_seed123.gif
+
+Generating GIF: ppo on Hopper-v4
+
+Generating GIF for PPO on Hopper-v4...
+Model directory: models/ppo/Hopper-v4/seed_123
+Loading model from: models/ppo/Hopper-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment Hopper-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+Loading VecNormalize from: models/ppo/Hopper-v4/seed_123/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 3473.59, Steps = 1000
+  Episode 2: Reward = 3478.33, Steps = 1000
+  Episode 3: Reward = 3483.95, Steps = 1000
+
+Saving GIF to gifs/ppo_Hopper-v4_seed123.gif...
+GIF created successfully!
+Mean Reward: 3478.62 ± 4.24
+Total frames: 3000
+✓ GIF created: gifs/ppo_Hopper-v4_seed123.gif
+
+Generating comparison GIF for Hopper-v4
+
+Generating comparison GIF for Hopper-v4...
+Loading A2C model from: models/a2c/Hopper-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run A2C on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Loading PPO model from: models/ppo/Hopper-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment Hopper-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+
+Recording 1 comparison episodes...
+  Episode 1: A2C = 1002.45, PPO = 3483.13
+
+Saving comparison GIF to gifs/comparison_Hopper-v4_seed123.gif...
+Comparison GIF created successfully!
+Total frames: 1000
+✓ Comparison GIF created: gifs/comparison_Hopper-v4_seed123.gif
+
+==========================================
+
+Environment: HalfCheetah-v4
+----------------------------------------
+Generating GIF: a2c on HalfCheetah-v4
+
+Generating GIF for A2C on HalfCheetah-v4...
+Model directory: models/a2c/HalfCheetah-v4/seed_123
+Loading model from: models/a2c/HalfCheetah-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run A2C on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment HalfCheetah-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+Loading VecNormalize from: models/a2c/HalfCheetah-v4/seed_123/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 2498.31, Steps = 1000
+  Episode 2: Reward = 2569.36, Steps = 1000
+  Episode 3: Reward = 1005.91, Steps = 1000
+
+Saving GIF to gifs/a2c_HalfCheetah-v4_seed123.gif...
+GIF created successfully!
+Mean Reward: 2024.53 ± 720.85
+Total frames: 3000
+✓ GIF created: gifs/a2c_HalfCheetah-v4_seed123.gif
+
+Generating GIF: ppo on HalfCheetah-v4
+
+Generating GIF for PPO on HalfCheetah-v4...
+Model directory: models/ppo/HalfCheetah-v4/seed_123
+Loading model from: models/ppo/HalfCheetah-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment HalfCheetah-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+Loading VecNormalize from: models/ppo/HalfCheetah-v4/seed_123/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1594.62, Steps = 1000
+  Episode 2: Reward = 1634.46, Steps = 1000
+  Episode 3: Reward = 1637.56, Steps = 1000
+
+Saving GIF to gifs/ppo_HalfCheetah-v4_seed123.gif...
+GIF created successfully!
+Mean Reward: 1622.21 ± 19.55
+Total frames: 3000
+✓ GIF created: gifs/ppo_HalfCheetah-v4_seed123.gif
+
+Generating comparison GIF for HalfCheetah-v4
+
+Generating comparison GIF for HalfCheetah-v4...
+Loading A2C model from: models/a2c/HalfCheetah-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run A2C on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+Loading PPO model from: models/ppo/HalfCheetah-v4/seed_123/final_model.zip
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/stable_baselines3/common/on_policy_algorithm.py:150: UserWarning: You are trying to run PPO on the GPU, but it is primarily intended to run on the CPU when not using a CNN policy (you are using ActorCriticPolicy which should be a MlpPolicy). See https://github.com/DLR-RM/stable-baselines3/issues/1245 for more info. You can pass `device='cpu'` or `export CUDA_VISIBLE_DEVICES=` to force using the CPU.Note: The model will train, but the GPU utilization will be poor and the training might take longer than on CPU.
+  warnings.warn(
+/home/scai/msr/aiy257584/anaconda3/envs/sb3_rl/lib/python3.9/site-packages/gymnasium/envs/registration.py:519: DeprecationWarning: WARN: The environment HalfCheetah-v4 is out of date. You should consider upgrading to version `v5`.
+  logger.deprecation(
+
+Recording 1 comparison episodes...
+  Episode 1: A2C = 2414.83, PPO = 1632.53
+
+Saving comparison GIF to gifs/comparison_HalfCheetah-v4_seed123.gif...
+Comparison GIF created successfully!
+Total frames: 1000
+✓ Comparison GIF created: gifs/comparison_HalfCheetah-v4_seed123.gif
+
+==========================================
+
+All GIFs generated successfully!
+
+GIFs saved to: gifs/
+
+total 944M
+-rw-r--r-- 1 aiy257584 aiy25  52M Nov 25 02:40 a2c_HalfCheetah-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25  94M Nov 25 02:23 a2c_HalfCheetah-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  21M Nov 25 02:35 a2c_Hopper-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25 106M Nov 25 02:18 a2c_Hopper-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  11M Nov 25 02:30 a2c_InvertedPendulum-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25 2.3M Nov 25 02:13 a2c_InvertedPendulum-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  34M Nov 25 02:43 comparison_HalfCheetah-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25  53M Nov 25 02:27 comparison_HalfCheetah-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  81M Nov 25 02:38 comparison_Hopper-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25  71M Nov 25 02:21 comparison_Hopper-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25 6.3M Nov 25 02:33 comparison_InvertedPendulum-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25 5.7M Nov 25 02:16 comparison_InvertedPendulum-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  62M Nov 25 02:42 ppo_HalfCheetah-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25  61M Nov 25 02:25 ppo_HalfCheetah-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25 134M Nov 25 02:37 ppo_Hopper-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25 134M Nov 25 02:20 ppo_Hopper-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  12M Nov 25 02:32 ppo_InvertedPendulum-v4_seed123.gif
+-rw-r--r-- 1 aiy257584 aiy25  12M Nov 25 02:15 ppo_InvertedPendulum-v4_seed42.gif

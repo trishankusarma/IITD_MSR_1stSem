@@ -1,0 +1,49 @@
+Training Log
+Environment: Hopper-v4
+Algorithm: ppo
+Seed: 42
+Device: cuda
+Total Timesteps: 300000
+Hyperparameters:
+  learning_rate: 0.0003
+  n_steps: 2048
+  batch_size: 64
+  n_epochs: 10
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_range: 0.2
+  ent_coef: 0.0
+  vf_coef: 0.5
+  max_grad_norm: 0.5
+
+Starting training...
+Progress: 10000 timesteps completed.
+Progress: 20000 timesteps completed.
+Progress: 30000 timesteps completed.
+Progress: 40000 timesteps completed.
+Progress: 50000 timesteps completed.
+Progress: 60000 timesteps completed.
+Progress: 70000 timesteps completed.
+Progress: 80000 timesteps completed.
+Progress: 90000 timesteps completed.
+Progress: 100000 timesteps completed.
+Progress: 110000 timesteps completed.
+Progress: 120000 timesteps completed.
+Progress: 130000 timesteps completed.
+Progress: 140000 timesteps completed.
+Progress: 150000 timesteps completed.
+Progress: 160000 timesteps completed.
+Progress: 170000 timesteps completed.
+Progress: 180000 timesteps completed.
+Progress: 190000 timesteps completed.
+Progress: 200000 timesteps completed.
+Progress: 210000 timesteps completed.
+Progress: 220000 timesteps completed.
+Progress: 230000 timesteps completed.
+Progress: 240000 timesteps completed.
+Progress: 250000 timesteps completed.
+Progress: 260000 timesteps completed.
+Progress: 270000 timesteps completed.
+Progress: 280000 timesteps completed.
+Progress: 290000 timesteps completed.
+Progress: 300000 timesteps completed.

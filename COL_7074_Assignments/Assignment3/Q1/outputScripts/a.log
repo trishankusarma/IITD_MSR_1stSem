@@ -1,0 +1,45 @@
+yscl4@yscl4:~/trishanku/IITD_MSR_1stSem/ML_ASSIGNMENT_A3/Q1/question_a$ python3 a.py ../data/train.csv ../data/validation.csv ../data/test.csv ../outputs/predictionA.csv
+Shape of trainData is : (7827, 14)
+Shape of testData is : (967, 14)
+Shape of validationData is : (870, 14)
+After pre-processing
+Shape of trainDataX is : (7827, 13)
+Shape of trainDataY is : (7827,)
+Shape of testDataX is : (967, 13)
+Shape of testDataY is : (967,)
+Shape of validationDataX is : (870, 13)
+Shape of validationDataY is : (870,)
+---------------Testing for maxDepth : 5-------------------
+Training on the train data
+Prediction on train data
+Accuracy : 0.889, Precision: 0.910, Recall: 0.866, F1-Score: 0.888
+Prediction on validation data
+Accuracy : 0.585, Precision: 0.589, Recall: 0.555, F1-Score: 0.572
+Prediction on test data
+Accuracy : 0.583, Precision: 0.559, Recall: 0.572, F1-Score: 0.565
+---------------Testing for maxDepth : 10-------------------
+Training on the train data
+Prediction on train data
+Accuracy : 0.995, Precision: 0.999, Recall: 0.991, F1-Score: 0.995
+Prediction on validation data
+Accuracy : 0.608, Precision: 0.607, Recall: 0.608, F1-Score: 0.608
+Prediction on test data
+Accuracy : 0.592, Precision: 0.565, Recall: 0.598, F1-Score: 0.581
+---------------Testing for maxDepth : 15-------------------
+Training on the train data
+Prediction on train data
+Accuracy : 0.996, Precision: 0.999, Recall: 0.992, F1-Score: 0.996
+Prediction on validation data
+Accuracy : 0.608, Precision: 0.607, Recall: 0.608, F1-Score: 0.608
+Prediction on test data
+Accuracy : 0.592, Precision: 0.565, Recall: 0.598, F1-Score: 0.581
+---------------Testing for maxDepth : 20-------------------
+Training on the train data
+Prediction on train data
+Accuracy : 0.996, Precision: 0.999, Recall: 0.992, F1-Score: 0.996
+Prediction on validation data
+Accuracy : 0.608, Precision: 0.607, Recall: 0.608, F1-Score: 0.608
+Prediction on test data
+Accuracy : 0.592, Precision: 0.565, Recall: 0.598, F1-Score: 0.581
+Best validation accuracy is coming to be 0.6080459770114942 and for the depth 10
+ Saved predictions to ../outputs/predictionA.csv

@@ -1,0 +1,63 @@
+================================================================================
+STABLE BASELINES3: A2C vs PPO PERFORMANCE ANALYSIS
+================================================================================
+
+FINAL PERFORMANCE (Last 10 Evaluations Average)
+--------------------------------------------------------------------------------
+        Environment Algorithm  Mean Reward  Std Reward  Min Reward  Max Reward  N Seeds
+InvertedPendulum-v4       A2C   478.070655  319.907651   25.692000  709.409973        3
+InvertedPendulum-v4       PPO  1000.000000    0.000000 1000.000000 1000.000000        3
+          Hopper-v4       A2C   365.587921  143.547022  254.942101  568.310791        3
+          Hopper-v4       PPO  1712.215922  249.424305 1529.934204 2064.888342        3
+     HalfCheetah-v4       A2C  1229.602069  552.611596  573.321210 1925.221667        3
+     HalfCheetah-v4       PPO  1275.748564   68.773185 1180.131201 1338.972058        3
+
+STATISTICAL COMPARISON
+--------------------------------------------------------------------------------
+        Environment A2C Mean PPO Mean Difference t-statistic p-value Significant (p<0.05)                    Winner
+InvertedPendulum-v4   478.07  1000.00     521.93      -2.307  0.0823                   No No significant difference
+          Hopper-v4   365.59  1712.22    1346.63      -6.618  0.0027                  Yes                       PPO
+     HalfCheetah-v4  1229.60  1275.75      46.15      -0.117  0.9124                   No No significant difference
+
+
+InvertedPendulum-v4
+================================================================================
+
+A2C:
+  Seed 42: Final = 25.69, Max = 750.50
+  Seed 123: Final = 709.41, Max = 803.79
+  Seed 456: Final = 699.11, Max = 949.70
+
+PPO:
+  Seed 42: Final = 1000.00, Max = 1000.00
+  Seed 123: Final = 1000.00, Max = 1000.00
+  Seed 456: Final = 1000.00, Max = 1000.00
+
+
+Hopper-v4
+================================================================================
+
+A2C:
+  Seed 42: Final = 254.94, Max = 946.10
+  Seed 123: Final = 273.51, Max = 986.73
+  Seed 456: Final = 568.31, Max = 578.29
+
+PPO:
+  Seed 42: Final = 1541.83, Max = 1600.04
+  Seed 123: Final = 2064.89, Max = 2146.38
+  Seed 456: Final = 1529.93, Max = 1548.63
+
+
+HalfCheetah-v4
+================================================================================
+
+A2C:
+  Seed 42: Final = 573.32, Max = 580.01
+  Seed 123: Final = 1190.26, Max = 1227.00
+  Seed 456: Final = 1925.22, Max = 1947.18
+
+PPO:
+  Seed 42: Final = 1308.14, Max = 1332.02
+  Seed 123: Final = 1338.97, Max = 1364.74
+  Seed 456: Final = 1180.13, Max = 1201.74
+

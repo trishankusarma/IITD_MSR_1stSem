@@ -1,0 +1,187 @@
+PS C:\Users\TRISHANKU\WorkSpace\MSR_IITD_1st_Year\AIY_7022_Assignments\Assignment2\Q2\gym_gridworlds> python -m gym_gridworlds.td_starter
+C:\Users\TRISHANKU\anaconda3\lib\site-packages\gymnasium\envs\registration.py:644: UserWarning: ←[33mWARN: Overriding environment Gym-Gridworlds/Full-4x5-v0 already in registry.←[0m
+  logger.warn(f"Overriding environment {new_spec.id} already in registry.")
+--- Starting training across 10 seeds ---
+Training for noise : 0.0
+
+--- Training Seed 1/10 ---
+
+Seed 0: Mean=-0.009, Min=-3.000, Max=2.000, Std=0.640, Success Rate=0.010
+
+--- Training Seed 2/10 ---
+
+Seed 1: Mean=1.631, Min=-8.000, Max=2.000, Std=1.530, Success Rate=0.940
+
+--- Training Seed 3/10 ---
+
+Seed 2: Mean=-0.335, Min=-10.000, Max=0.100, Std=1.463, Success Rate=0.000
+
+--- Training Seed 4/10 ---
+
+Seed 3: Mean=1.607, Min=-3.000, Max=2.000, Std=1.104, Success Rate=0.860
+
+--- Training Seed 5/10 ---
+
+Seed 4: Mean=1.538, Min=-3.000, Max=2.000, Std=1.070, Success Rate=0.810
+
+--- Training Seed 6/10 ---
+
+Seed 5: Mean=-0.250, Min=-10.000, Max=0.100, Std=1.390, Success Rate=0.000
+
+--- Training Seed 7/10 ---
+
+Seed 6: Mean=-0.436, Min=-23.000, Max=2.000, Std=3.230, Success Rate=0.370
+
+--- Training Seed 8/10 ---
+
+Seed 7: Mean=-0.224, Min=-15.000, Max=0.100, Std=1.594, Success Rate=0.000
+
+--- Training Seed 9/10 ---
+
+Seed 8: Mean=1.347, Min=-10.000, Max=2.000, Std=1.989, Success Rate=0.860
+
+--- Training Seed 10/10 ---
+
+Seed 9: Mean=1.483, Min=-5.000, Max=2.000, Std=1.436, Success Rate=0.850
+✅ Saved mean learning curve.
+✅ Saved importance sampling weights plot: gym_gridworlds/plots/importance_weights_0.0.png
+JSON file 'gym_gridworlds/evaluation/importance_sampling_evaluation_results.json' updated successfully.
+
+Generating GIF... saving to gym_gridworlds/gifs/temporal_difference_0.0.gif
+✅ GIF saved as gym_gridworlds/gifs/temporal_difference_0.0.gif
+Total reward obtained : 2.0
+
+Best Optimal Policy (Action to take in each state):
+[['Down' 'Stay' 'Stay' 'Right' 'Stay']
+ ['Down' 'Up' 'Right' 'Right' 'Up']
+ ['Right' 'Right' 'Down' 'Right' 'Up']
+ ['Left' 'Left' 'Right' 'Right' 'Up']]
+
+Q-values for State 0 (top-left) from the best policy:
+  Action: Left, Q-value: -0.274
+  Action: Down, Q-value: 0.076
+  Action: Right, Q-value: -0.443
+  Action: Up, Q-value: -0.384
+  Action: Stay, Q-value: -0.394
+Training for noise : 0.1
+
+--- Training Seed 1/10 ---
+
+Seed 0: Mean=1.624, Min=-13.000, Max=2.000, Std=1.733, Success Rate=0.920
+
+--- Training Seed 2/10 ---
+
+Seed 1: Mean=-0.167, Min=-5.000, Max=0.100, Std=1.073, Success Rate=0.000
+
+--- Training Seed 3/10 ---
+
+Seed 2: Mean=1.900, Min=-3.000, Max=2.000, Std=0.700, Success Rate=0.980
+
+--- Training Seed 4/10 ---
+
+Seed 3: Mean=-3.076, Min=-38.000, Max=2.000, Std=7.290, Success Rate=0.520
+
+--- Training Seed 5/10 ---
+
+Seed 4: Mean=1.731, Min=-3.000, Max=2.000, Std=1.102, Success Rate=0.940
+
+--- Training Seed 6/10 ---
+
+Seed 5: Mean=-0.600, Min=-10.000, Max=2.000, Std=1.806, Success Rate=0.010
+
+--- Training Seed 7/10 ---
+
+Seed 6: Mean=1.850, Min=-3.000, Max=2.000, Std=0.853, Success Rate=0.970
+
+--- Training Seed 8/10 ---
+
+Seed 7: Mean=0.928, Min=-8.000, Max=2.000, Std=2.020, Success Rate=0.660
+
+--- Training Seed 9/10 ---
+
+Seed 8: Mean=-1.325, Min=-10.000, Max=2.000, Std=2.712, Success Rate=0.030
+
+--- Training Seed 10/10 ---
+
+Seed 9: Mean=-4.195, Min=-43.000, Max=2.000, Std=8.273, Success Rate=0.380
+✅ Saved mean learning curve.
+✅ Saved importance sampling weights plot: gym_gridworlds/plots/importance_weights_0.1.png
+JSON file 'gym_gridworlds/evaluation/importance_sampling_evaluation_results.json' updated successfully.
+
+Generating GIF... saving to gym_gridworlds/gifs/temporal_difference_0.1.gif
+✅ GIF saved as gym_gridworlds/gifs/temporal_difference_0.1.gif
+Total reward obtained : 2.0
+
+Best Optimal Policy (Action to take in each state):
+[['Down' 'Left' 'Left' 'Right' 'Stay']
+ ['Down' 'Left' 'Right' 'Right' 'Up']
+ ['Right' 'Right' 'Down' 'Right' 'Up']
+ ['Down' 'Right' 'Right' 'Right' 'Up']]
+
+Q-values for State 0 (top-left) from the best policy:
+  Action: Left, Q-value: 0.503
+  Action: Down, Q-value: 0.720
+  Action: Right, Q-value: 0.427
+  Action: Up, Q-value: 0.507
+  Action: Stay, Q-value: 0.478
+Training for noise : 0.01
+
+--- Training Seed 1/10 ---
+
+Seed 0: Mean=-3.949, Min=-25.000, Max=2.000, Std=6.461, Success Rate=0.280
+
+--- Training Seed 2/10 ---
+
+Seed 1: Mean=0.055, Min=-5.000, Max=2.000, Std=1.334, Success Rate=0.150
+
+--- Training Seed 3/10 ---
+
+Seed 2: Mean=-0.453, Min=-5.000, Max=2.000, Std=1.645, Success Rate=0.040
+
+--- Training Seed 4/10 ---
+
+Seed 3: Mean=1.724, Min=-3.000, Max=2.000, Std=1.034, Success Rate=0.920
+
+--- Training Seed 5/10 ---
+
+Seed 4: Mean=-0.089, Min=-8.000, Max=2.000, Std=2.657, Success Rate=0.550
+
+--- Training Seed 6/10 ---
+
+Seed 5: Mean=1.750, Min=-3.000, Max=2.000, Std=1.090, Success Rate=0.950
+
+--- Training Seed 7/10 ---
+
+Seed 6: Mean=1.712, Min=-3.000, Max=2.000, Std=1.113, Success Rate=0.930
+
+--- Training Seed 8/10 ---
+
+Seed 7: Mean=-3.259, Min=-15.000, Max=2.000, Std=4.263, Success Rate=0.030
+
+--- Training Seed 9/10 ---
+
+Seed 8: Mean=1.850, Min=-3.000, Max=2.000, Std=0.853, Success Rate=0.970
+
+--- Training Seed 10/10 ---
+
+Seed 9: Mean=-2.950, Min=-43.000, Max=2.000, Std=8.261, Success Rate=0.510
+✅ Saved mean learning curve.
+✅ Saved importance sampling weights plot: gym_gridworlds/plots/importance_weights_0.01.png
+JSON file 'gym_gridworlds/evaluation/importance_sampling_evaluation_results.json' updated successfully.
+
+Generating GIF... saving to gym_gridworlds/gifs/temporal_difference_0.01.gif
+✅ GIF saved as gym_gridworlds/gifs/temporal_difference_0.01.gif
+Total reward obtained : 2.0
+
+Best Optimal Policy (Action to take in each state):
+[['Down' 'Left' 'Stay' 'Right' 'Stay']
+ ['Down' 'Up' 'Right' 'Down' 'Up']
+ ['Right' 'Right' 'Down' 'Right' 'Up']
+ ['Left' 'Left' 'Right' 'Right' 'Up']]
+
+Q-values for State 0 (top-left) from the best policy:
+  Action: Left, Q-value: 0.249
+  Action: Down, Q-value: 0.457
+  Action: Right, Q-value: 0.179
+  Action: Up, Q-value: 0.248
+  Action: Stay, Q-value: 0.245

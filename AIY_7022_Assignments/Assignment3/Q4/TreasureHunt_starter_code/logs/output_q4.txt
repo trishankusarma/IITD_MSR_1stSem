@@ -1,0 +1,516 @@
+[2025-11-05 03:43:50] ======================================================================
+[2025-11-05 03:43:50] Logging started at 2025-11-05 03:43:50
+[2025-11-05 03:43:50] Log file   : logs/output_q4.txt
+[2025-11-05 03:43:50] Using device: cuda
+[2025-11-05 03:43:50] ======================================================================
+[2025-11-05 03:43:50] Starting DQN training on TreasureHunt_v2 environment
+[2025-11-05 03:44:16] → Trained policy GIF: gifs/INITIAL_MODEL_20251105_034358_trained.gif
+[2025-11-05 03:44:34] → Random policy GIF: gifs/INITIAL_MODEL_20251105_034358_random.gif
+[2025-11-05 03:44:34] Filling replay buffer with 5000 random transitions...
+[2025-11-05 03:49:21] Last (500ep), Ep 500: Avg=-9.946, Max=0.010, Min=-24.400, ε=0.970
+[2025-11-05 03:56:35] Last (500ep), Ep 1000: Avg=-9.850, Max=1.700, Min=-21.400, ε=0.942
+[2025-11-05 03:56:35] [GPU CLEANUP] Cache cleared at episode 1000
+
+[2025-11-05 03:56:35] [Async] Starting evaluation & visualization at episode 1000...
+[2025-11-05 03:56:40] Eval → Reward=-7.35, Treasures=0.20, Pirates=0.20, Goals=0.31
+[2025-11-05 03:56:40] Model saved to models/checkpoint_1000_20251105_035640.pt
+[2025-11-05 03:56:40] Reward curve saved to plots/checkpoint_1000_20251105_035640_training_rewards.png (window=20)
+[2025-11-05 03:56:58] → Trained policy GIF: gifs/checkpoint_1000_20251105_035640_trained.gif
+[2025-11-05 03:56:58] [Async] Done for episode 1000.
+[2025-11-05 04:05:22] Last (500ep), Ep 1500: Avg=-9.527, Max=1.300, Min=-23.500, ε=0.914
+[2025-11-05 04:13:43] Last (500ep), Ep 2000: Avg=-9.144, Max=1.200, Min=-19.900, ε=0.887
+[2025-11-05 04:13:43] [GPU CLEANUP] Cache cleared at episode 2000
+
+[2025-11-05 04:13:43] [Async] Starting evaluation & visualization at episode 2000...
+[2025-11-05 04:13:48] Eval → Reward=-7.56, Treasures=0.11, Pirates=0.30, Goals=0.31
+[2025-11-05 04:13:48] Model saved to models/checkpoint_2000_20251105_041348.pt
+[2025-11-05 04:13:48] Reward curve saved to plots/checkpoint_2000_20251105_041348_training_rewards.png (window=20)
+[2025-11-05 04:14:06] → Trained policy GIF: gifs/checkpoint_2000_20251105_041348_trained.gif
+[2025-11-05 04:14:06] [Async] Done for episode 2000.
+[2025-11-05 04:22:20] Last (500ep), Ep 2500: Avg=-9.158, Max=1.500, Min=-19.900, ε=0.861
+[2025-11-05 04:30:34] Last (500ep), Ep 3000: Avg=-8.710, Max=0.900, Min=-22.600, ε=0.835
+[2025-11-05 04:30:34] [GPU CLEANUP] Cache cleared at episode 3000
+
+[2025-11-05 04:30:34] [Async] Starting evaluation & visualization at episode 3000...
+[2025-11-05 04:30:38] Eval → Reward=-6.60, Treasures=0.23, Pirates=0.23, Goals=0.45
+[2025-11-05 04:30:38] Model saved to models/checkpoint_3000_20251105_043038.pt
+[2025-11-05 04:30:39] Reward curve saved to plots/checkpoint_3000_20251105_043038_training_rewards.png (window=30)
+[2025-11-05 04:30:57] → Trained policy GIF: gifs/checkpoint_3000_20251105_043038_trained.gif
+[2025-11-05 04:30:57] [Async] Done for episode 3000.
+[2025-11-05 04:38:39] Last (500ep), Ep 3500: Avg=-8.496, Max=1.300, Min=-23.500, ε=0.811
+[2025-11-05 04:46:34] Last (500ep), Ep 4000: Avg=-8.132, Max=2.300, Min=-25.300, ε=0.787
+[2025-11-05 04:46:35] [GPU CLEANUP] Cache cleared at episode 4000
+
+[2025-11-05 04:46:35] [Async] Starting evaluation & visualization at episode 4000...
+[2025-11-05 04:46:39] Eval → Reward=-6.37, Treasures=0.22, Pirates=0.58, Goals=0.46
+[2025-11-05 04:46:39] Model saved to models/checkpoint_4000_20251105_044639.pt
+[2025-11-05 04:46:39] Reward curve saved to plots/checkpoint_4000_20251105_044639_training_rewards.png (window=40)
+[2025-11-05 04:46:57] → Trained policy GIF: gifs/checkpoint_4000_20251105_044639_trained.gif
+[2025-11-05 04:46:57] [Async] Done for episode 4000.
+[2025-11-05 04:54:36] Last (500ep), Ep 4500: Avg=-7.820, Max=2.200, Min=-20.500, ε=0.764
+[2025-11-05 05:01:58] Last (500ep), Ep 5000: Avg=-7.626, Max=1.500, Min=-20.500, ε=0.741
+[2025-11-05 05:01:59] [GPU CLEANUP] Cache cleared at episode 5000
+
+[2025-11-05 05:01:59] [Async] Starting evaluation & visualization at episode 5000...
+[2025-11-05 05:02:04] Eval → Reward=-6.28, Treasures=0.14, Pirates=0.40, Goals=0.50
+[2025-11-05 05:02:05] Model saved to models/checkpoint_5000_20251105_050204.pt
+[2025-11-05 05:02:06] Reward curve saved to plots/checkpoint_5000_20251105_050204_training_rewards.png (window=50)
+[2025-11-05 05:02:26] → Trained policy GIF: gifs/checkpoint_5000_20251105_050204_trained.gif
+[2025-11-05 05:02:26] [Async] Done for episode 5000.
+[2025-11-05 05:09:29] Last (500ep), Ep 5500: Avg=-7.383, Max=1.600, Min=-26.200, ε=0.719
+[2025-11-05 05:16:32] Last (500ep), Ep 6000: Avg=-7.143, Max=1.400, Min=-22.900, ε=0.698
+[2025-11-05 05:16:32] [GPU CLEANUP] Cache cleared at episode 6000
+
+[2025-11-05 05:16:32] [Async] Starting evaluation & visualization at episode 6000...
+[2025-11-05 05:16:36] Eval → Reward=-6.29, Treasures=0.07, Pirates=0.29, Goals=0.49
+[2025-11-05 05:16:36] Model saved to models/checkpoint_6000_20251105_051636.pt
+[2025-11-05 05:16:37] Reward curve saved to plots/checkpoint_6000_20251105_051636_training_rewards.png (window=60)
+[2025-11-05 05:16:55] → Trained policy GIF: gifs/checkpoint_6000_20251105_051636_trained.gif
+[2025-11-05 05:16:55] [Async] Done for episode 6000.
+[2025-11-05 05:23:45] Last (500ep), Ep 6500: Avg=-7.302, Max=1.200, Min=-25.300, ε=0.677
+[2025-11-05 05:30:43] Last (500ep), Ep 7000: Avg=-6.851, Max=1.600, Min=-19.600, ε=0.657
+[2025-11-05 05:30:43] [GPU CLEANUP] Cache cleared at episode 7000
+
+[2025-11-05 05:30:43] [Async] Starting evaluation & visualization at episode 7000...
+[2025-11-05 05:30:47] Eval → Reward=-5.82, Treasures=0.14, Pirates=0.11, Goals=0.51
+[2025-11-05 05:30:47] Model saved to models/checkpoint_7000_20251105_053047.pt
+[2025-11-05 05:30:47] Reward curve saved to plots/checkpoint_7000_20251105_053047_training_rewards.png (window=70)
+[2025-11-05 05:31:05] → Trained policy GIF: gifs/checkpoint_7000_20251105_053047_trained.gif
+[2025-11-05 05:31:05] [Async] Done for episode 7000.
+[2025-11-05 05:37:40] Last (500ep), Ep 7500: Avg=-6.933, Max=2.600, Min=-39.700, ε=0.638
+[2025-11-05 05:43:57] Last (500ep), Ep 8000: Avg=-6.418, Max=1.300, Min=-20.800, ε=0.619
+[2025-11-05 05:43:57] [GPU CLEANUP] Cache cleared at episode 8000
+
+[2025-11-05 05:43:57] [Async] Starting evaluation & visualization at episode 8000...
+[2025-11-05 05:44:01] Eval → Reward=-5.18, Treasures=0.18, Pirates=0.32, Goals=0.62
+[2025-11-05 05:44:01] Model saved to models/checkpoint_8000_20251105_054401.pt
+[2025-11-05 05:44:01] Reward curve saved to plots/checkpoint_8000_20251105_054401_training_rewards.png (window=80)
+[2025-11-05 05:44:19] → Trained policy GIF: gifs/checkpoint_8000_20251105_054401_trained.gif
+[2025-11-05 05:44:19] [Async] Done for episode 8000.
+[2025-11-05 05:50:43] Last (500ep), Ep 8500: Avg=-6.612, Max=1.800, Min=-21.700, ε=0.601
+[2025-11-05 05:56:45] Last (500ep), Ep 9000: Avg=-5.995, Max=2.500, Min=-29.800, ε=0.583
+[2025-11-05 05:56:45] [GPU CLEANUP] Cache cleared at episode 9000
+
+[2025-11-05 05:56:45] [Async] Starting evaluation & visualization at episode 9000...
+[2025-11-05 05:56:49] Eval → Reward=-5.01, Treasures=0.14, Pirates=0.17, Goals=0.62
+[2025-11-05 05:56:49] Model saved to models/checkpoint_9000_20251105_055649.pt
+[2025-11-05 05:56:49] Reward curve saved to plots/checkpoint_9000_20251105_055649_training_rewards.png (window=90)
+[2025-11-05 05:57:08] → Trained policy GIF: gifs/checkpoint_9000_20251105_055649_trained.gif
+[2025-11-05 05:57:08] [Async] Done for episode 9000.
+[2025-11-05 06:03:09] Last (500ep), Ep 9500: Avg=-6.196, Max=1.900, Min=-20.800, ε=0.566
+[2025-11-05 06:09:04] Last (500ep), Ep 10000: Avg=-5.789, Max=1.900, Min=-23.200, ε=0.549
+[2025-11-05 06:09:05] [GPU CLEANUP] Cache cleared at episode 10000
+
+[2025-11-05 06:09:05] [Async] Starting evaluation & visualization at episode 10000...
+[2025-11-05 06:09:08] Eval → Reward=-4.57, Treasures=0.15, Pirates=0.27, Goals=0.64
+[2025-11-05 06:09:08] Model saved to models/checkpoint_10000_20251105_060908.pt
+[2025-11-05 06:09:09] Reward curve saved to plots/checkpoint_10000_20251105_060908_training_rewards.png (window=100)
+[2025-11-05 06:09:27] → Trained policy GIF: gifs/checkpoint_10000_20251105_060908_trained.gif
+[2025-11-05 06:09:27] [Async] Done for episode 10000.
+[2025-11-05 06:14:58] Last (500ep), Ep 10500: Avg=-5.691, Max=1.800, Min=-23.500, ε=0.533
+[2025-11-05 06:20:34] Last (500ep), Ep 11000: Avg=-5.453, Max=0.800, Min=-23.500, ε=0.517
+[2025-11-05 06:20:35] [GPU CLEANUP] Cache cleared at episode 11000
+
+[2025-11-05 06:20:35] [Async] Starting evaluation & visualization at episode 11000...
+[2025-11-05 06:20:38] Eval → Reward=-4.55, Treasures=0.13, Pirates=0.32, Goals=0.66
+[2025-11-05 06:20:38] Model saved to models/checkpoint_11000_20251105_062038.pt
+[2025-11-05 06:20:38] Reward curve saved to plots/checkpoint_11000_20251105_062038_training_rewards.png (window=110)
+[2025-11-05 06:20:57] → Trained policy GIF: gifs/checkpoint_11000_20251105_062038_trained.gif
+[2025-11-05 06:20:57] [Async] Done for episode 11000.
+[2025-11-05 06:26:08] Last (500ep), Ep 11500: Avg=-5.240, Max=1.200, Min=-22.600, ε=0.502
+[2025-11-05 06:31:28] Last (500ep), Ep 12000: Avg=-4.988, Max=1.300, Min=-18.100, ε=0.487
+[2025-11-05 06:31:28] [GPU CLEANUP] Cache cleared at episode 12000
+
+[2025-11-05 06:31:28] [Async] Starting evaluation & visualization at episode 12000...
+[2025-11-05 06:31:31] Eval → Reward=-5.33, Treasures=0.09, Pirates=0.20, Goals=0.58
+[2025-11-05 06:31:31] Model saved to models/checkpoint_12000_20251105_063131.pt
+[2025-11-05 06:31:32] Reward curve saved to plots/checkpoint_12000_20251105_063131_training_rewards.png (window=120)
+[2025-11-05 06:31:50] → Trained policy GIF: gifs/checkpoint_12000_20251105_063131_trained.gif
+[2025-11-05 06:31:50] [Async] Done for episode 12000.
+[2025-11-05 06:36:45] Last (500ep), Ep 12500: Avg=-5.119, Max=2.600, Min=-21.700, ε=0.473
+[2025-11-05 06:41:59] Last (500ep), Ep 13000: Avg=-5.005, Max=1.200, Min=-19.000, ε=0.459
+[2025-11-05 06:41:59] [GPU CLEANUP] Cache cleared at episode 13000
+
+[2025-11-05 06:41:59] [Async] Starting evaluation & visualization at episode 13000...
+[2025-11-05 06:42:03] Eval → Reward=-4.84, Treasures=0.16, Pirates=0.50, Goals=0.64
+[2025-11-05 06:42:03] Model saved to models/checkpoint_13000_20251105_064203.pt
+[2025-11-05 06:42:03] Reward curve saved to plots/checkpoint_13000_20251105_064203_training_rewards.png (window=130)
+[2025-11-05 06:42:20] → Trained policy GIF: gifs/checkpoint_13000_20251105_064203_trained.gif
+[2025-11-05 06:42:20] [Async] Done for episode 13000.
+[2025-11-05 06:47:16] Last (500ep), Ep 13500: Avg=-4.930, Max=1.900, Min=-25.300, ε=0.445
+[2025-11-05 06:52:32] Last (500ep), Ep 14000: Avg=-4.968, Max=3.100, Min=-17.200, ε=0.432
+[2025-11-05 06:52:33] [GPU CLEANUP] Cache cleared at episode 14000
+
+[2025-11-05 06:52:33] [Async] Starting evaluation & visualization at episode 14000...
+[2025-11-05 06:52:36] Eval → Reward=-4.09, Treasures=0.19, Pirates=0.17, Goals=0.68
+[2025-11-05 06:52:36] Model saved to models/checkpoint_14000_20251105_065236.pt
+[2025-11-05 06:52:37] Reward curve saved to plots/checkpoint_14000_20251105_065236_training_rewards.png (window=140)
+[2025-11-05 06:52:54] → Trained policy GIF: gifs/checkpoint_14000_20251105_065236_trained.gif
+[2025-11-05 06:52:54] [Async] Done for episode 14000.
+[2025-11-05 06:57:39] Last (500ep), Ep 14500: Avg=-4.859, Max=1.400, Min=-19.900, ε=0.419
+[2025-11-05 07:02:10] Last (500ep), Ep 15000: Avg=-4.235, Max=3.000, Min=-18.100, ε=0.407
+[2025-11-05 07:02:10] [GPU CLEANUP] Cache cleared at episode 15000
+
+[2025-11-05 07:02:10] [Async] Starting evaluation & visualization at episode 15000...
+[2025-11-05 07:02:13] Eval → Reward=-4.01, Treasures=0.10, Pirates=0.26, Goals=0.73
+[2025-11-05 07:02:13] Model saved to models/checkpoint_15000_20251105_070213.pt
+[2025-11-05 07:02:14] Reward curve saved to plots/checkpoint_15000_20251105_070213_training_rewards.png (window=150)
+[2025-11-05 07:02:32] → Trained policy GIF: gifs/checkpoint_15000_20251105_070213_trained.gif
+[2025-11-05 07:02:32] [Async] Done for episode 15000.
+[2025-11-05 07:06:55] Last (500ep), Ep 15500: Avg=-4.344, Max=2.100, Min=-21.700, ε=0.395
+[2025-11-05 07:11:33] Last (500ep), Ep 16000: Avg=-4.346, Max=1.900, Min=-16.300, ε=0.383
+[2025-11-05 07:11:33] [GPU CLEANUP] Cache cleared at episode 16000
+
+[2025-11-05 07:11:33] [Async] Starting evaluation & visualization at episode 16000...
+[2025-11-05 07:11:36] Eval → Reward=-4.20, Treasures=0.12, Pirates=0.31, Goals=0.73
+[2025-11-05 07:11:36] Model saved to models/checkpoint_16000_20251105_071136.pt
+[2025-11-05 07:11:36] Reward curve saved to plots/checkpoint_16000_20251105_071136_training_rewards.png (window=160)
+[2025-11-05 07:11:54] → Trained policy GIF: gifs/checkpoint_16000_20251105_071136_trained.gif
+[2025-11-05 07:11:54] [Async] Done for episode 16000.
+[2025-11-05 07:15:58] Last (500ep), Ep 16500: Avg=-4.031, Max=1.900, Min=-17.200, ε=0.372
+[2025-11-05 07:20:25] Last (500ep), Ep 17000: Avg=-4.199, Max=2.700, Min=-19.900, ε=0.361
+[2025-11-05 07:20:26] [GPU CLEANUP] Cache cleared at episode 17000
+
+[2025-11-05 07:20:26] [Async] Starting evaluation & visualization at episode 17000...
+[2025-11-05 07:20:29] Eval → Reward=-4.52, Treasures=0.11, Pirates=0.35, Goals=0.67
+[2025-11-05 07:20:29] Model saved to models/checkpoint_17000_20251105_072029.pt
+[2025-11-05 07:20:30] Reward curve saved to plots/checkpoint_17000_20251105_072029_training_rewards.png (window=170)
+[2025-11-05 07:20:48] → Trained policy GIF: gifs/checkpoint_17000_20251105_072029_trained.gif
+[2025-11-05 07:20:48] [Async] Done for episode 17000.
+[2025-11-05 07:24:50] Last (500ep), Ep 17500: Avg=-4.091, Max=3.700, Min=-35.200, ε=0.350
+[2025-11-05 07:29:11] Last (500ep), Ep 18000: Avg=-4.054, Max=2.900, Min=-19.600, ε=0.340
+[2025-11-05 07:29:12] [GPU CLEANUP] Cache cleared at episode 18000
+
+[2025-11-05 07:29:12] [Async] Starting evaluation & visualization at episode 18000...
+[2025-11-05 07:29:15] Eval → Reward=-4.26, Treasures=0.14, Pirates=0.18, Goals=0.70
+[2025-11-05 07:29:15] Model saved to models/checkpoint_18000_20251105_072915.pt
+[2025-11-05 07:29:16] Reward curve saved to plots/checkpoint_18000_20251105_072915_training_rewards.png (window=180)
+[2025-11-05 07:29:34] → Trained policy GIF: gifs/checkpoint_18000_20251105_072915_trained.gif
+[2025-11-05 07:29:34] [Async] Done for episode 18000.
+[2025-11-05 07:33:33] Last (500ep), Ep 18500: Avg=-4.032, Max=2.900, Min=-31.600, ε=0.330
+[2025-11-05 07:37:50] Last (500ep), Ep 19000: Avg=-3.938, Max=2.600, Min=-15.400, ε=0.320
+[2025-11-05 07:37:50] [GPU CLEANUP] Cache cleared at episode 19000
+
+[2025-11-05 07:37:50] [Async] Starting evaluation & visualization at episode 19000...
+[2025-11-05 07:37:53] Eval → Reward=-4.52, Treasures=0.08, Pirates=0.42, Goals=0.71
+[2025-11-05 07:37:53] Model saved to models/checkpoint_19000_20251105_073753.pt
+[2025-11-05 07:37:54] Reward curve saved to plots/checkpoint_19000_20251105_073753_training_rewards.png (window=190)
+[2025-11-05 07:38:12] → Trained policy GIF: gifs/checkpoint_19000_20251105_073753_trained.gif
+[2025-11-05 07:38:12] [Async] Done for episode 19000.
+[2025-11-05 07:41:53] Last (500ep), Ep 19500: Avg=-3.687, Max=2.200, Min=-16.900, ε=0.311
+[2025-11-05 07:45:48] Last (500ep), Ep 20000: Avg=-3.608, Max=2.800, Min=-19.900, ε=0.302
+[2025-11-05 07:45:48] [GPU CLEANUP] Cache cleared at episode 20000
+
+[2025-11-05 07:45:48] [Async] Starting evaluation & visualization at episode 20000...
+[2025-11-05 07:45:51] Eval → Reward=-4.83, Treasures=0.07, Pirates=0.30, Goals=0.68
+[2025-11-05 07:45:52] Model saved to models/checkpoint_20000_20251105_074551.pt
+[2025-11-05 07:45:52] Reward curve saved to plots/checkpoint_20000_20251105_074551_training_rewards.png (window=200)
+[2025-11-05 07:46:09] → Trained policy GIF: gifs/checkpoint_20000_20251105_074551_trained.gif
+[2025-11-05 07:46:09] [Async] Done for episode 20000.
+[2025-11-05 07:50:14] Last (500ep), Ep 20500: Avg=-4.037, Max=2.400, Min=-19.000, ε=0.293
+[2025-11-05 07:54:24] Last (500ep), Ep 21000: Avg=-3.825, Max=2.200, Min=-18.100, ε=0.284
+[2025-11-05 07:54:24] [GPU CLEANUP] Cache cleared at episode 21000
+
+[2025-11-05 07:54:24] [Async] Starting evaluation & visualization at episode 21000...
+[2025-11-05 07:54:27] Eval → Reward=-5.05, Treasures=0.10, Pirates=0.16, Goals=0.58
+[2025-11-05 07:54:27] Model saved to models/checkpoint_21000_20251105_075427.pt
+[2025-11-05 07:54:28] Reward curve saved to plots/checkpoint_21000_20251105_075427_training_rewards.png (window=210)
+[2025-11-05 07:54:46] → Trained policy GIF: gifs/checkpoint_21000_20251105_075427_trained.gif
+[2025-11-05 07:54:46] [Async] Done for episode 21000.
+[2025-11-05 07:58:31] Last (500ep), Ep 21500: Avg=-3.732, Max=2.100, Min=-40.600, ε=0.276
+[2025-11-05 08:02:38] Last (500ep), Ep 22000: Avg=-3.826, Max=2.300, Min=-34.300, ε=0.268
+[2025-11-05 08:02:38] [GPU CLEANUP] Cache cleared at episode 22000
+
+[2025-11-05 08:02:38] [Async] Starting evaluation & visualization at episode 22000...
+[2025-11-05 08:02:41] Eval → Reward=-4.39, Treasures=0.13, Pirates=0.41, Goals=0.67
+[2025-11-05 08:02:41] Model saved to models/checkpoint_22000_20251105_080241.pt
+[2025-11-05 08:02:41] Reward curve saved to plots/checkpoint_22000_20251105_080241_training_rewards.png (window=220)
+[2025-11-05 08:02:59] → Trained policy GIF: gifs/checkpoint_22000_20251105_080241_trained.gif
+[2025-11-05 08:02:59] [Async] Done for episode 22000.
+[2025-11-05 08:06:37] Last (500ep), Ep 22500: Avg=-3.601, Max=2.200, Min=-13.900, ε=0.260
+[2025-11-05 08:10:34] Last (500ep), Ep 23000: Avg=-3.674, Max=3.100, Min=-24.400, ε=0.252
+[2025-11-05 08:10:34] [GPU CLEANUP] Cache cleared at episode 23000
+
+[2025-11-05 08:10:34] [Async] Starting evaluation & visualization at episode 23000...
+[2025-11-05 08:10:37] Eval → Reward=-3.20, Treasures=0.17, Pirates=0.12, Goals=0.76
+[2025-11-05 08:10:37] Model saved to models/checkpoint_23000_20251105_081037.pt
+[2025-11-05 08:10:38] Reward curve saved to plots/checkpoint_23000_20251105_081037_training_rewards.png (window=230)
+[2025-11-05 08:10:55] → Trained policy GIF: gifs/checkpoint_23000_20251105_081037_trained.gif
+[2025-11-05 08:10:55] [Async] Done for episode 23000.
+[2025-11-05 08:14:39] Last (500ep), Ep 23500: Avg=-3.588, Max=2.400, Min=-12.400, ε=0.245
+[2025-11-05 08:18:40] Last (500ep), Ep 24000: Avg=-3.599, Max=2.700, Min=-19.000, ε=0.237
+[2025-11-05 08:18:40] [GPU CLEANUP] Cache cleared at episode 24000
+
+[2025-11-05 08:18:40] [Async] Starting evaluation & visualization at episode 24000...
+[2025-11-05 08:18:43] Eval → Reward=-3.37, Treasures=0.13, Pirates=0.22, Goals=0.76
+[2025-11-05 08:18:43] Model saved to models/checkpoint_24000_20251105_081843.pt
+[2025-11-05 08:18:44] Reward curve saved to plots/checkpoint_24000_20251105_081843_training_rewards.png (window=240)
+[2025-11-05 08:19:00] → Trained policy GIF: gifs/checkpoint_24000_20251105_081843_trained.gif
+[2025-11-05 08:19:00] [Async] Done for episode 24000.
+[2025-11-05 08:22:20] Last (500ep), Ep 24500: Avg=-3.175, Max=2.800, Min=-23.500, ε=0.230
+[2025-11-05 08:25:57] Last (500ep), Ep 25000: Avg=-3.186, Max=2.400, Min=-17.100, ε=0.224
+[2025-11-05 08:25:58] [GPU CLEANUP] Cache cleared at episode 25000
+
+[2025-11-05 08:25:58] [Async] Starting evaluation & visualization at episode 25000...
+[2025-11-05 08:26:00] Eval → Reward=-3.33, Treasures=0.18, Pirates=0.71, Goals=0.81
+[2025-11-05 08:26:00] Model saved to models/checkpoint_25000_20251105_082600.pt
+[2025-11-05 08:26:01] Reward curve saved to plots/checkpoint_25000_20251105_082600_training_rewards.png (window=250)
+[2025-11-05 08:26:18] → Trained policy GIF: gifs/checkpoint_25000_20251105_082600_trained.gif
+[2025-11-05 08:26:18] [Async] Done for episode 25000.
+[2025-11-05 08:29:24] Last (500ep), Ep 25500: Avg=-3.008, Max=3.100, Min=-18.100, ε=0.217
+[2025-11-05 08:32:51] Last (500ep), Ep 26000: Avg=-3.127, Max=2.800, Min=-16.300, ε=0.211
+[2025-11-05 08:32:51] [GPU CLEANUP] Cache cleared at episode 26000
+
+[2025-11-05 08:32:51] [Async] Starting evaluation & visualization at episode 26000...
+[2025-11-05 08:32:54] Eval → Reward=-3.30, Treasures=0.16, Pirates=0.12, Goals=0.77
+[2025-11-05 08:32:54] Model saved to models/checkpoint_26000_20251105_083254.pt
+[2025-11-05 08:32:55] Reward curve saved to plots/checkpoint_26000_20251105_083254_training_rewards.png (window=260)
+[2025-11-05 08:33:13] → Trained policy GIF: gifs/checkpoint_26000_20251105_083254_trained.gif
+[2025-11-05 08:33:13] [Async] Done for episode 26000.
+[2025-11-05 08:36:35] Last (500ep), Ep 26500: Avg=-3.414, Max=2.200, Min=-52.300, ε=0.204
+[2025-11-05 08:40:16] Last (500ep), Ep 27000: Avg=-3.227, Max=2.600, Min=-14.800, ε=0.198
+[2025-11-05 08:40:16] [GPU CLEANUP] Cache cleared at episode 27000
+
+[2025-11-05 08:40:16] [Async] Starting evaluation & visualization at episode 27000...
+[2025-11-05 08:40:19] Eval → Reward=-3.63, Treasures=0.07, Pirates=0.26, Goals=0.76
+[2025-11-05 08:40:19] Model saved to models/checkpoint_27000_20251105_084019.pt
+[2025-11-05 08:40:20] Reward curve saved to plots/checkpoint_27000_20251105_084019_training_rewards.png (window=270)
+[2025-11-05 08:40:38] → Trained policy GIF: gifs/checkpoint_27000_20251105_084019_trained.gif
+[2025-11-05 08:40:38] [Async] Done for episode 27000.
+[2025-11-05 08:43:54] Last (500ep), Ep 27500: Avg=-3.274, Max=3.500, Min=-46.000, ε=0.193
+[2025-11-05 08:47:25] Last (500ep), Ep 28000: Avg=-3.234, Max=2.400, Min=-21.700, ε=0.187
+[2025-11-05 08:47:26] [GPU CLEANUP] Cache cleared at episode 28000
+
+[2025-11-05 08:47:26] [Async] Starting evaluation & visualization at episode 28000...
+[2025-11-05 08:47:29] Eval → Reward=-3.79, Treasures=0.08, Pirates=0.13, Goals=0.73
+[2025-11-05 08:47:29] Model saved to models/checkpoint_28000_20251105_084729.pt
+[2025-11-05 08:47:29] Reward curve saved to plots/checkpoint_28000_20251105_084729_training_rewards.png (window=280)
+[2025-11-05 08:47:47] → Trained policy GIF: gifs/checkpoint_28000_20251105_084729_trained.gif
+[2025-11-05 08:47:47] [Async] Done for episode 28000.
+[2025-11-05 08:50:48] Last (500ep), Ep 28500: Avg=-2.877, Max=2.000, Min=-23.500, ε=0.181
+[2025-11-05 08:54:17] Last (500ep), Ep 29000: Avg=-3.175, Max=2.100, Min=-44.200, ε=0.176
+[2025-11-05 08:54:17] [GPU CLEANUP] Cache cleared at episode 29000
+
+[2025-11-05 08:54:17] [Async] Starting evaluation & visualization at episode 29000...
+[2025-11-05 08:54:20] Eval → Reward=-2.86, Treasures=0.15, Pirates=0.19, Goals=0.82
+[2025-11-05 08:54:20] Model saved to models/checkpoint_29000_20251105_085420.pt
+[2025-11-05 08:54:21] Reward curve saved to plots/checkpoint_29000_20251105_085420_training_rewards.png (window=290)
+[2025-11-05 08:54:39] → Trained policy GIF: gifs/checkpoint_29000_20251105_085420_trained.gif
+[2025-11-05 08:54:39] [Async] Done for episode 29000.
+[2025-11-05 08:57:53] Last (500ep), Ep 29500: Avg=-3.150, Max=2.500, Min=-14.500, ε=0.171
+[2025-11-05 09:01:11] Last (500ep), Ep 30000: Avg=-2.878, Max=2.700, Min=-11.800, ε=0.166
+[2025-11-05 09:01:11] [GPU CLEANUP] Cache cleared at episode 30000
+
+[2025-11-05 09:01:11] [Async] Starting evaluation & visualization at episode 30000...
+[2025-11-05 09:01:14] Eval → Reward=-3.31, Treasures=0.12, Pirates=0.24, Goals=0.78
+[2025-11-05 09:01:14] Model saved to models/checkpoint_30000_20251105_090114.pt
+[2025-11-05 09:01:14] Reward curve saved to plots/checkpoint_30000_20251105_090114_training_rewards.png (window=300)
+[2025-11-05 09:01:31] → Trained policy GIF: gifs/checkpoint_30000_20251105_090114_trained.gif
+[2025-11-05 09:01:31] [Async] Done for episode 30000.
+[2025-11-05 09:04:43] Last (500ep), Ep 30500: Avg=-3.023, Max=2.400, Min=-11.800, ε=0.161
+[2025-11-05 09:08:18] Last (500ep), Ep 31000: Avg=-3.129, Max=2.900, Min=-14.000, ε=0.156
+[2025-11-05 09:08:18] [GPU CLEANUP] Cache cleared at episode 31000
+
+[2025-11-05 09:08:18] [Async] Starting evaluation & visualization at episode 31000...
+[2025-11-05 09:08:20] Eval → Reward=-3.49, Treasures=0.16, Pirates=0.57, Goals=0.78
+[2025-11-05 09:08:20] Model saved to models/checkpoint_31000_20251105_090820.pt
+[2025-11-05 09:08:20] Reward curve saved to plots/checkpoint_31000_20251105_090820_training_rewards.png (window=310)
+[2025-11-05 09:08:37] → Trained policy GIF: gifs/checkpoint_31000_20251105_090820_trained.gif
+[2025-11-05 09:08:37] [Async] Done for episode 31000.
+[2025-11-05 09:11:41] Last (500ep), Ep 31500: Avg=-2.947, Max=1.900, Min=-16.300, ε=0.151
+[2025-11-05 09:14:57] Last (500ep), Ep 32000: Avg=-2.913, Max=2.500, Min=-23.500, ε=0.147
+[2025-11-05 09:14:57] [GPU CLEANUP] Cache cleared at episode 32000
+
+[2025-11-05 09:14:57] [Async] Starting evaluation & visualization at episode 32000...
+[2025-11-05 09:15:00] Eval → Reward=-3.27, Treasures=0.13, Pirates=0.10, Goals=0.77
+[2025-11-05 09:15:00] Model saved to models/checkpoint_32000_20251105_091500.pt
+[2025-11-05 09:15:00] Reward curve saved to plots/checkpoint_32000_20251105_091500_training_rewards.png (window=320)
+[2025-11-05 09:15:18] → Trained policy GIF: gifs/checkpoint_32000_20251105_091500_trained.gif
+[2025-11-05 09:15:18] [Async] Done for episode 32000.
+[2025-11-05 09:18:24] Last (500ep), Ep 32500: Avg=-2.811, Max=3.300, Min=-11.800, ε=0.143
+[2025-11-05 09:21:21] Last (500ep), Ep 33000: Avg=-2.673, Max=2.700, Min=-25.000, ε=0.138
+[2025-11-05 09:21:22] [GPU CLEANUP] Cache cleared at episode 33000
+
+[2025-11-05 09:21:22] [Async] Starting evaluation & visualization at episode 33000...
+[2025-11-05 09:21:25] Eval → Reward=-3.02, Treasures=0.13, Pirates=0.17, Goals=0.81
+[2025-11-05 09:21:26] Model saved to models/checkpoint_33000_20251105_092125.pt
+[2025-11-05 09:21:26] Reward curve saved to plots/checkpoint_33000_20251105_092125_training_rewards.png (window=330)
+[2025-11-05 09:21:46] → Trained policy GIF: gifs/checkpoint_33000_20251105_092125_trained.gif
+[2025-11-05 09:21:46] [Async] Done for episode 33000.
+[2025-11-05 09:24:48] Last (500ep), Ep 33500: Avg=-2.904, Max=3.200, Min=-28.000, ε=0.134
+[2025-11-05 09:28:07] Last (500ep), Ep 34000: Avg=-2.895, Max=2.800, Min=-14.500, ε=0.130
+[2025-11-05 09:28:07] [GPU CLEANUP] Cache cleared at episode 34000
+
+[2025-11-05 09:28:07] [Async] Starting evaluation & visualization at episode 34000...
+[2025-11-05 09:28:10] Eval → Reward=-3.31, Treasures=0.14, Pirates=0.18, Goals=0.78
+[2025-11-05 09:28:10] Model saved to models/checkpoint_34000_20251105_092810.pt
+[2025-11-05 09:28:11] Reward curve saved to plots/checkpoint_34000_20251105_092810_training_rewards.png (window=340)
+[2025-11-05 09:28:27] → Trained policy GIF: gifs/checkpoint_34000_20251105_092810_trained.gif
+[2025-11-05 09:28:27] [Async] Done for episode 34000.
+[2025-11-05 09:31:21] Last (500ep), Ep 34500: Avg=-2.776, Max=2.700, Min=-43.300, ε=0.127
+[2025-11-05 09:34:43] Last (500ep), Ep 35000: Avg=-3.066, Max=2.100, Min=-20.800, ε=0.123
+[2025-11-05 09:34:43] [GPU CLEANUP] Cache cleared at episode 35000
+
+[2025-11-05 09:34:43] [Async] Starting evaluation & visualization at episode 35000...
+[2025-11-05 09:34:46] Eval → Reward=-3.57, Treasures=0.17, Pirates=0.11, Goals=0.74
+[2025-11-05 09:34:46] Model saved to models/checkpoint_35000_20251105_093446.pt
+[2025-11-05 09:34:47] Reward curve saved to plots/checkpoint_35000_20251105_093446_training_rewards.png (window=350)
+[2025-11-05 09:35:05] → Trained policy GIF: gifs/checkpoint_35000_20251105_093446_trained.gif
+[2025-11-05 09:35:05] [Async] Done for episode 35000.
+[2025-11-05 09:38:03] Last (500ep), Ep 35500: Avg=-2.910, Max=2.800, Min=-38.800, ε=0.119
+[2025-11-05 09:41:16] Last (500ep), Ep 36000: Avg=-2.855, Max=2.500, Min=-25.000, ε=0.116
+[2025-11-05 09:41:16] [GPU CLEANUP] Cache cleared at episode 36000
+
+[2025-11-05 09:41:16] [Async] Starting evaluation & visualization at episode 36000...
+[2025-11-05 09:41:19] Eval → Reward=-3.56, Treasures=0.10, Pirates=0.78, Goals=0.80
+[2025-11-05 09:41:19] Model saved to models/checkpoint_36000_20251105_094119.pt
+[2025-11-05 09:41:19] Reward curve saved to plots/checkpoint_36000_20251105_094119_training_rewards.png (window=360)
+[2025-11-05 09:41:35] → Trained policy GIF: gifs/checkpoint_36000_20251105_094119_trained.gif
+[2025-11-05 09:41:35] [Async] Done for episode 36000.
+[2025-11-05 09:44:19] Last (500ep), Ep 36500: Avg=-2.630, Max=3.000, Min=-16.000, ε=0.112
+[2025-11-05 09:47:46] Last (500ep), Ep 37000: Avg=-3.117, Max=2.900, Min=-14.500, ε=0.109
+[2025-11-05 09:47:46] [GPU CLEANUP] Cache cleared at episode 37000
+
+[2025-11-05 09:47:46] [Async] Starting evaluation & visualization at episode 37000...
+[2025-11-05 09:47:49] Eval → Reward=-4.68, Treasures=0.12, Pirates=0.96, Goals=0.71
+[2025-11-05 09:47:49] Model saved to models/checkpoint_37000_20251105_094749.pt
+[2025-11-05 09:47:50] Reward curve saved to plots/checkpoint_37000_20251105_094749_training_rewards.png (window=370)
+[2025-11-05 09:48:07] → Trained policy GIF: gifs/checkpoint_37000_20251105_094749_trained.gif
+[2025-11-05 09:48:07] [Async] Done for episode 37000.
+[2025-11-05 09:51:14] Last (500ep), Ep 37500: Avg=-2.954, Max=1.700, Min=-12.700, ε=0.106
+[2025-11-05 09:54:22] Last (500ep), Ep 38000: Avg=-2.721, Max=3.000, Min=-12.700, ε=0.103
+[2025-11-05 09:54:22] [GPU CLEANUP] Cache cleared at episode 38000
+
+[2025-11-05 09:54:22] [Async] Starting evaluation & visualization at episode 38000...
+[2025-11-05 09:54:25] Eval → Reward=-3.44, Treasures=0.14, Pirates=0.12, Goals=0.74
+[2025-11-05 09:54:25] Model saved to models/checkpoint_38000_20251105_095425.pt
+[2025-11-05 09:54:25] Reward curve saved to plots/checkpoint_38000_20251105_095425_training_rewards.png (window=380)
+[2025-11-05 09:54:42] → Trained policy GIF: gifs/checkpoint_38000_20251105_095425_trained.gif
+[2025-11-05 09:54:42] [Async] Done for episode 38000.
+[2025-11-05 09:57:43] Last (500ep), Ep 38500: Avg=-2.854, Max=3.000, Min=-17.300, ε=0.100
+[2025-11-05 10:00:57] Last (500ep), Ep 39000: Avg=-2.882, Max=3.400, Min=-51.500, ε=0.097
+[2025-11-05 10:00:57] [GPU CLEANUP] Cache cleared at episode 39000
+
+[2025-11-05 10:00:57] [Async] Starting evaluation & visualization at episode 39000...
+[2025-11-05 10:01:00] Eval → Reward=-2.71, Treasures=0.20, Pirates=0.15, Goals=0.82
+[2025-11-05 10:01:00] Model saved to models/checkpoint_39000_20251105_100100.pt
+[2025-11-05 10:01:01] Reward curve saved to plots/checkpoint_39000_20251105_100100_training_rewards.png (window=390)
+[2025-11-05 10:01:17] → Trained policy GIF: gifs/checkpoint_39000_20251105_100100_trained.gif
+[2025-11-05 10:01:17] [Async] Done for episode 39000.
+[2025-11-05 10:04:13] Last (500ep), Ep 39500: Avg=-2.863, Max=2.900, Min=-58.600, ε=0.094
+[2025-11-05 10:07:32] Last (500ep), Ep 40000: Avg=-3.026, Max=2.000, Min=-21.400, ε=0.091
+[2025-11-05 10:07:32] [GPU CLEANUP] Cache cleared at episode 40000
+
+[2025-11-05 10:07:32] [Async] Starting evaluation & visualization at episode 40000...
+[2025-11-05 10:07:35] Eval → Reward=-3.50, Treasures=0.14, Pirates=0.09, Goals=0.74
+[2025-11-05 10:07:35] Model saved to models/checkpoint_40000_20251105_100735.pt
+[2025-11-05 10:07:35] Reward curve saved to plots/checkpoint_40000_20251105_100735_training_rewards.png (window=400)
+[2025-11-05 10:07:52] → Trained policy GIF: gifs/checkpoint_40000_20251105_100735_trained.gif
+[2025-11-05 10:07:52] [Async] Done for episode 40000.
+[2025-11-05 10:10:57] Last (500ep), Ep 40500: Avg=-2.969, Max=2.900, Min=-15.400, ε=0.088
+[2025-11-05 10:14:06] Last (500ep), Ep 41000: Avg=-2.712, Max=3.800, Min=-10.600, ε=0.086
+[2025-11-05 10:14:06] [GPU CLEANUP] Cache cleared at episode 41000
+
+[2025-11-05 10:14:06] [Async] Starting evaluation & visualization at episode 41000...
+[2025-11-05 10:14:09] Eval → Reward=-3.37, Treasures=0.16, Pirates=0.17, Goals=0.75
+[2025-11-05 10:14:09] Model saved to models/checkpoint_41000_20251105_101409.pt
+[2025-11-05 10:14:09] Reward curve saved to plots/checkpoint_41000_20251105_101409_training_rewards.png (window=410)
+[2025-11-05 10:14:26] → Trained policy GIF: gifs/checkpoint_41000_20251105_101409_trained.gif
+[2025-11-05 10:14:26] [Async] Done for episode 41000.
+[2025-11-05 10:17:40] Last (500ep), Ep 41500: Avg=-3.098, Max=2.700, Min=-17.200, ε=0.083
+[2025-11-05 10:20:52] Last (500ep), Ep 42000: Avg=-2.521, Max=2.900, Min=-11.800, ε=0.081
+[2025-11-05 10:20:53] [GPU CLEANUP] Cache cleared at episode 42000
+
+[2025-11-05 10:20:53] [Async] Starting evaluation & visualization at episode 42000...
+[2025-11-05 10:20:56] Eval → Reward=-2.89, Treasures=0.10, Pirates=0.14, Goals=0.82
+[2025-11-05 10:20:56] Model saved to models/checkpoint_42000_20251105_102056.pt
+[2025-11-05 10:20:57] Reward curve saved to plots/checkpoint_42000_20251105_102056_training_rewards.png (window=420)
+[2025-11-05 10:21:15] → Trained policy GIF: gifs/checkpoint_42000_20251105_102056_trained.gif
+[2025-11-05 10:21:15] [Async] Done for episode 42000.
+[2025-11-05 10:23:57] Last (500ep), Ep 42500: Avg=-2.532, Max=2.900, Min=-10.900, ε=0.078
+[2025-11-05 10:26:51] Last (500ep), Ep 43000: Avg=-2.521, Max=2.900, Min=-22.800, ε=0.076
+[2025-11-05 10:26:51] [GPU CLEANUP] Cache cleared at episode 43000
+
+[2025-11-05 10:26:51] [Async] Starting evaluation & visualization at episode 43000...
+[2025-11-05 10:26:53] Eval → Reward=-2.90, Treasures=0.14, Pirates=0.15, Goals=0.82
+[2025-11-05 10:26:53] Model saved to models/checkpoint_43000_20251105_102653.pt
+[2025-11-05 10:26:54] Reward curve saved to plots/checkpoint_43000_20251105_102653_training_rewards.png (window=430)
+[2025-11-05 10:27:11] → Trained policy GIF: gifs/checkpoint_43000_20251105_102653_trained.gif
+[2025-11-05 10:27:11] [Async] Done for episode 43000.
+[2025-11-05 10:29:54] Last (500ep), Ep 43500: Avg=-2.639, Max=2.700, Min=-17.200, ε=0.074
+[2025-11-05 10:32:51] Last (500ep), Ep 44000: Avg=-2.654, Max=1.900, Min=-27.100, ε=0.072
+[2025-11-05 10:32:52] [GPU CLEANUP] Cache cleared at episode 44000
+
+[2025-11-05 10:32:52] [Async] Starting evaluation & visualization at episode 44000...
+[2025-11-05 10:32:54] Eval → Reward=-3.33, Treasures=0.15, Pirates=0.11, Goals=0.76
+[2025-11-05 10:32:54] Model saved to models/checkpoint_44000_20251105_103254.pt
+[2025-11-05 10:32:55] Reward curve saved to plots/checkpoint_44000_20251105_103254_training_rewards.png (window=440)
+[2025-11-05 10:33:11] → Trained policy GIF: gifs/checkpoint_44000_20251105_103254_trained.gif
+[2025-11-05 10:33:11] [Async] Done for episode 44000.
+[2025-11-05 10:36:03] Last (500ep), Ep 44500: Avg=-2.725, Max=2.400, Min=-14.200, ε=0.070
+[2025-11-05 10:39:16] Last (500ep), Ep 45000: Avg=-2.896, Max=2.700, Min=-18.100, ε=0.067
+[2025-11-05 10:39:16] [GPU CLEANUP] Cache cleared at episode 45000
+
+[2025-11-05 10:39:16] [Async] Starting evaluation & visualization at episode 45000...
+[2025-11-05 10:39:19] Eval → Reward=-3.04, Treasures=0.19, Pirates=0.33, Goals=0.79
+[2025-11-05 10:39:19] Model saved to models/checkpoint_45000_20251105_103919.pt
+[2025-11-05 10:39:19] Reward curve saved to plots/checkpoint_45000_20251105_103919_training_rewards.png (window=450)
+[2025-11-05 10:39:36] → Trained policy GIF: gifs/checkpoint_45000_20251105_103919_trained.gif
+[2025-11-05 10:39:36] [Async] Done for episode 45000.
+[2025-11-05 10:42:21] Last (500ep), Ep 45500: Avg=-2.619, Max=2.700, Min=-18.100, ε=0.065
+[2025-11-05 10:45:32] Last (500ep), Ep 46000: Avg=-2.921, Max=1.600, Min=-20.800, ε=0.064
+[2025-11-05 10:45:33] [GPU CLEANUP] Cache cleared at episode 46000
+
+[2025-11-05 10:45:33] [Async] Starting evaluation & visualization at episode 46000...
+[2025-11-05 10:45:36] Eval → Reward=-3.83, Treasures=0.11, Pirates=0.96, Goals=0.79
+[2025-11-05 10:45:36] Model saved to models/checkpoint_46000_20251105_104536.pt
+[2025-11-05 10:45:36] Reward curve saved to plots/checkpoint_46000_20251105_104536_training_rewards.png (window=460)
+[2025-11-05 10:45:52] → Trained policy GIF: gifs/checkpoint_46000_20251105_104536_trained.gif
+[2025-11-05 10:45:52] [Async] Done for episode 46000.
+[2025-11-05 10:48:54] Last (500ep), Ep 46500: Avg=-3.064, Max=3.000, Min=-40.600, ε=0.062
+[2025-11-05 10:51:53] Last (500ep), Ep 47000: Avg=-2.687, Max=3.000, Min=-33.400, ε=0.060
+[2025-11-05 10:51:53] [GPU CLEANUP] Cache cleared at episode 47000
+
+[2025-11-05 10:51:53] [Async] Starting evaluation & visualization at episode 47000...
+[2025-11-05 10:51:56] Eval → Reward=-2.88, Treasures=0.13, Pirates=0.08, Goals=0.80
+[2025-11-05 10:51:56] Model saved to models/checkpoint_47000_20251105_105156.pt
+[2025-11-05 10:51:56] Reward curve saved to plots/checkpoint_47000_20251105_105156_training_rewards.png (window=470)
+[2025-11-05 10:52:13] → Trained policy GIF: gifs/checkpoint_47000_20251105_105156_trained.gif
+[2025-11-05 10:52:13] [Async] Done for episode 47000.
+[2025-11-05 10:55:12] Last (500ep), Ep 47500: Avg=-3.074, Max=2.900, Min=-33.100, ε=0.058
+[2025-11-05 10:58:07] Last (500ep), Ep 48000: Avg=-2.558, Max=3.000, Min=-25.000, ε=0.056
+[2025-11-05 10:58:08] [GPU CLEANUP] Cache cleared at episode 48000
+
+[2025-11-05 10:58:08] [Async] Starting evaluation & visualization at episode 48000...
+[2025-11-05 10:58:10] Eval → Reward=-2.96, Treasures=0.12, Pirates=0.27, Goals=0.80
+[2025-11-05 10:58:10] Model saved to models/checkpoint_48000_20251105_105810.pt
+[2025-11-05 10:58:10] Reward curve saved to plots/checkpoint_48000_20251105_105810_training_rewards.png (window=480)
+[2025-11-05 10:58:27] → Trained policy GIF: gifs/checkpoint_48000_20251105_105810_trained.gif
+[2025-11-05 10:58:27] [Async] Done for episode 48000.
+[2025-11-05 11:01:28] Last (500ep), Ep 48500: Avg=-2.895, Max=2.600, Min=-21.700, ε=0.055
+[2025-11-05 11:04:38] Last (500ep), Ep 49000: Avg=-2.879, Max=3.300, Min=-23.500, ε=0.053
+[2025-11-05 11:04:38] [GPU CLEANUP] Cache cleared at episode 49000
+
+[2025-11-05 11:04:38] [Async] Starting evaluation & visualization at episode 49000...
+[2025-11-05 11:04:41] Eval → Reward=-3.27, Treasures=0.12, Pirates=0.15, Goals=0.77
+[2025-11-05 11:04:41] Model saved to models/checkpoint_49000_20251105_110441.pt
+[2025-11-05 11:04:42] Reward curve saved to plots/checkpoint_49000_20251105_110441_training_rewards.png (window=490)
+[2025-11-05 11:04:59] → Trained policy GIF: gifs/checkpoint_49000_20251105_110441_trained.gif
+[2025-11-05 11:04:59] [Async] Done for episode 49000.
+[2025-11-05 11:07:52] Last (500ep), Ep 49500: Avg=-2.961, Max=1.900, Min=-28.900, ε=0.052
+[2025-11-05 11:10:47] Last (500ep), Ep 50000: Avg=-2.632, Max=3.400, Min=-16.900, ε=0.050
+[2025-11-05 11:10:47] [GPU CLEANUP] Cache cleared at episode 50000
+
+[2025-11-05 11:10:47] [Async] Starting evaluation & visualization at episode 50000...
+[2025-11-05 11:10:48] Model saved to models/dqn_treasurehunt_20251105_111047.pt
+[2025-11-05 11:10:48] Reward curve saved to plots/dqn_treasurehunt_20251105_111047_training_rewards.png (window=500)
+[2025-11-05 11:10:51] Eval → Reward=-3.43, Treasures=0.13, Pirates=0.36, Goals=0.76
+[2025-11-05 11:10:51] Model saved to models/checkpoint_50000_20251105_111051.pt
+[2025-11-05 11:10:51] Reward curve saved to plots/checkpoint_50000_20251105_111051_training_rewards.png (window=500)
+[2025-11-05 11:11:06] → Trained policy GIF: gifs/dqn_treasurehunt_20251105_111047_trained.gif
+[2025-11-05 11:11:09] → Trained policy GIF: gifs/checkpoint_50000_20251105_111051_trained.gif
+[2025-11-05 11:11:09] [Async] Done for episode 50000.
+
+[2025-11-05 11:11:09] Training complete.
+[2025-11-05 11:11:09] Training finished in 750.10 min
+[2025-11-05 11:11:09] Logging stopped. Output restored to terminal.

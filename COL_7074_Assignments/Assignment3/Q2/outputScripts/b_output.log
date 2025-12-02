@@ -1,0 +1,450 @@
+yscl4@yscl4:~/trishanku/IITD_MSR_1stSem/ML_ASSIGNMENT_A3/Q2$ python b.py dataset/train dataset/test outputs
+2025-10-31 13:47:57,246 - INFO - Loading training data...
+2025-10-31 13:47:58,207 - INFO - Training samples: 21600
+2025-10-31 13:47:58,207 - INFO - Loading test data...
+2025-10-31 13:47:58,678 - INFO - Test samples: 10800
+2025-10-31 13:47:58,679 - INFO - 
+Training Part b model with 1 hidden units ...
+2025-10-31 13:47:58,679 - INFO - ReLU: False
+2025-10-31 13:47:58,942 - INFO - Epoch 0 | Train Loss=3.5839 | Val Loss=3.5831 | Train Acc=2.45% | Val Acc=1.90%
+2025-10-31 13:48:06,638 - INFO - Epoch 50 | Train Loss=3.3861 | Val Loss=3.4055 | Train Acc=5.92% | Val Acc=5.83%
+2025-10-31 13:48:14,344 - INFO - Epoch 100 | Train Loss=3.2979 | Val Loss=3.3175 | Train Acc=6.18% | Val Acc=5.88%
+2025-10-31 13:48:22,167 - INFO - Epoch 150 | Train Loss=3.2501 | Val Loss=3.2710 | Train Acc=6.44% | Val Acc=6.44%
+2025-10-31 13:48:30,142 - INFO - Epoch 200 | Train Loss=3.2254 | Val Loss=3.2530 | Train Acc=6.64% | Val Acc=6.30%
+2025-10-31 13:48:36,937 - INFO - Early Stop: plateau at epoch 240
+2025-10-31 13:48:37,113 - INFO - Units 1 | Train → Precision: 0.0687, Recall: 0.0687, F1: 0.0687 | Test → Precision: 0.0598, Recall: 0.0598, F1: 0.0598
+2025-10-31 13:48:37,115 - INFO - Num of units in single hidden layer 1 → Test Macro-F1 = 0.0233
+2025-10-31 13:48:37,117 - INFO - Num of units in single hidden layer 1 → Train Macro-F1 = 0.0272
+Model: 1
+----Train----
+Class  1 → P=0.000, R=0.000, F1=0.000
+Class  2 → P=0.056, R=0.098, F1=0.072
+Class  3 → P=0.000, R=0.000, F1=0.000
+Class  4 → P=0.000, R=0.000, F1=0.000
+Class  5 → P=0.000, R=0.000, F1=0.000
+Class  6 → P=0.057, R=0.030, F1=0.039
+Class  7 → P=0.000, R=0.000, F1=0.000
+Class  8 → P=0.000, R=0.000, F1=0.000
+Class  9 → P=0.000, R=0.000, F1=0.000
+Class 10 → P=0.067, R=0.100, F1=0.080
+Class 11 → P=0.000, R=0.000, F1=0.000
+Class 12 → P=0.049, R=0.078, F1=0.060
+Class 13 → P=0.012, R=0.005, F1=0.007
+Class 14 → P=0.000, R=0.000, F1=0.000
+Class 15 → P=0.000, R=0.000, F1=0.000
+Class 16 → P=0.000, R=0.000, F1=0.000
+Class 17 → P=0.000, R=0.000, F1=0.000
+Class 18 → P=0.000, R=0.000, F1=0.000
+Class 19 → P=0.000, R=0.000, F1=0.000
+Class 20 → P=0.000, R=0.000, F1=0.000
+Class 21 → P=0.059, R=0.777, F1=0.110
+Class 22 → P=0.055, R=0.158, F1=0.082
+Class 23 → P=0.000, R=0.000, F1=0.000
+Class 24 → P=0.055, R=0.118, F1=0.075
+Class 25 → P=0.000, R=0.000, F1=0.000
+Class 26 → P=0.018, R=0.003, F1=0.006
+Class 27 → P=0.040, R=0.027, F1=0.032
+Class 28 → P=0.130, R=0.830, F1=0.225
+Class 29 → P=0.000, R=0.000, F1=0.000
+Class 30 → P=0.042, R=0.080, F1=0.055
+Class 31 → P=0.000, R=0.000, F1=0.000
+Class 32 → P=0.000, R=0.000, F1=0.000
+Class 33 → P=0.000, R=0.000, F1=0.000
+Class 34 → P=0.075, R=0.070, F1=0.073
+Class 35 → P=0.000, R=0.000, F1=0.000
+Class 36 → P=0.049, R=0.097, F1=0.065
+----Test----
+Class  1 → P=0.000, R=0.000, F1=0.000
+Class  2 → P=0.052, R=0.093, F1=0.067
+Class  3 → P=0.000, R=0.000, F1=0.000
+Class  4 → P=0.000, R=0.000, F1=0.000
+Class  5 → P=0.000, R=0.000, F1=0.000
+Class  6 → P=0.041, R=0.020, F1=0.027
+Class  7 → P=0.000, R=0.000, F1=0.000
+Class  8 → P=0.000, R=0.000, F1=0.000
+Class  9 → P=0.000, R=0.000, F1=0.000
+Class 10 → P=0.048, R=0.073, F1=0.058
+Class 11 → P=0.000, R=0.000, F1=0.000
+Class 12 → P=0.042, R=0.067, F1=0.051
+Class 13 → P=0.034, R=0.017, F1=0.022
+Class 14 → P=0.000, R=0.000, F1=0.000
+Class 15 → P=0.000, R=0.000, F1=0.000
+Class 16 → P=0.000, R=0.000, F1=0.000
+Class 17 → P=0.000, R=0.000, F1=0.000
+Class 18 → P=0.000, R=0.000, F1=0.000
+Class 19 → P=0.000, R=0.000, F1=0.000
+Class 20 → P=0.000, R=0.000, F1=0.000
+Class 21 → P=0.055, R=0.713, F1=0.102
+Class 22 → P=0.028, R=0.083, F1=0.041
+Class 23 → P=0.000, R=0.000, F1=0.000
+Class 24 → P=0.048, R=0.103, F1=0.066
+Class 25 → P=0.000, R=0.000, F1=0.000
+Class 26 → P=0.053, R=0.013, F1=0.021
+Class 27 → P=0.033, R=0.023, F1=0.027
+Class 28 → P=0.121, R=0.757, F1=0.209
+Class 29 → P=0.000, R=0.000, F1=0.000
+Class 30 → P=0.048, R=0.083, F1=0.061
+Class 31 → P=0.000, R=0.000, F1=0.000
+Class 32 → P=0.000, R=0.000, F1=0.000
+Class 33 → P=0.000, R=0.000, F1=0.000
+Class 34 → P=0.049, R=0.047, F1=0.048
+Class 35 → P=0.000, R=0.000, F1=0.000
+Class 36 → P=0.030, R=0.060, F1=0.040
+2025-10-31 13:48:37,119 - INFO - 
+Training Part b model with 5 hidden units ...
+2025-10-31 13:48:37,119 - INFO - ReLU: False
+2025-10-31 13:48:37,478 - INFO - Epoch 0 | Train Loss=3.5659 | Val Loss=3.5155 | Train Acc=6.42% | Val Acc=6.90%
+2025-10-31 13:48:49,010 - INFO - Epoch 50 | Train Loss=2.4677 | Val Loss=2.5088 | Train Acc=32.19% | Val Acc=30.56%
+2025-10-31 13:49:00,598 - INFO - Epoch 100 | Train Loss=2.2159 | Val Loss=2.3025 | Train Acc=35.84% | Val Acc=34.26%
+2025-10-31 13:49:12,174 - INFO - Epoch 150 | Train Loss=2.1024 | Val Loss=2.2181 | Train Acc=38.03% | Val Acc=34.81%
+2025-10-31 13:49:23,723 - INFO - Epoch 200 | Train Loss=2.0337 | Val Loss=2.1714 | Train Acc=40.47% | Val Acc=35.51%
+2025-10-31 13:49:35,288 - INFO - Epoch 250 | Train Loss=1.9890 | Val Loss=2.1471 | Train Acc=41.72% | Val Acc=36.99%
+2025-10-31 13:49:46,793 - INFO - Epoch 300 | Train Loss=1.9569 | Val Loss=2.1286 | Train Acc=42.23% | Val Acc=37.18%
+2025-10-31 13:49:58,283 - INFO - Epoch 350 | Train Loss=1.9327 | Val Loss=2.1207 | Train Acc=42.42% | Val Acc=37.69%
+2025-10-31 13:50:09,590 - INFO - Units 5 | Train → Precision: 0.4282, Recall: 0.4282, F1: 0.4282 | Test → Precision: 0.3853, Recall: 0.3853, F1: 0.3853
+2025-10-31 13:50:09,592 - INFO - Num of units in single hidden layer 5 → Test Macro-F1 = 0.3625
+2025-10-31 13:50:09,595 - INFO - Num of units in single hidden layer 5 → Train Macro-F1 = 0.4042
+Model: 5
+----Train----
+Class  1 → P=0.574, R=0.673, F1=0.620
+Class  2 → P=0.183, R=0.028, F1=0.049
+Class  3 → P=0.426, R=0.490, F1=0.456
+Class  4 → P=0.327, R=0.265, F1=0.293
+Class  5 → P=0.342, R=0.208, F1=0.259
+Class  6 → P=0.434, R=0.598, F1=0.503
+Class  7 → P=0.504, R=0.478, F1=0.491
+Class  8 → P=0.430, R=0.658, F1=0.520
+Class  9 → P=0.436, R=0.445, F1=0.440
+Class 10 → P=0.422, R=0.727, F1=0.534
+Class 11 → P=0.554, R=0.745, F1=0.635
+Class 12 → P=0.474, R=0.693, F1=0.563
+Class 13 → P=0.445, R=0.525, F1=0.482
+Class 14 → P=0.552, R=0.740, F1=0.632
+Class 15 → P=0.415, R=0.620, F1=0.497
+Class 16 → P=0.407, R=0.315, F1=0.355
+Class 17 → P=0.316, R=0.255, F1=0.282
+Class 18 → P=0.426, R=0.240, F1=0.307
+Class 19 → P=0.381, R=0.388, F1=0.385
+Class 20 → P=0.322, R=0.363, F1=0.341
+Class 21 → P=0.396, R=0.645, F1=0.490
+Class 22 → P=0.626, R=0.682, F1=0.653
+Class 23 → P=0.441, R=0.358, F1=0.396
+Class 24 → P=0.444, R=0.585, F1=0.505
+Class 25 → P=0.340, R=0.357, F1=0.348
+Class 26 → P=0.236, R=0.058, F1=0.094
+Class 27 → P=0.583, R=0.670, F1=0.623
+Class 28 → P=0.339, R=0.247, F1=0.286
+Class 29 → P=0.331, R=0.207, F1=0.254
+Class 30 → P=0.338, R=0.418, F1=0.374
+Class 31 → P=0.404, R=0.380, F1=0.391
+Class 32 → P=0.320, R=0.110, F1=0.164
+Class 33 → P=0.415, R=0.290, F1=0.342
+Class 34 → P=0.343, R=0.403, F1=0.371
+Class 35 → P=0.342, R=0.128, F1=0.187
+Class 36 → P=0.434, R=0.422, F1=0.428
+----Test----
+Class  1 → P=0.487, R=0.573, F1=0.527
+Class  2 → P=0.115, R=0.023, F1=0.039
+Class  3 → P=0.365, R=0.437, F1=0.398
+Class  4 → P=0.350, R=0.237, F1=0.282
+Class  5 → P=0.304, R=0.173, F1=0.221
+Class  6 → P=0.426, R=0.543, F1=0.477
+Class  7 → P=0.414, R=0.407, F1=0.410
+Class  8 → P=0.400, R=0.620, F1=0.486
+Class  9 → P=0.428, R=0.403, F1=0.415
+Class 10 → P=0.417, R=0.733, F1=0.531
+Class 11 → P=0.537, R=0.767, F1=0.632
+Class 12 → P=0.438, R=0.650, F1=0.523
+Class 13 → P=0.389, R=0.440, F1=0.413
+Class 14 → P=0.502, R=0.670, F1=0.574
+Class 15 → P=0.343, R=0.510, F1=0.410
+Class 16 → P=0.335, R=0.307, F1=0.320
+Class 17 → P=0.314, R=0.270, F1=0.290
+Class 18 → P=0.377, R=0.210, F1=0.270
+Class 19 → P=0.329, R=0.353, F1=0.341
+Class 20 → P=0.299, R=0.297, F1=0.298
+Class 21 → P=0.353, R=0.563, F1=0.434
+Class 22 → P=0.575, R=0.617, F1=0.595
+Class 23 → P=0.327, R=0.280, F1=0.302
+Class 24 → P=0.416, R=0.537, F1=0.469
+Class 25 → P=0.297, R=0.337, F1=0.316
+Class 26 → P=0.270, R=0.057, F1=0.094
+Class 27 → P=0.553, R=0.610, F1=0.580
+Class 28 → P=0.332, R=0.243, F1=0.281
+Class 29 → P=0.241, R=0.160, F1=0.192
+Class 30 → P=0.337, R=0.413, F1=0.371
+Class 31 → P=0.341, R=0.330, F1=0.336
+Class 32 → P=0.258, R=0.107, F1=0.151
+Class 33 → P=0.344, R=0.250, F1=0.290
+Class 34 → P=0.282, R=0.317, F1=0.298
+Class 35 → P=0.231, R=0.090, F1=0.129
+Class 36 → P=0.375, R=0.337, F1=0.355
+2025-10-31 13:50:09,596 - INFO - 
+Training Part b model with 10 hidden units ...
+2025-10-31 13:50:09,597 - INFO - ReLU: False
+2025-10-31 13:50:09,979 - INFO - Epoch 0 | Train Loss=3.5091 | Val Loss=3.4295 | Train Acc=13.73% | Val Acc=13.10%
+2025-10-31 13:50:22,431 - INFO - Epoch 50 | Train Loss=1.8718 | Val Loss=1.9406 | Train Acc=52.42% | Val Acc=48.84%
+2025-10-31 13:50:34,839 - INFO - Epoch 100 | Train Loss=1.5846 | Val Loss=1.7097 | Train Acc=57.45% | Val Acc=52.96%
+2025-10-31 13:50:47,252 - INFO - Epoch 150 | Train Loss=1.4665 | Val Loss=1.6386 | Train Acc=59.69% | Val Acc=53.98%
+2025-10-31 13:50:59,607 - INFO - Epoch 200 | Train Loss=1.3957 | Val Loss=1.6002 | Train Acc=61.78% | Val Acc=54.63%
+2025-10-31 13:51:11,950 - INFO - Epoch 250 | Train Loss=1.3460 | Val Loss=1.5806 | Train Acc=62.92% | Val Acc=54.54%
+2025-10-31 13:51:24,318 - INFO - Epoch 300 | Train Loss=1.3086 | Val Loss=1.5746 | Train Acc=63.64% | Val Acc=55.51%
+2025-10-31 13:51:36,661 - INFO - Epoch 350 | Train Loss=1.2790 | Val Loss=1.5630 | Train Acc=64.67% | Val Acc=55.00%
+2025-10-31 13:51:41,068 - INFO - Early Stop: plateau at epoch 368
+2025-10-31 13:51:41,277 - INFO - Units 10 | Train → Precision: 0.6401, Recall: 0.6401, F1: 0.6401 | Test → Precision: 0.5629, Recall: 0.5629, F1: 0.5629
+2025-10-31 13:51:41,279 - INFO - Num of units in single hidden layer 10 → Test Macro-F1 = 0.5592
+2025-10-31 13:51:41,282 - INFO - Num of units in single hidden layer 10 → Train Macro-F1 = 0.6365
+Model: 10
+----Train----
+Class  1 → P=0.767, R=0.802, F1=0.784
+Class  2 → P=0.581, R=0.510, F1=0.543
+Class  3 → P=0.603, R=0.717, F1=0.655
+Class  4 → P=0.516, R=0.497, F1=0.506
+Class  5 → P=0.563, R=0.528, F1=0.545
+Class  6 → P=0.706, R=0.710, F1=0.708
+Class  7 → P=0.565, R=0.588, F1=0.576
+Class  8 → P=0.791, R=0.797, F1=0.794
+Class  9 → P=0.841, R=0.812, F1=0.826
+Class 10 → P=0.667, R=0.790, F1=0.723
+Class 11 → P=0.724, R=0.802, F1=0.761
+Class 12 → P=0.765, R=0.793, F1=0.779
+Class 13 → P=0.604, R=0.588, F1=0.596
+Class 14 → P=0.681, R=0.683, F1=0.682
+Class 15 → P=0.661, R=0.740, F1=0.698
+Class 16 → P=0.654, R=0.672, F1=0.663
+Class 17 → P=0.546, R=0.490, F1=0.517
+Class 18 → P=0.572, R=0.555, F1=0.563
+Class 19 → P=0.620, R=0.582, F1=0.600
+Class 20 → P=0.677, R=0.665, F1=0.671
+Class 21 → P=0.548, R=0.625, F1=0.584
+Class 22 → P=0.849, R=0.870, F1=0.859
+Class 23 → P=0.694, R=0.570, F1=0.626
+Class 24 → P=0.687, R=0.665, F1=0.676
+Class 25 → P=0.575, R=0.488, F1=0.528
+Class 26 → P=0.396, R=0.252, F1=0.308
+Class 27 → P=0.687, R=0.748, F1=0.716
+Class 28 → P=0.650, R=0.725, F1=0.686
+Class 29 → P=0.561, R=0.532, F1=0.546
+Class 30 → P=0.534, R=0.618, F1=0.573
+Class 31 → P=0.609, R=0.703, F1=0.653
+Class 32 → P=0.487, R=0.452, F1=0.469
+Class 33 → P=0.576, R=0.587, F1=0.581
+Class 34 → P=0.656, R=0.703, F1=0.679
+Class 35 → P=0.600, R=0.488, F1=0.539
+Class 36 → P=0.703, R=0.698, F1=0.701
+----Test----
+Class  1 → P=0.637, R=0.703, F1=0.669
+Class  2 → P=0.435, R=0.360, F1=0.394
+Class  3 → P=0.531, R=0.663, F1=0.590
+Class  4 → P=0.486, R=0.473, F1=0.480
+Class  5 → P=0.518, R=0.473, F1=0.495
+Class  6 → P=0.628, R=0.637, F1=0.632
+Class  7 → P=0.478, R=0.513, F1=0.495
+Class  8 → P=0.718, R=0.740, F1=0.729
+Class  9 → P=0.753, R=0.763, F1=0.758
+Class 10 → P=0.634, R=0.757, F1=0.690
+Class 11 → P=0.668, R=0.783, F1=0.721
+Class 12 → P=0.699, R=0.667, F1=0.683
+Class 13 → P=0.562, R=0.510, F1=0.535
+Class 14 → P=0.602, R=0.580, F1=0.591
+Class 15 → P=0.571, R=0.657, F1=0.611
+Class 16 → P=0.580, R=0.617, F1=0.598
+Class 17 → P=0.590, R=0.490, F1=0.536
+Class 18 → P=0.523, R=0.490, F1=0.506
+Class 19 → P=0.589, R=0.563, F1=0.576
+Class 20 → P=0.552, R=0.547, F1=0.549
+Class 21 → P=0.505, R=0.550, F1=0.526
+Class 22 → P=0.729, R=0.763, F1=0.746
+Class 23 → P=0.564, R=0.457, F1=0.505
+Class 24 → P=0.632, R=0.583, F1=0.607
+Class 25 → P=0.502, R=0.397, F1=0.443
+Class 26 → P=0.286, R=0.203, F1=0.238
+Class 27 → P=0.657, R=0.650, F1=0.653
+Class 28 → P=0.570, R=0.597, F1=0.583
+Class 29 → P=0.427, R=0.430, F1=0.429
+Class 30 → P=0.490, R=0.493, F1=0.492
+Class 31 → P=0.537, R=0.630, F1=0.580
+Class 32 → P=0.404, R=0.407, F1=0.405
+Class 33 → P=0.500, R=0.540, F1=0.519
+Class 34 → P=0.547, R=0.603, F1=0.574
+Class 35 → P=0.474, R=0.430, F1=0.451
+Class 36 → P=0.545, R=0.543, F1=0.544
+2025-10-31 13:51:41,284 - INFO - 
+Training Part b model with 50 hidden units ...
+2025-10-31 13:51:41,287 - INFO - ReLU: False
+2025-10-31 13:51:42,040 - INFO - Epoch 0 | Train Loss=3.4451 | Val Loss=3.3018 | Train Acc=27.40% | Val Acc=24.77%
+2025-10-31 13:52:11,005 - INFO - Epoch 50 | Train Loss=1.0302 | Val Loss=1.1479 | Train Acc=74.04% | Val Acc=70.19%
+2025-10-31 13:52:41,831 - INFO - Epoch 100 | Train Loss=0.7905 | Val Loss=1.0034 | Train Acc=79.85% | Val Acc=72.04%
+2025-10-31 13:53:14,037 - INFO - Epoch 150 | Train Loss=0.6568 | Val Loss=0.9493 | Train Acc=83.59% | Val Acc=73.06%
+2025-10-31 13:53:46,557 - INFO - Epoch 200 | Train Loss=0.5625 | Val Loss=0.9244 | Train Acc=86.32% | Val Acc=74.07%
+2025-10-31 13:54:19,022 - INFO - Epoch 250 | Train Loss=0.4922 | Val Loss=0.9146 | Train Acc=88.47% | Val Acc=74.58%
+2025-10-31 13:54:51,523 - INFO - Epoch 300 | Train Loss=0.4352 | Val Loss=0.9140 | Train Acc=90.11% | Val Acc=74.86%
+2025-10-31 13:55:24,280 - INFO - Epoch 350 | Train Loss=0.3886 | Val Loss=0.9234 | Train Acc=91.42% | Val Acc=74.40%
+2025-10-31 13:55:56,460 - INFO - Units 50 | Train → Precision: 0.9078, Recall: 0.9078, F1: 0.9078 | Test → Precision: 0.7484, Recall: 0.7484, F1: 0.7484
+2025-10-31 13:55:56,461 - INFO - Num of units in single hidden layer 50 → Test Macro-F1 = 0.7483
+2025-10-31 13:55:56,464 - INFO - Num of units in single hidden layer 50 → Train Macro-F1 = 0.9078
+Model: 50
+----Train----
+Class  1 → P=0.950, R=0.950, F1=0.950
+Class  2 → P=0.885, R=0.913, F1=0.899
+Class  3 → P=0.915, R=0.900, F1=0.908
+Class  4 → P=0.864, R=0.845, F1=0.854
+Class  5 → P=0.901, R=0.862, F1=0.881
+Class  6 → P=0.931, R=0.898, F1=0.914
+Class  7 → P=0.926, R=0.898, F1=0.912
+Class  8 → P=0.955, R=0.922, F1=0.938
+Class  9 → P=0.976, R=0.945, F1=0.960
+Class 10 → P=0.910, R=0.915, F1=0.913
+Class 11 → P=0.956, R=0.947, F1=0.951
+Class 12 → P=0.929, R=0.933, F1=0.931
+Class 13 → P=0.880, R=0.902, F1=0.891
+Class 14 → P=0.916, R=0.947, F1=0.931
+Class 15 → P=0.899, R=0.937, F1=0.918
+Class 16 → P=0.924, R=0.935, F1=0.930
+Class 17 → P=0.896, R=0.860, F1=0.878
+Class 18 → P=0.912, R=0.878, F1=0.895
+Class 19 → P=0.885, R=0.882, F1=0.883
+Class 20 → P=0.905, R=0.910, F1=0.908
+Class 21 → P=0.856, R=0.920, F1=0.887
+Class 22 → P=0.949, R=0.962, F1=0.955
+Class 23 → P=0.877, R=0.870, F1=0.874
+Class 24 → P=0.935, R=0.905, F1=0.920
+Class 25 → P=0.871, R=0.888, F1=0.880
+Class 26 → P=0.868, R=0.825, F1=0.846
+Class 27 → P=0.946, R=0.932, F1=0.939
+Class 28 → P=0.951, R=0.928, F1=0.939
+Class 29 → P=0.859, R=0.865, F1=0.862
+Class 30 → P=0.881, R=0.925, F1=0.902
+Class 31 → P=0.903, R=0.930, F1=0.916
+Class 32 → P=0.869, R=0.862, F1=0.865
+Class 33 → P=0.929, R=0.937, F1=0.933
+Class 34 → P=0.920, R=0.922, F1=0.921
+Class 35 → P=0.854, R=0.885, F1=0.869
+Class 36 → P=0.910, R=0.947, F1=0.928
+----Test----
+Class  1 → P=0.814, R=0.873, F1=0.842
+Class  2 → P=0.690, R=0.690, F1=0.690
+Class  3 → P=0.748, R=0.703, F1=0.725
+Class  4 → P=0.666, R=0.650, F1=0.658
+Class  5 → P=0.706, R=0.697, F1=0.701
+Class  6 → P=0.782, R=0.763, F1=0.772
+Class  7 → P=0.693, R=0.677, F1=0.685
+Class  8 → P=0.793, R=0.807, F1=0.800
+Class  9 → P=0.867, R=0.867, F1=0.867
+Class 10 → P=0.842, R=0.837, F1=0.839
+Class 11 → P=0.900, R=0.870, F1=0.885
+Class 12 → P=0.839, R=0.817, F1=0.828
+Class 13 → P=0.706, R=0.720, F1=0.713
+Class 14 → P=0.793, R=0.857, F1=0.824
+Class 15 → P=0.762, R=0.800, F1=0.780
+Class 16 → P=0.801, R=0.817, F1=0.809
+Class 17 → P=0.672, R=0.690, F1=0.681
+Class 18 → P=0.772, R=0.690, F1=0.729
+Class 19 → P=0.729, R=0.710, F1=0.720
+Class 20 → P=0.690, R=0.683, F1=0.687
+Class 21 → P=0.690, R=0.727, F1=0.708
+Class 22 → P=0.867, R=0.850, F1=0.859
+Class 23 → P=0.682, R=0.657, F1=0.669
+Class 24 → P=0.763, R=0.783, F1=0.773
+Class 25 → P=0.680, R=0.723, F1=0.701
+Class 26 → P=0.617, R=0.597, F1=0.607
+Class 27 → P=0.845, R=0.817, F1=0.831
+Class 28 → P=0.849, R=0.827, F1=0.838
+Class 29 → P=0.619, R=0.640, F1=0.630
+Class 30 → P=0.678, R=0.723, F1=0.700
+Class 31 → P=0.715, R=0.753, F1=0.734
+Class 32 → P=0.675, R=0.623, F1=0.648
+Class 33 → P=0.719, R=0.717, F1=0.718
+Class 34 → P=0.753, R=0.803, F1=0.777
+Class 35 → P=0.721, R=0.733, F1=0.727
+Class 36 → P=0.822, R=0.753, F1=0.786
+2025-10-31 13:55:56,465 - INFO - 
+Training Part b model with 100 hidden units ...
+2025-10-31 13:55:56,471 - INFO - ReLU: False
+2025-10-31 13:55:57,704 - INFO - Epoch 0 | Train Loss=3.4098 | Val Loss=3.2188 | Train Acc=35.61% | Val Acc=33.98%
+2025-10-31 13:56:49,590 - INFO - Epoch 50 | Train Loss=0.9100 | Val Loss=1.0419 | Train Acc=76.99% | Val Acc=72.82%
+2025-10-31 13:57:41,750 - INFO - Epoch 100 | Train Loss=0.6374 | Val Loss=0.8581 | Train Acc=84.38% | Val Acc=77.08%
+2025-10-31 13:58:33,755 - INFO - Epoch 150 | Train Loss=0.4751 | Val Loss=0.7706 | Train Acc=89.42% | Val Acc=79.07%
+2025-10-31 13:59:25,665 - INFO - Epoch 200 | Train Loss=0.3671 | Val Loss=0.7225 | Train Acc=92.64% | Val Acc=80.14%
+2025-10-31 14:00:17,756 - INFO - Epoch 250 | Train Loss=0.2907 | Val Loss=0.6991 | Train Acc=94.95% | Val Acc=80.74%
+2025-10-31 14:01:09,924 - INFO - Epoch 300 | Train Loss=0.2340 | Val Loss=0.6914 | Train Acc=96.52% | Val Acc=80.65%
+2025-10-31 14:02:02,192 - INFO - Epoch 350 | Train Loss=0.1914 | Val Loss=0.6895 | Train Acc=97.65% | Val Acc=80.28%
+2025-10-31 14:02:54,936 - INFO - Units 100 | Train → Precision: 0.9658, Recall: 0.9658, F1: 0.9658 | Test → Precision: 0.8158, Recall: 0.8158, F1: 0.8158
+2025-10-31 14:02:54,938 - INFO - Num of units in single hidden layer 100 → Test Macro-F1 = 0.8157
+2025-10-31 14:02:54,941 - INFO - Num of units in single hidden layer 100 → Train Macro-F1 = 0.9658
+Model: 100
+----Train----
+Class  1 → P=0.983, R=0.975, F1=0.979
+Class  2 → P=0.971, R=0.953, F1=0.962
+Class  3 → P=0.966, R=0.953, F1=0.960
+Class  4 → P=0.940, R=0.968, F1=0.954
+Class  5 → P=0.956, R=0.967, F1=0.961
+Class  6 → P=0.968, R=0.960, F1=0.964
+Class  7 → P=0.976, R=0.968, F1=0.972
+Class  8 → P=0.975, R=0.973, F1=0.974
+Class  9 → P=0.987, R=0.980, F1=0.983
+Class 10 → P=0.963, R=0.965, F1=0.964
+Class 11 → P=0.985, R=0.987, F1=0.986
+Class 12 → P=0.978, R=0.980, F1=0.979
+Class 13 → P=0.965, R=0.963, F1=0.964
+Class 14 → P=0.965, R=0.978, F1=0.972
+Class 15 → P=0.988, R=0.985, F1=0.987
+Class 16 → P=0.970, R=0.973, F1=0.972
+Class 17 → P=0.943, R=0.960, F1=0.951
+Class 18 → P=0.971, R=0.963, F1=0.967
+Class 19 → P=0.949, R=0.958, F1=0.954
+Class 20 → P=0.957, R=0.960, F1=0.958
+Class 21 → P=0.964, R=0.973, F1=0.968
+Class 22 → P=0.982, R=0.982, F1=0.982
+Class 23 → P=0.955, R=0.950, F1=0.952
+Class 24 → P=0.973, R=0.953, F1=0.963
+Class 25 → P=0.945, R=0.970, F1=0.957
+Class 26 → P=0.963, R=0.947, F1=0.955
+Class 27 → P=0.980, R=0.972, F1=0.976
+Class 28 → P=0.976, R=0.957, F1=0.966
+Class 29 → P=0.962, R=0.938, F1=0.950
+Class 30 → P=0.970, R=0.970, F1=0.970
+Class 31 → P=0.953, R=0.972, F1=0.962
+Class 32 → P=0.950, R=0.947, F1=0.948
+Class 33 → P=0.969, R=0.977, F1=0.973
+Class 34 → P=0.978, R=0.958, F1=0.968
+Class 35 → P=0.942, R=0.955, F1=0.949
+Class 36 → P=0.954, R=0.977, F1=0.965
+----Test----
+Class  1 → P=0.895, R=0.877, F1=0.886
+Class  2 → P=0.776, R=0.763, F1=0.770
+Class  3 → P=0.841, R=0.793, F1=0.816
+Class  4 → P=0.710, R=0.783, F1=0.745
+Class  5 → P=0.788, R=0.820, F1=0.804
+Class  6 → P=0.815, R=0.837, F1=0.826
+Class  7 → P=0.803, R=0.773, F1=0.788
+Class  8 → P=0.819, R=0.847, F1=0.833
+Class  9 → P=0.899, R=0.893, F1=0.896
+Class 10 → P=0.853, R=0.873, F1=0.863
+Class 11 → P=0.920, R=0.917, F1=0.918
+Class 12 → P=0.876, R=0.893, F1=0.884
+Class 13 → P=0.814, R=0.817, F1=0.815
+Class 14 → P=0.825, R=0.867, F1=0.846
+Class 15 → P=0.868, R=0.877, F1=0.872
+Class 16 → P=0.873, R=0.890, F1=0.881
+Class 17 → P=0.741, R=0.753, F1=0.747
+Class 18 → P=0.805, R=0.800, F1=0.803
+Class 19 → P=0.768, R=0.760, F1=0.764
+Class 20 → P=0.765, R=0.727, F1=0.745
+Class 21 → P=0.815, R=0.820, F1=0.817
+Class 22 → P=0.898, R=0.883, F1=0.891
+Class 23 → P=0.783, R=0.723, F1=0.752
+Class 24 → P=0.822, R=0.787, F1=0.804
+Class 25 → P=0.713, R=0.753, F1=0.733
+Class 26 → P=0.739, R=0.737, F1=0.738
+Class 27 → P=0.893, R=0.890, F1=0.891
+Class 28 → P=0.871, R=0.853, F1=0.862
+Class 29 → P=0.798, R=0.737, F1=0.766
+Class 30 → P=0.804, R=0.860, F1=0.831
+Class 31 → P=0.790, R=0.853, F1=0.821
+Class 32 → P=0.713, R=0.680, F1=0.696
+Class 33 → P=0.809, R=0.777, F1=0.793
+Class 34 → P=0.831, R=0.853, F1=0.842
+Class 35 → P=0.805, R=0.810, F1=0.807
+Class 36 → P=0.844, R=0.793, F1=0.818
+2025-10-31 14:02:55,126 - INFO - All predictions saved to outputs/prediction_b.csv

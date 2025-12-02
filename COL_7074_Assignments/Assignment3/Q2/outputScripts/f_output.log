@@ -1,0 +1,140 @@
+yscl4@yscl4:~/trishanku/IITD_MSR_1stSem/ML_ASSIGNMENT_A3/Q2$ python f.py datasetf/train datasetf/test outputs
+2025-10-31 18:36:56,998 - INFO - Training samples: 6000
+2025-10-31 18:36:57,000 - INFO - Error loading datasetf/test/37/.ipynb_checkpoints: Not an image or unreadable
+2025-10-31 18:36:57,023 - INFO - Error loading datasetf/test/41/.ipynb_checkpoints: Not an image or unreadable
+2025-10-31 18:36:57,065 - INFO - Testing samples: 3000
+2025-10-31 18:36:57,065 - INFO - Training digits model from scratch...
+2025-10-31 18:36:57,085 - INFO - ReLU: True
+2025-10-31 18:36:58,808 - INFO - Epoch 0 | Train Loss=1.8425 | Val Loss=1.1175 | Train Acc=80.94% | Val Acc=77.67%
+2025-10-31 18:36:58,950 - INFO - [Scratch] Epoch 1/20 | Train F1=0.7999 | Test F1=0.7998
+2025-10-31 18:36:58,950 - INFO - ReLU: True
+2025-10-31 18:36:59,987 - INFO - Epoch 0 | Train Loss=0.6324 | Val Loss=0.4413 | Train Acc=90.43% | Val Acc=86.50%
+2025-10-31 18:37:00,131 - INFO - [Scratch] Epoch 2/20 | Train F1=0.8994 | Test F1=0.8900
+2025-10-31 18:37:00,131 - INFO - ReLU: True
+2025-10-31 18:37:01,177 - INFO - Epoch 0 | Train Loss=0.3510 | Val Loss=0.3010 | Train Acc=93.11% | Val Acc=91.67%
+2025-10-31 18:37:01,321 - INFO - [Scratch] Epoch 3/20 | Train F1=0.9295 | Test F1=0.9192
+2025-10-31 18:37:01,321 - INFO - ReLU: True
+2025-10-31 18:37:02,369 - INFO - Epoch 0 | Train Loss=0.2597 | Val Loss=0.2224 | Train Acc=94.41% | Val Acc=93.50%
+2025-10-31 18:37:02,514 - INFO - [Scratch] Epoch 4/20 | Train F1=0.9431 | Test F1=0.9293
+2025-10-31 18:37:02,514 - INFO - ReLU: True
+2025-10-31 18:37:03,569 - INFO - Epoch 0 | Train Loss=0.2022 | Val Loss=0.2134 | Train Acc=95.87% | Val Acc=94.33%
+2025-10-31 18:37:03,713 - INFO - [Scratch] Epoch 5/20 | Train F1=0.9571 | Test F1=0.9386
+2025-10-31 18:37:03,713 - INFO - ReLU: True
+2025-10-31 18:37:04,774 - INFO - Epoch 0 | Train Loss=0.1747 | Val Loss=0.1335 | Train Acc=96.19% | Val Acc=97.00%
+2025-10-31 18:37:04,921 - INFO - [Scratch] Epoch 6/20 | Train F1=0.9626 | Test F1=0.9450
+2025-10-31 18:37:04,921 - INFO - ReLU: True
+2025-10-31 18:37:05,975 - INFO - Epoch 0 | Train Loss=0.1430 | Val Loss=0.1511 | Train Acc=97.35% | Val Acc=96.17%
+2025-10-31 18:37:06,120 - INFO - [Scratch] Epoch 7/20 | Train F1=0.9723 | Test F1=0.9499
+2025-10-31 18:37:06,121 - INFO - ReLU: True
+2025-10-31 18:37:07,193 - INFO - Epoch 0 | Train Loss=0.1321 | Val Loss=0.1037 | Train Acc=97.70% | Val Acc=97.67%
+2025-10-31 18:37:07,340 - INFO - [Scratch] Epoch 8/20 | Train F1=0.9769 | Test F1=0.9526
+2025-10-31 18:37:07,340 - INFO - ReLU: True
+2025-10-31 18:37:08,485 - INFO - Epoch 0 | Train Loss=0.1092 | Val Loss=0.1049 | Train Acc=98.13% | Val Acc=97.33%
+2025-10-31 18:37:08,633 - INFO - [Scratch] Epoch 9/20 | Train F1=0.9805 | Test F1=0.9560
+2025-10-31 18:37:08,633 - INFO - ReLU: True
+2025-10-31 18:37:09,703 - INFO - Epoch 0 | Train Loss=0.0994 | Val Loss=0.0748 | Train Acc=98.24% | Val Acc=98.50%
+2025-10-31 18:37:09,853 - INFO - [Scratch] Epoch 10/20 | Train F1=0.9827 | Test F1=0.9600
+2025-10-31 18:37:09,853 - INFO - ReLU: True
+2025-10-31 18:37:10,930 - INFO - Epoch 0 | Train Loss=0.0828 | Val Loss=0.0764 | Train Acc=98.67% | Val Acc=97.83%
+2025-10-31 18:37:11,079 - INFO - [Scratch] Epoch 11/20 | Train F1=0.9859 | Test F1=0.9588
+2025-10-31 18:37:11,079 - INFO - ReLU: True
+2025-10-31 18:37:12,160 - INFO - Epoch 0 | Train Loss=0.0728 | Val Loss=0.0695 | Train Acc=98.44% | Val Acc=98.00%
+2025-10-31 18:37:12,312 - INFO - [Scratch] Epoch 12/20 | Train F1=0.9840 | Test F1=0.9593
+2025-10-31 18:37:12,312 - INFO - ReLU: True
+2025-10-31 18:37:13,400 - INFO - Epoch 0 | Train Loss=0.0686 | Val Loss=0.0641 | Train Acc=98.72% | Val Acc=98.50%
+2025-10-31 18:37:13,552 - INFO - [Scratch] Epoch 13/20 | Train F1=0.9870 | Test F1=0.9606
+2025-10-31 18:37:13,553 - INFO - ReLU: True
+2025-10-31 18:37:14,663 - INFO - Epoch 0 | Train Loss=0.0589 | Val Loss=0.0543 | Train Acc=98.87% | Val Acc=98.83%
+2025-10-31 18:37:14,818 - INFO - [Scratch] Epoch 14/20 | Train F1=0.9887 | Test F1=0.9627
+2025-10-31 18:37:14,818 - INFO - ReLU: True
+2025-10-31 18:37:15,927 - INFO - Epoch 0 | Train Loss=0.0521 | Val Loss=0.0507 | Train Acc=98.94% | Val Acc=98.67%
+2025-10-31 18:37:16,081 - INFO - [Scratch] Epoch 15/20 | Train F1=0.9892 | Test F1=0.9627
+2025-10-31 18:37:16,081 - INFO - ReLU: True
+2025-10-31 18:37:17,203 - INFO - Epoch 0 | Train Loss=0.0514 | Val Loss=0.0349 | Train Acc=99.56% | Val Acc=99.50%
+2025-10-31 18:37:17,359 - INFO - [Scratch] Epoch 16/20 | Train F1=0.9955 | Test F1=0.9690
+2025-10-31 18:37:17,359 - INFO - ReLU: True
+2025-10-31 18:37:18,486 - INFO - Epoch 0 | Train Loss=0.0404 | Val Loss=0.0344 | Train Acc=99.44% | Val Acc=99.67%
+2025-10-31 18:37:18,645 - INFO - [Scratch] Epoch 17/20 | Train F1=0.9947 | Test F1=0.9644
+2025-10-31 18:37:18,646 - INFO - ReLU: True
+2025-10-31 18:37:19,772 - INFO - Epoch 0 | Train Loss=0.0336 | Val Loss=0.0326 | Train Acc=99.70% | Val Acc=99.50%
+2025-10-31 18:37:19,928 - INFO - [Scratch] Epoch 18/20 | Train F1=0.9968 | Test F1=0.9684
+2025-10-31 18:37:19,928 - INFO - ReLU: True
+2025-10-31 18:37:21,061 - INFO - Epoch 0 | Train Loss=0.0305 | Val Loss=0.0299 | Train Acc=99.74% | Val Acc=99.50%
+2025-10-31 18:37:21,226 - INFO - [Scratch] Epoch 19/20 | Train F1=0.9972 | Test F1=0.9663
+2025-10-31 18:37:21,226 - INFO - ReLU: True
+2025-10-31 18:37:22,370 - INFO - Epoch 0 | Train Loss=0.0276 | Val Loss=0.0218 | Train Acc=99.93% | Val Acc=100.00%
+2025-10-31 18:37:22,530 - INFO - [Scratch] Epoch 20/20 | Train F1=0.9993 | Test F1=0.9684
+W0 (3072, 512)
+b0 (1, 512)
+W1 (512, 256)
+b1 (1, 256)
+W2 (256, 128)
+b2 (1, 128)
+W3 (128, 64)
+b3 (1, 64)
+W4 (64, 36)
+b4 (1, 36)
+2025-10-31 18:37:22,858 - INFO - Fine-tuning transfer model on digits dataset...
+2025-10-31 18:37:22,858 - INFO - ReLU: True
+2025-10-31 18:37:23,965 - INFO - Epoch 0 | Train Loss=0.7673 | Val Loss=0.2209 | Train Acc=94.52% | Val Acc=92.83%
+2025-10-31 18:37:24,119 - INFO - [Transfer] Epoch 1/20 | Train F1=0.9435 | Test F1=0.9222
+2025-10-31 18:37:24,119 - INFO - ReLU: True
+2025-10-31 18:37:25,241 - INFO - Epoch 0 | Train Loss=0.1722 | Val Loss=0.1656 | Train Acc=96.78% | Val Acc=94.67%
+2025-10-31 18:37:25,401 - INFO - [Transfer] Epoch 2/20 | Train F1=0.9657 | Test F1=0.9450
+2025-10-31 18:37:25,401 - INFO - ReLU: True
+2025-10-31 18:37:26,519 - INFO - Epoch 0 | Train Loss=0.1087 | Val Loss=0.1359 | Train Acc=98.63% | Val Acc=95.50%
+2025-10-31 18:37:26,676 - INFO - [Transfer] Epoch 3/20 | Train F1=0.9832 | Test F1=0.9604
+2025-10-31 18:37:26,676 - INFO - ReLU: True
+2025-10-31 18:37:27,827 - INFO - Epoch 0 | Train Loss=0.0763 | Val Loss=0.1097 | Train Acc=98.31% | Val Acc=96.67%
+2025-10-31 18:37:27,984 - INFO - [Transfer] Epoch 4/20 | Train F1=0.9815 | Test F1=0.9591
+2025-10-31 18:37:27,984 - INFO - ReLU: True
+2025-10-31 18:37:29,165 - INFO - Epoch 0 | Train Loss=0.0566 | Val Loss=0.0397 | Train Acc=99.19% | Val Acc=99.33%
+2025-10-31 18:37:29,321 - INFO - [Transfer] Epoch 5/20 | Train F1=0.9920 | Test F1=0.9653
+2025-10-31 18:37:29,321 - INFO - ReLU: True
+2025-10-31 18:37:30,463 - INFO - Epoch 0 | Train Loss=0.0411 | Val Loss=0.0335 | Train Acc=99.50% | Val Acc=99.33%
+2025-10-31 18:37:30,618 - INFO - [Transfer] Epoch 6/20 | Train F1=0.9948 | Test F1=0.9663
+2025-10-31 18:37:30,618 - INFO - ReLU: True
+2025-10-31 18:37:31,751 - INFO - Epoch 0 | Train Loss=0.0305 | Val Loss=0.0280 | Train Acc=99.76% | Val Acc=99.50%
+2025-10-31 18:37:31,906 - INFO - [Transfer] Epoch 7/20 | Train F1=0.9973 | Test F1=0.9643
+2025-10-31 18:37:31,906 - INFO - ReLU: True
+2025-10-31 18:37:33,049 - INFO - Epoch 0 | Train Loss=0.0234 | Val Loss=0.0226 | Train Acc=99.91% | Val Acc=99.50%
+2025-10-31 18:37:33,205 - INFO - [Transfer] Epoch 8/20 | Train F1=0.9987 | Test F1=0.9693
+2025-10-31 18:37:33,205 - INFO - ReLU: True
+2025-10-31 18:37:34,450 - INFO - Epoch 0 | Train Loss=0.0178 | Val Loss=0.0133 | Train Acc=99.93% | Val Acc=100.00%
+2025-10-31 18:37:34,625 - INFO - [Transfer] Epoch 9/20 | Train F1=0.9993 | Test F1=0.9680
+2025-10-31 18:37:34,625 - INFO - ReLU: True
+2025-10-31 18:37:35,887 - INFO - Epoch 0 | Train Loss=0.0126 | Val Loss=0.0124 | Train Acc=99.94% | Val Acc=99.83%
+2025-10-31 18:37:36,063 - INFO - [Transfer] Epoch 10/20 | Train F1=0.9993 | Test F1=0.9710
+2025-10-31 18:37:36,063 - INFO - ReLU: True
+2025-10-31 18:37:37,322 - INFO - Epoch 0 | Train Loss=0.0105 | Val Loss=0.0064 | Train Acc=99.98% | Val Acc=100.00%
+2025-10-31 18:37:37,498 - INFO - [Transfer] Epoch 11/20 | Train F1=0.9998 | Test F1=0.9693
+2025-10-31 18:37:37,498 - INFO - ReLU: True
+2025-10-31 18:37:38,750 - INFO - Epoch 0 | Train Loss=0.0084 | Val Loss=0.0088 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:38,924 - INFO - [Transfer] Epoch 12/20 | Train F1=1.0000 | Test F1=0.9700
+2025-10-31 18:37:38,924 - INFO - ReLU: True
+2025-10-31 18:37:40,192 - INFO - Epoch 0 | Train Loss=0.0070 | Val Loss=0.0077 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:40,375 - INFO - [Transfer] Epoch 13/20 | Train F1=1.0000 | Test F1=0.9703
+2025-10-31 18:37:40,375 - INFO - ReLU: True
+2025-10-31 18:37:41,632 - INFO - Epoch 0 | Train Loss=0.0059 | Val Loss=0.0082 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:41,810 - INFO - [Transfer] Epoch 14/20 | Train F1=1.0000 | Test F1=0.9703
+2025-10-31 18:37:41,811 - INFO - ReLU: True
+2025-10-31 18:37:43,075 - INFO - Epoch 0 | Train Loss=0.0057 | Val Loss=0.0053 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:43,254 - INFO - [Transfer] Epoch 15/20 | Train F1=1.0000 | Test F1=0.9710
+2025-10-31 18:37:43,255 - INFO - ReLU: True
+2025-10-31 18:37:44,512 - INFO - Epoch 0 | Train Loss=0.0049 | Val Loss=0.0040 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:44,686 - INFO - [Transfer] Epoch 16/20 | Train F1=1.0000 | Test F1=0.9716
+2025-10-31 18:37:44,687 - INFO - ReLU: True
+2025-10-31 18:37:45,944 - INFO - Epoch 0 | Train Loss=0.0042 | Val Loss=0.0050 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:46,122 - INFO - [Transfer] Epoch 17/20 | Train F1=1.0000 | Test F1=0.9706
+2025-10-31 18:37:46,122 - INFO - ReLU: True
+2025-10-31 18:37:47,387 - INFO - Epoch 0 | Train Loss=0.0039 | Val Loss=0.0037 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:47,574 - INFO - [Transfer] Epoch 18/20 | Train F1=1.0000 | Test F1=0.9716
+2025-10-31 18:37:47,574 - INFO - ReLU: True
+2025-10-31 18:37:48,845 - INFO - Epoch 0 | Train Loss=0.0035 | Val Loss=0.0037 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:49,025 - INFO - [Transfer] Epoch 19/20 | Train F1=1.0000 | Test F1=0.9720
+2025-10-31 18:37:49,025 - INFO - ReLU: True
+2025-10-31 18:37:50,293 - INFO - Epoch 0 | Train Loss=0.0033 | Val Loss=0.0034 | Train Acc=100.00% | Val Acc=100.00%
+2025-10-31 18:37:50,471 - INFO - [Transfer] Epoch 20/20 | Train F1=1.0000 | Test F1=0.9713
+2025-10-31 18:37:50,770 - INFO - Comparison plot saved successfully.
+ Saved predictions to outputs/prediction_f.csv
+2025-10-31 18:37:50,848 - INFO - Saved predictions to CSV

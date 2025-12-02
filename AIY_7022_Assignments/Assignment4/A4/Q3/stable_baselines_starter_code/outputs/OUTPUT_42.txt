@@ -1,0 +1,180 @@
+(sb3_rl) [aiy257584@scai03 ~/scratch/RL_A4/A4/Q3/stable_baselines_starter_code]
+$ ./run_batch_gif_creation.sh
+==========================================
+Starting Batch GIF Generation
+==========================================
+
+Environment: InvertedPendulum-v4
+----------------------------------------
+Generating GIF: a2c on InvertedPendulum-v4
+
+Generating GIF for A2C on InvertedPendulum-v4...
+Model directory: models/a2c/InvertedPendulum-v4/seed_42
+Loading model from: models/a2c/InvertedPendulum-v4/seed_42/final_model.zip
+Loading VecNormalize from: models/a2c/InvertedPendulum-v4/seed_42/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 73.00, Steps = 73
+  Episode 2: Reward = 122.00, Steps = 122
+  Episode 3: Reward = 42.00, Steps = 42
+
+Saving GIF to gifs/a2c_InvertedPendulum-v4_seed42.gif...
+GIF created successfully!
+Mean Reward: 79.00 ± 32.93
+Total frames: 237
+✓ GIF created: gifs/a2c_InvertedPendulum-v4_seed42.gif
+
+Generating GIF: ppo on InvertedPendulum-v4
+
+Generating GIF for PPO on InvertedPendulum-v4...
+Model directory: models/ppo/InvertedPendulum-v4/seed_42
+Loading model from: models/ppo/InvertedPendulum-v4/seed_42/final_model.zip
+Loading VecNormalize from: models/ppo/InvertedPendulum-v4/seed_42/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1000.00, Steps = 1000
+  Episode 2: Reward = 1000.00, Steps = 1000
+  Episode 3: Reward = 1000.00, Steps = 1000
+
+Saving GIF to gifs/ppo_InvertedPendulum-v4_seed42.gif...
+GIF created successfully!
+Mean Reward: 1000.00 ± 0.00
+Total frames: 3000
+✓ GIF created: gifs/ppo_InvertedPendulum-v4_seed42.gif
+
+Generating comparison GIF for InvertedPendulum-v4
+
+Generating comparison GIF for InvertedPendulum-v4...
+Loading A2C model from: models/a2c/InvertedPendulum-v4/seed_42/final_model.zip
+
+Recording 1 comparison episodes...
+  Episode 1: A2C = 87.00, PPO = 1000.00
+
+Saving comparison GIF to gifs/comparison_InvertedPendulum-v4_seed42.gif...
+Comparison GIF created successfully!
+Total frames: 1000
+✓ Comparison GIF created: gifs/comparison_InvertedPendulum-v4_seed42.gif
+
+==========================================
+
+Environment: Hopper-v4
+----------------------------------------
+Generating GIF: a2c on Hopper-v4
+
+Generating GIF for A2C on Hopper-v4...
+Model directory: models/a2c/Hopper-v4/seed_42
+Loading model from: models/a2c/Hopper-v4/seed_42/final_model.zip
+Loading VecNormalize from: models/a2c/Hopper-v4/seed_42/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1004.28, Steps = 1000
+  Episode 2: Reward = 1004.45, Steps = 1000
+  Episode 3: Reward = 1004.63, Steps = 1000
+
+Saving GIF to gifs/a2c_Hopper-v4_seed42.gif...
+GIF created successfully!
+Mean Reward: 1004.45 ± 0.14
+Total frames: 3000
+✓ GIF created: gifs/a2c_Hopper-v4_seed42.gif
+
+Generating GIF: ppo on Hopper-v4
+
+Generating GIF for PPO on Hopper-v4...
+Model directory: models/ppo/Hopper-v4/seed_42
+Loading model from: models/ppo/Hopper-v4/seed_42/final_model.zip
+Loading VecNormalize from: models/ppo/Hopper-v4/seed_42/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 3349.07, Steps = 1000
+  Episode 2: Reward = 3376.91, Steps = 1000
+  Episode 3: Reward = 3317.95, Steps = 968
+
+Saving GIF to gifs/ppo_Hopper-v4_seed42.gif...
+GIF created successfully!
+Mean Reward: 3347.97 ± 24.08
+Total frames: 2968
+✓ GIF created: gifs/ppo_Hopper-v4_seed42.gif
+
+Generating comparison GIF for Hopper-v4
+
+Generating comparison GIF for Hopper-v4...
+Loading A2C model from: models/a2c/Hopper-v4/seed_42/final_model.zip
+Loading PPO model from: models/ppo/Hopper-v4/seed_42/final_model.zip
+
+Recording 1 comparison episodes...
+  Episode 1: A2C = 1005.15, PPO = 2447.23
+
+Saving comparison GIF to gifs/comparison_Hopper-v4_seed42.gif...
+Comparison GIF created successfully!
+Total frames: 1000
+✓ Comparison GIF created: gifs/comparison_Hopper-v4_seed42.gif
+
+==========================================
+
+Environment: HalfCheetah-v4
+----------------------------------------
+Generating GIF: a2c on HalfCheetah-v4
+
+Generating GIF for A2C on HalfCheetah-v4...
+Model directory: models/a2c/HalfCheetah-v4/seed_42
+Loading model from: models/a2c/HalfCheetah-v4/seed_42/final_model.zip
+Loading VecNormalize from: models/a2c/HalfCheetah-v4/seed_42/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 436.98, Steps = 1000
+  Episode 2: Reward = 730.93, Steps = 1000
+  Episode 3: Reward = 44.50, Steps = 1000
+
+Saving GIF to gifs/a2c_HalfCheetah-v4_seed42.gif...
+GIF created successfully!
+Mean Reward: 404.14 ± 281.20
+Total frames: 3000
+✓ GIF created: gifs/a2c_HalfCheetah-v4_seed42.gif
+
+Generating GIF: ppo on HalfCheetah-v4
+
+Generating GIF for PPO on HalfCheetah-v4...
+Model directory: models/ppo/HalfCheetah-v4/seed_42
+Loading model from: models/ppo/HalfCheetah-v4/seed_42/final_model.zip
+Loading VecNormalize from: models/ppo/HalfCheetah-v4/seed_42/vec_normalize.pkl
+
+Recording 3 episodes...
+  Episode 1: Reward = 1632.85, Steps = 1000
+  Episode 2: Reward = 1546.39, Steps = 1000
+  Episode 3: Reward = 1611.88, Steps = 1000
+
+Saving GIF to gifs/ppo_HalfCheetah-v4_seed42.gif...
+GIF created successfully!
+Mean Reward: 1597.04 ± 36.83
+Total frames: 3000
+✓ GIF created: gifs/ppo_HalfCheetah-v4_seed42.gif
+
+Generating comparison GIF for HalfCheetah-v4
+
+Generating comparison GIF for HalfCheetah-v4...
+Loading A2C model from: models/a2c/HalfCheetah-v4/seed_42/final_model.zip
+
+Recording 1 comparison episodes...
+  Episode 1: A2C = 132.24, PPO = 1606.09
+
+Saving comparison GIF to gifs/comparison_HalfCheetah-v4_seed42.gif...
+Comparison GIF created successfully!
+Total frames: 1000
+✓ Comparison GIF created: gifs/comparison_HalfCheetah-v4_seed42.gif
+
+==========================================
+
+All GIFs generated successfully!
+
+GIFs saved to: gifs/
+
+total 532M
+-rw-r--r-- 1 aiy257584 aiy25  94M Nov 25 02:23 a2c_HalfCheetah-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25 106M Nov 25 02:18 a2c_Hopper-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25 2.3M Nov 25 02:13 a2c_InvertedPendulum-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  53M Nov 25 02:27 comparison_HalfCheetah-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  71M Nov 25 02:21 comparison_Hopper-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25 5.7M Nov 25 02:16 comparison_InvertedPendulum-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  61M Nov 25 02:25 ppo_HalfCheetah-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25 134M Nov 25 02:20 ppo_Hopper-v4_seed42.gif
+-rw-r--r-- 1 aiy257584 aiy25  12M Nov 25 02:15 ppo_InvertedPendulum-v4_seed42.gif

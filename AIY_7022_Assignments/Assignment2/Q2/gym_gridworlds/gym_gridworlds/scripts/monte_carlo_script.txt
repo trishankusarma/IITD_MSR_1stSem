@@ -1,0 +1,189 @@
+--- Starting training across 10 seeds ---Running for 8000 episodes and Noise : 0.0 --
+
+--- Training Seed 1/10 ---
+
+Seed 0: Mean=-0.960, Min=-8.000, Max=2.000, Std=2.126, Success Rate=0.090
+
+--- Training Seed 2/10 ---
+
+Seed 1: Mean=-0.607, Min=-15.000, Max=2.000, Std=3.188, Success Rate=0.360
+
+--- Training Seed 3/10 ---
+
+Seed 2: Mean=-2.132, Min=-8.000, Max=2.000, Std=2.639, Success Rate=0.140
+
+--- Training Seed 4/10 ---
+
+Seed 3: Mean=0.274, Min=-8.000, Max=2.000, Std=2.418, Success Rate=0.550
+
+--- Training Seed 5/10 ---
+
+Seed 4: Mean=1.038, Min=-3.000, Max=2.000, Std=1.365, Success Rate=0.600
+
+--- Training Seed 6/10 ---
+
+Seed 5: Mean=1.893, Min=-3.000, Max=2.000, Std=0.589, Success Rate=0.960
+
+--- Training Seed 7/10 ---
+
+Seed 6: Mean=-0.307, Min=-8.000, Max=2.000, Std=2.640, Success Rate=0.450
+
+--- Training Seed 8/10 ---
+
+Seed 7: Mean=0.386, Min=-8.000, Max=2.000, Std=1.996, Success Rate=0.420
+
+--- Training Seed 9/10 ---
+
+Seed 8: Mean=-2.229, Min=-13.000, Max=2.000, Std=2.687, Success Rate=0.180
+
+--- Training Seed 10/10 ---
+
+Seed 9: Mean=0.716, Min=-3.000, Max=2.000, Std=1.386, Success Rate=0.450
+JSON file 'gym_gridworlds/evaluation/importance_sampling_evaluation_results.json' updated successfully.
+Noise : 0.0 :: MC_ImportanceSampling(0.0): (1.8430000000000002, 0.7639705491705815)
+✅ Saved mean learning curve.
+
+Best Optimal Policy (Action to take in each state):
+
+Best Optimal Policy (Action per state):
+[['Right' 'Up' 'Stay' 'Left' 'Stay']
+ ['Down' 'Down' 'Left' 'Left' 'Right']
+ ['Up' 'Down' 'Left' 'Left' 'Right']
+ ['Up' 'Left' 'Left' 'Right' 'Down']]
+
+Q-values for State 0 (top-left) from the best policy:
+  Action: Up, Q-value: 0.015
+  Action: Down, Q-value: 0.020
+  Action: Left, Q-value: -3.195
+  Action: Right, Q-value: 0.022
+  Action: Stay, Q-value: -3.076
+
+Generating GIF... saving to gym_gridworlds/gifs/monte_carlo_noise0.0.gif
+Reward : 2.0
+GIF saved successfully to C:\Users\TRISHANKU\WorkSpace\MSR_IITD_1st_Year\AIY_7022_Assignments\Assignment2\Q2\gym_gridworlds\gym_gridworlds\gifs\monte_carlo_noise0.0.gif
+--- Starting training across 10 seeds ---Running for 5000 episodes and Noise : 0.1 --
+
+--- Training Seed 1/10 ---
+
+Seed 0: Mean=1.074, Min=-8.000, Max=2.000, Std=1.933, Success Rate=0.710
+
+--- Training Seed 2/10 ---
+
+Seed 1: Mean=0.232, Min=-8.000, Max=2.000, Std=1.165, Success Rate=0.170
+
+--- Training Seed 3/10 ---
+
+Seed 2: Mean=-0.249, Min=-5.000, Max=2.000, Std=1.135, Success Rate=0.020
+
+--- Training Seed 4/10 ---
+
+Seed 3: Mean=-0.068, Min=-3.000, Max=0.100, Std=0.673, Success Rate=0.000
+
+--- Training Seed 5/10 ---
+
+Seed 4: Mean=-0.339, Min=-8.000, Max=2.000, Std=2.529, Success Rate=0.380
+
+--- Training Seed 6/10 ---
+
+Seed 5: Mean=-0.658, Min=-20.000, Max=2.000, Std=4.031, Success Rate=0.540
+
+--- Training Seed 7/10 ---
+
+Seed 6: Mean=0.026, Min=-3.000, Max=2.000, Std=0.565, Success Rate=0.010
+
+--- Training Seed 8/10 ---
+
+Seed 7: Mean=0.705, Min=-13.000, Max=2.000, Std=2.845, Success Rate=0.760
+
+--- Training Seed 9/10 ---
+
+Seed 8: Mean=-0.443, Min=-9.900, Max=0.100, Std=1.656, Success Rate=0.000
+
+--- Training Seed 10/10 ---
+
+Seed 9: Mean=1.655, Min=-3.000, Max=2.000, Std=1.145, Success Rate=0.900
+JSON file 'gym_gridworlds/evaluation/importance_sampling_evaluation_results.json' updated successfully.
+Noise : 0.1 :: MC_ImportanceSampling(0.1): (1.855, 0.6399023362982825)
+✅ Saved mean learning curve.
+
+Best Optimal Policy (Action to take in each state):
+
+Best Optimal Policy (Action per state):
+[['Left' 'Down' 'Stay' 'Left' 'Stay']
+ ['Stay' 'Down' 'Down' 'Left' 'Right']
+ ['Right' 'Down' 'Left' 'Left' 'Left']
+ ['Up' 'Left' 'Left' 'Right' 'Right']]
+
+Q-values for State 0 (top-left) from the best policy:
+  Action: Up, Q-value: -0.445
+  Action: Down, Q-value: -0.153
+  Action: Left, Q-value: 0.010
+  Action: Right, Q-value: -1.093
+  Action: Stay, Q-value: -1.367
+
+Generating GIF... saving to gym_gridworlds/gifs/monte_carlo_noise0.1.gif
+Reward : 2.0
+GIF saved successfully to C:\Users\TRISHANKU\WorkSpace\MSR_IITD_1st_Year\AIY_7022_Assignments\Assignment2\Q2\gym_gridworlds\gym_gridworlds\gifs\monte_carlo_noise0.1.gif
+--- Starting training across 10 seeds ---Running for 5000 episodes and Noise : 0.01 --
+
+--- Training Seed 1/10 ---
+
+Seed 0: Mean=1.810, Min=-5.000, Max=2.000, Std=0.997, Success Rate=0.960
+
+--- Training Seed 2/10 ---
+
+Seed 1: Mean=-0.522, Min=-13.000, Max=2.000, Std=2.195, Success Rate=0.160
+
+--- Training Seed 3/10 ---
+
+Seed 2: Mean=-0.266, Min=-8.000, Max=2.000, Std=2.905, Success Rate=0.520
+
+--- Training Seed 4/10 ---
+
+Seed 3: Mean=-0.050, Min=-4.900, Max=0.100, Std=0.853, Success Rate=0.000
+
+--- Training Seed 5/10 ---
+
+Seed 4: Mean=0.128, Min=-8.000, Max=2.000, Std=1.813, Success Rate=0.280
+
+--- Training Seed 6/10 ---
+
+Seed 5: Mean=-0.094, Min=-4.900, Max=0.100, Std=0.866, Success Rate=0.000
+
+--- Training Seed 7/10 ---
+
+Seed 6: Mean=1.500, Min=-8.000, Max=2.000, Std=1.658, Success Rate=0.910
+
+--- Training Seed 8/10 ---
+
+Seed 7: Mean=-2.859, Min=-15.000, Max=2.000, Std=3.919, Success Rate=0.010
+
+--- Training Seed 9/10 ---
+
+Seed 8: Mean=-0.717, Min=-13.000, Max=2.000, Std=2.727, Success Rate=0.400
+
+--- Training Seed 10/10 ---
+
+Seed 9: Mean=-0.162, Min=-4.900, Max=0.100, Std=1.060, Success Rate=0.000
+JSON file 'gym_gridworlds/evaluation/importance_sampling_evaluation_results.json' updated successfully.
+Noise : 0.01 :: MC_ImportanceSampling(0.01): (1.93, 0.5339475629684997)
+✅ Saved mean learning curve.
+
+Best Optimal Policy (Action to take in each state):
+
+Best Optimal Policy (Action per state):
+[['Down' 'Up' 'Up' 'Left' 'Stay']
+ ['Right' 'Up' 'Right' 'Left' 'Right']
+ ['Left' 'Down' 'Down' 'Left' 'Right']
+ ['Up' 'Left' 'Left' 'Left' 'Down']]
+
+Q-values for State 0 (top-left) from the best policy:
+  Action: Up, Q-value: 0.299
+  Action: Down, Q-value: 0.322
+  Action: Left, Q-value: -2.076
+  Action: Right, Q-value: 0.006
+  Action: Stay, Q-value: -3.107
+
+Generating GIF... saving to gym_gridworlds/gifs/monte_carlo_noise0.01.gif
+Reward : 2.0
+GIF saved successfully to C:\Users\TRISHANKU\WorkSpace\MSR_IITD_1st_Year\AIY_7022_Assignments\Assignment2\Q2\gym_gridworlds\gym_gridworlds\gifs\monte_carlo_noise0.01.gif

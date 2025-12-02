@@ -1,0 +1,37 @@
+yscl4@yscl4:~/trishanku/IITD_MSR_1stSem/ML_ASSIGNMENT_A3/Q1/question_e$ python e.py ../data/train.csv ../data/validation.csv ../data/test.csv ../outputs/predictionE.csv
+
+Loading data ...
+Train shape: (7827, 14)
+Validation shape: (870, 14)
+Test shape: (967, 14)
+
+Preprocessing ...
+After pre-processing
+Shape of trainDataX is : (7827, 13)
+Shape of trainDataY is : (7827,)
+Shape of testDataX is : (967, 13)
+Shape of testDataY is : (967,)
+Shape of validationDataX is : (870, 13)
+Shape of validationDataY is : (870,)
+
+=== Running DecisionTreeClassifier: Varying max_depth ===
+[2025-11-01 01:37:24.361011] Depth=15 | Train=0.8301 | Val=0.6207 | Test=0.6298
+[2025-11-01 01:37:24.405968] Depth=25 | Train=0.9825 | Val=0.6138 | Test=0.6101
+[2025-11-01 01:37:24.450700] Depth=35 | Train=1.0000 | Val=0.6299 | Test=0.6143
+[2025-11-01 01:37:24.495815] Depth=45 | Train=1.0000 | Val=0.6299 | Test=0.6143
+
+Best depth based on validation accuracy: 35 (Val Acc=0.6299)
+
+=== Running DecisionTreeClassifier: Varying ccp_alpha ===
+[2025-11-01 01:37:24.640495] Alpha=0.0 | Train=1.0000 | Val=0.6299 | Test=0.6143
+[2025-11-01 01:37:24.686155] Alpha=0.0001 | Train=1.0000 | Val=0.6299 | Test=0.6143
+[2025-11-01 01:37:24.731891] Alpha=0.0003 | Train=0.9807 | Val=0.6241 | Test=0.6112
+[2025-11-01 01:37:24.779056] Alpha=0.0005 | Train=0.8582 | Val=0.6379 | Test=0.6381
+
+Best alpha based on validation accuracy: 0.0005 (Val Acc=0.6379)
+
+=== (e) Selecting BEST MODEL based on validation accuracy ===
+
+Best Model = ccp_alpha=0.0005 with Validation Accuracy = 0.6379
+Accuracy : 0.638, Precision: 0.611, Recall: 0.648, F1-Score: 0.629
+ Saved predictions to ../outputs/predictionE.csv

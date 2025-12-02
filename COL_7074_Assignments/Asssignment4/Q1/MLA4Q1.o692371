@@ -1,0 +1,169 @@
+===============================
+692371.pbshpc
+scai01.hpc.iitd.ac.in
+===============================
+Using device: cuda
+GPU Name: NVIDIA A100 80GB PCIe
+GPU Memory: 84.99 GB
+Logging started — all terminal output will also go to: logs/output_lunar_dqn.txt
+Using device: cuda
+Vocabulary loaded from vocabulary.json
+Vocabulary size: 48
+
+Vocabulary size: 48
+PAD token index: 0
+TRAIN set: 72000 examples
+VAL set: 8000 examples
+TEST set: 20000 examples
+
+Model parameters: 2,531,888
+
+============================================================
+STARTING TRAINING
+============================================================
+
+Epoch 1/20
+
+Train Loss: 1.7803 | Token Acc: 0.3903 | Seq Acc: 0.0372 | F1: 0.3903
+Val   Loss: 2.8896 | Token Acc: 0.2644 | Seq Acc: 0.1665 | F1: 0.2604
+Test  Loss: 2.8925 | Token Acc: 0.2637 | Seq Acc: 0.1654 | F1: 0.2604
+ Saved best model with val seq acc: 0.1665
+
+Epoch 2/20
+
+Train Loss: 1.4067 | Token Acc: 0.5166 | Seq Acc: 0.1795 | F1: 0.5166
+Val   Loss: 2.8336 | Token Acc: 0.2766 | Seq Acc: 0.2094 | F1: 0.2727
+Test  Loss: 2.8350 | Token Acc: 0.2766 | Seq Acc: 0.2100 | F1: 0.2731
+ Saved best model with val seq acc: 0.2094
+
+Epoch 3/20
+
+Train Loss: 1.2743 | Token Acc: 0.5719 | Seq Acc: 0.2205 | F1: 0.5719
+Val   Loss: 2.8539 | Token Acc: 0.3106 | Seq Acc: 0.2474 | F1: 0.3066
+Test  Loss: 2.8637 | Token Acc: 0.3125 | Seq Acc: 0.2525 | F1: 0.3088
+ Saved best model with val seq acc: 0.2474
+
+Epoch 4/20
+
+Train Loss: 1.1399 | Token Acc: 0.6338 | Seq Acc: 0.2670 | F1: 0.6338
+Val   Loss: 2.7758 | Token Acc: 0.3579 | Seq Acc: 0.3309 | F1: 0.3539
+Test  Loss: 2.7856 | Token Acc: 0.3574 | Seq Acc: 0.3296 | F1: 0.3537
+ Saved best model with val seq acc: 0.3309
+
+Epoch 5/20
+
+Train Loss: 0.8355 | Token Acc: 0.7468 | Seq Acc: 0.3629 | F1: 0.7468
+Val   Loss: 2.7514 | Token Acc: 0.4577 | Seq Acc: 0.4532 | F1: 0.4549
+Test  Loss: 2.7192 | Token Acc: 0.4627 | Seq Acc: 0.4540 | F1: 0.4597
+ Saved best model with val seq acc: 0.4532
+
+Epoch 6/20
+
+Train Loss: 0.5756 | Token Acc: 0.8331 | Seq Acc: 0.4963 | F1: 0.8331
+Val   Loss: 2.3562 | Token Acc: 0.5434 | Seq Acc: 0.5513 | F1: 0.5412
+Test  Loss: 2.3799 | Token Acc: 0.5383 | Seq Acc: 0.5466 | F1: 0.5360
+ Saved best model with val seq acc: 0.5513
+
+Epoch 7/20
+
+Train Loss: 0.4851 | Token Acc: 0.8580 | Seq Acc: 0.5518 | F1: 0.8580
+Val   Loss: 2.3428 | Token Acc: 0.5640 | Seq Acc: 0.5605 | F1: 0.5620
+Test  Loss: 2.3400 | Token Acc: 0.5639 | Seq Acc: 0.5649 | F1: 0.5620
+ Saved best model with val seq acc: 0.5605
+
+Epoch 8/20
+
+Train Loss: 0.4305 | Token Acc: 0.8720 | Seq Acc: 0.5823 | F1: 0.8720
+Val   Loss: 2.3923 | Token Acc: 0.5748 | Seq Acc: 0.5880 | F1: 0.5735
+Test  Loss: 2.3569 | Token Acc: 0.5785 | Seq Acc: 0.5849 | F1: 0.5769
+ Saved best model with val seq acc: 0.5880
+
+Epoch 9/20
+
+Train Loss: 0.3937 | Token Acc: 0.8825 | Seq Acc: 0.6030 | F1: 0.8825
+Val   Loss: 2.2745 | Token Acc: 0.5917 | Seq Acc: 0.6021 | F1: 0.5903
+Test  Loss: 2.2393 | Token Acc: 0.5973 | Seq Acc: 0.6021 | F1: 0.5954
+ Saved best model with val seq acc: 0.6021
+
+Epoch 10/20
+
+Train Loss: 0.3612 | Token Acc: 0.8906 | Seq Acc: 0.6204 | F1: 0.8906
+Val   Loss: 2.2492 | Token Acc: 0.5949 | Seq Acc: 0.5991 | F1: 0.5944
+Test  Loss: 2.1692 | Token Acc: 0.6066 | Seq Acc: 0.6055 | F1: 0.6040
+
+Epoch 11/20
+
+Train Loss: 0.3452 | Token Acc: 0.8952 | Seq Acc: 0.6329 | F1: 0.8952
+Val   Loss: 2.1717 | Token Acc: 0.6147 | Seq Acc: 0.6038 | F1: 0.6136
+Test  Loss: 2.2516 | Token Acc: 0.6030 | Seq Acc: 0.6023 | F1: 0.6011
+ Saved best model with val seq acc: 0.6038
+
+Epoch 12/20
+
+Train Loss: 0.3288 | Token Acc: 0.9005 | Seq Acc: 0.6469 | F1: 0.9005
+Val   Loss: 2.1803 | Token Acc: 0.6155 | Seq Acc: 0.6174 | F1: 0.6130
+Test  Loss: 2.1668 | Token Acc: 0.6165 | Seq Acc: 0.6097 | F1: 0.6149
+ Saved best model with val seq acc: 0.6174
+
+Epoch 13/20
+
+Train Loss: 0.3129 | Token Acc: 0.9036 | Seq Acc: 0.6537 | F1: 0.9036
+Val   Loss: 2.2152 | Token Acc: 0.6162 | Seq Acc: 0.6185 | F1: 0.6150
+Test  Loss: 2.1389 | Token Acc: 0.6280 | Seq Acc: 0.6190 | F1: 0.6255
+ Saved best model with val seq acc: 0.6185
+
+Epoch 14/20
+
+Train Loss: 0.2917 | Token Acc: 0.9097 | Seq Acc: 0.6633 | F1: 0.9097
+Val   Loss: 2.1317 | Token Acc: 0.6238 | Seq Acc: 0.6256 | F1: 0.6223
+Test  Loss: 2.0931 | Token Acc: 0.6290 | Seq Acc: 0.6225 | F1: 0.6274
+ Saved best model with val seq acc: 0.6256
+
+Epoch 15/20
+
+Train Loss: 0.2928 | Token Acc: 0.9103 | Seq Acc: 0.6735 | F1: 0.9103
+Val   Loss: 2.0350 | Token Acc: 0.6350 | Seq Acc: 0.6259 | F1: 0.6326
+Test  Loss: 2.0206 | Token Acc: 0.6349 | Seq Acc: 0.6254 | F1: 0.6328
+ Saved best model with val seq acc: 0.6259
+
+Epoch 16/20
+
+Train Loss: 0.2670 | Token Acc: 0.9169 | Seq Acc: 0.6812 | F1: 0.9169
+Val   Loss: 2.0818 | Token Acc: 0.6382 | Seq Acc: 0.6320 | F1: 0.6369
+Test  Loss: 2.0629 | Token Acc: 0.6413 | Seq Acc: 0.6298 | F1: 0.6394
+ Saved best model with val seq acc: 0.6320
+
+Epoch 17/20
+
+Train Loss: 0.2622 | Token Acc: 0.9184 | Seq Acc: 0.6914 | F1: 0.9184
+Val   Loss: 2.0965 | Token Acc: 0.6355 | Seq Acc: 0.6231 | F1: 0.6351
+Test  Loss: 2.0862 | Token Acc: 0.6381 | Seq Acc: 0.6230 | F1: 0.6353
+
+Epoch 18/20
+
+Train Loss: 0.2493 | Token Acc: 0.9224 | Seq Acc: 0.6978 | F1: 0.9224
+Val   Loss: 2.1121 | Token Acc: 0.6380 | Seq Acc: 0.6224 | F1: 0.6362
+Test  Loss: 2.0964 | Token Acc: 0.6388 | Seq Acc: 0.6201 | F1: 0.6367
+
+Epoch 19/20
+
+Train Loss: 0.2341 | Token Acc: 0.9265 | Seq Acc: 0.7065 | F1: 0.9265
+Val   Loss: 2.1105 | Token Acc: 0.6425 | Seq Acc: 0.6235 | F1: 0.6411
+Test  Loss: 2.0971 | Token Acc: 0.6427 | Seq Acc: 0.6280 | F1: 0.6411
+
+Epoch 20/20
+
+Train Loss: 0.2253 | Token Acc: 0.9289 | Seq Acc: 0.7158 | F1: 0.9289
+Val   Loss: 2.1529 | Token Acc: 0.6431 | Seq Acc: 0.6275 | F1: 0.6424
+Test  Loss: 2.1072 | Token Acc: 0.6497 | Seq Acc: 0.6327 | F1: 0.6477
+
+============================================================
+TRAINING COMPLETE!
+============================================================
+Best validation sequence accuracy: 0.6320
+
+============================================================
+EVALUATING ON TEST SET (FINAL)
+============================================================
+
+Test Loss: 2.1072 | Token Acc: 0.6497 | Seq Acc: 0.6327 | F1: 0.6477

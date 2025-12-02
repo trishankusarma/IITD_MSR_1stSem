@@ -1,0 +1,313 @@
+[2025-11-10 02:17:23] ======================================================================
+[2025-11-10 02:17:23] Logging started at 2025-11-10 02:17:23
+[2025-11-10 02:17:23] Log file   : logs/output_q3.txt
+[2025-11-10 02:17:23] Using device: cuda
+[2025-11-10 02:17:23] ======================================================================
+
+[2025-11-10 02:17:23] === TRAINING: TASK B ===
+[2025-11-10 02:17:51] [Ep   500] avg_return=34.528  ε=0.910  buf=5000  opt=4873
+[2025-11-10 02:18:10] [Ep  1000] avg_return=35.330  ε=0.828  buf=10000  opt=9873
+[2025-11-10 02:18:32] [Ep  1500] avg_return=34.464  ε=0.754  buf=15000  opt=14873
+[2025-11-10 02:18:56] [Ep  2000] avg_return=35.599  ε=0.687  buf=20000  opt=19873
+[2025-11-10 02:19:22] [Ep  2500] avg_return=37.340  ε=0.626  buf=25000  opt=24873
+[2025-11-10 02:19:50] [Ep  3000] avg_return=41.699  ε=0.571  buf=30000  opt=29873
+[2025-11-10 02:20:22] [Ep  3500] avg_return=39.620  ε=0.522  buf=35000  opt=34873
+[2025-11-10 02:20:55] [Ep  4000] avg_return=40.697  ε=0.477  buf=40000  opt=39873
+[2025-11-10 02:21:30] [Ep  4500] avg_return=42.236  ε=0.436  buf=45000  opt=44873
+[2025-11-10 02:22:07] [Ep  5000] avg_return=42.954  ε=0.400  buf=50000  opt=49873
+[2025-11-10 02:22:08] ✓ Saved: evaluation_part_B_ep5000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 02:22:08] ✓ Saved: evaluation_part_B_ep5000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 02:22:08] ✓ Saved: evaluation_part_B_ep5000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 02:22:08] ======================================================================
+[2025-11-10 02:22:08] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 02:22:08] ======================================================================
+[2025-11-10 02:22:08] Mean Total Wealth at t=10       : 46.1600
+[2025-11-10 02:22:08] Std of Total Wealth at t=10     : 13.2739
+[2025-11-10 02:22:08] Variance of Total Wealth at t=10: 176.1969
+[2025-11-10 02:22:08] Ratio (Mean/Std) at t=10        : 3.4775
+[2025-11-10 02:22:08] ----------------------------------------------------------------------
+[2025-11-10 02:22:08] Overall Mean (all steps & seeds): 50.2459
+[2025-11-10 02:22:08] Overall Std (all steps & seeds) : 10.5146
+[2025-11-10 02:22:08] Overall Var (all steps & seeds) : 110.5574
+[2025-11-10 02:22:08] Overall Ratio (Mean/Std)        : 4.7787
+[2025-11-10 02:22:08] ======================================================================
+
+[2025-11-10 02:22:08] ✓ Saved wealth stats: evaluation_part_B_ep5000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 02:22:46] [Ep  5500] avg_return=42.663  ε=0.363  buf=50000  opt=54873
+[2025-11-10 02:23:24] [Ep  6000] avg_return=40.665  ε=0.333  buf=50000  opt=59873
+[2025-11-10 02:24:02] [Ep  6500] avg_return=39.575  ε=0.306  buf=50000  opt=64873
+[2025-11-10 02:24:40] [Ep  7000] avg_return=38.043  ε=0.282  buf=50000  opt=69873
+[2025-11-10 02:25:19] [Ep  7500] avg_return=37.083  ε=0.260  buf=50000  opt=74873
+[2025-11-10 02:25:57] [Ep  8000] avg_return=38.140  ε=0.240  buf=50000  opt=79873
+[2025-11-10 02:26:34] [Ep  8500] avg_return=36.482  ε=0.222  buf=50000  opt=84873
+[2025-11-10 02:27:11] [Ep  9000] avg_return=37.851  ε=0.206  buf=50000  opt=89873
+[2025-11-10 02:27:50] [Ep  9500] avg_return=37.069  ε=0.191  buf=50000  opt=94873
+[2025-11-10 02:28:28] [Ep 10000] avg_return=40.601  ε=0.177  buf=50000  opt=99873
+[2025-11-10 02:28:28] ✓ Saved: evaluation_part_B_ep10000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 02:28:29] ✓ Saved: evaluation_part_B_ep10000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 02:28:29] ✓ Saved: evaluation_part_B_ep10000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 02:28:29] ======================================================================
+[2025-11-10 02:28:29] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 02:28:29] ======================================================================
+[2025-11-10 02:28:29] Mean Total Wealth at t=10       : 45.0650
+[2025-11-10 02:28:29] Std of Total Wealth at t=10     : 13.4977
+[2025-11-10 02:28:29] Variance of Total Wealth at t=10: 182.1870
+[2025-11-10 02:28:29] Ratio (Mean/Std) at t=10        : 3.3387
+[2025-11-10 02:28:29] ----------------------------------------------------------------------
+[2025-11-10 02:28:29] Overall Mean (all steps & seeds): 48.8718
+[2025-11-10 02:28:29] Overall Std (all steps & seeds) : 10.6512
+[2025-11-10 02:28:29] Overall Var (all steps & seeds) : 113.4474
+[2025-11-10 02:28:29] Overall Ratio (Mean/Std)        : 4.5884
+[2025-11-10 02:28:29] ======================================================================
+
+[2025-11-10 02:28:29] ✓ Saved wealth stats: evaluation_part_B_ep10000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 02:29:07] [Ep 10500] avg_return=37.346  ε=0.164  buf=50000  opt=104873
+[2025-11-10 02:29:44] [Ep 11000] avg_return=33.276  ε=0.153  buf=50000  opt=109873
+[2025-11-10 02:30:22] [Ep 11500] avg_return=39.202  ε=0.143  buf=50000  opt=114873
+[2025-11-10 02:31:00] [Ep 12000] avg_return=37.625  ε=0.134  buf=50000  opt=119873
+[2025-11-10 02:31:39] [Ep 12500] avg_return=36.134  ε=0.126  buf=50000  opt=124873
+[2025-11-10 02:32:18] [Ep 13000] avg_return=35.630  ε=0.119  buf=50000  opt=129873
+[2025-11-10 02:32:56] [Ep 13500] avg_return=35.743  ε=0.113  buf=50000  opt=134873
+[2025-11-10 02:33:34] [Ep 14000] avg_return=34.920  ε=0.107  buf=50000  opt=139873
+[2025-11-10 02:34:14] [Ep 14500] avg_return=33.743  ε=0.101  buf=50000  opt=144873
+[2025-11-10 02:34:53] [Ep 15000] avg_return=36.383  ε=0.096  buf=50000  opt=149873
+[2025-11-10 02:34:54] ✓ Saved: evaluation_part_B_ep15000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 02:34:54] ✓ Saved: evaluation_part_B_ep15000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 02:34:54] ✓ Saved: evaluation_part_B_ep15000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 02:34:54] ======================================================================
+[2025-11-10 02:34:54] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 02:34:54] ======================================================================
+[2025-11-10 02:34:54] Mean Total Wealth at t=10       : 39.4500
+[2025-11-10 02:34:54] Std of Total Wealth at t=10     : 14.7454
+[2025-11-10 02:34:54] Variance of Total Wealth at t=10: 217.4275
+[2025-11-10 02:34:54] Ratio (Mean/Std) at t=10        : 2.6754
+[2025-11-10 02:34:54] ----------------------------------------------------------------------
+[2025-11-10 02:34:54] Overall Mean (all steps & seeds): 45.8891
+[2025-11-10 02:34:54] Overall Std (all steps & seeds) : 13.3396
+[2025-11-10 02:34:54] Overall Var (all steps & seeds) : 177.9450
+[2025-11-10 02:34:54] Overall Ratio (Mean/Std)        : 3.4401
+[2025-11-10 02:34:54] ======================================================================
+
+[2025-11-10 02:34:54] ✓ Saved wealth stats: evaluation_part_B_ep15000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 02:35:33] [Ep 15500] avg_return=36.450  ε=0.092  buf=50000  opt=154873
+[2025-11-10 02:36:12] [Ep 16000] avg_return=33.034  ε=0.088  buf=50000  opt=159873
+[2025-11-10 02:36:50] [Ep 16500] avg_return=36.401  ε=0.084  buf=50000  opt=164873
+[2025-11-10 02:37:28] [Ep 17000] avg_return=34.867  ε=0.081  buf=50000  opt=169873
+[2025-11-10 02:38:07] [Ep 17500] avg_return=33.887  ε=0.078  buf=50000  opt=174873
+[2025-11-10 02:38:45] [Ep 18000] avg_return=35.551  ε=0.075  buf=50000  opt=179873
+[2025-11-10 02:39:23] [Ep 18500] avg_return=35.468  ε=0.073  buf=50000  opt=184873
+[2025-11-10 02:40:01] [Ep 19000] avg_return=34.746  ε=0.071  buf=50000  opt=189873
+[2025-11-10 02:40:40] [Ep 19500] avg_return=34.020  ε=0.069  buf=50000  opt=194873
+[2025-11-10 02:41:18] [Ep 20000] avg_return=34.406  ε=0.067  buf=50000  opt=199873
+[2025-11-10 02:41:19] ✓ Saved: evaluation_part_B_ep20000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 02:41:19] ✓ Saved: evaluation_part_B_ep20000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 02:41:19] ✓ Saved: evaluation_part_B_ep20000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 02:41:19] ======================================================================
+[2025-11-10 02:41:19] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 02:41:19] ======================================================================
+[2025-11-10 02:41:19] Mean Total Wealth at t=10       : 33.5500
+[2025-11-10 02:41:19] Std of Total Wealth at t=10     : 15.3460
+[2025-11-10 02:41:19] Variance of Total Wealth at t=10: 235.5000
+[2025-11-10 02:41:19] Ratio (Mean/Std) at t=10        : 2.1862
+[2025-11-10 02:41:19] ----------------------------------------------------------------------
+[2025-11-10 02:41:19] Overall Mean (all steps & seeds): 41.2477
+[2025-11-10 02:41:19] Overall Std (all steps & seeds) : 15.2411
+[2025-11-10 02:41:19] Overall Var (all steps & seeds) : 232.2908
+[2025-11-10 02:41:19] Overall Ratio (Mean/Std)        : 2.7064
+[2025-11-10 02:41:19] ======================================================================
+
+[2025-11-10 02:41:19] ✓ Saved wealth stats: evaluation_part_B_ep20000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 02:41:57] [Ep 20500] avg_return=34.353  ε=0.065  buf=50000  opt=204873
+[2025-11-10 02:42:36] [Ep 21000] avg_return=34.203  ε=0.064  buf=50000  opt=209873
+[2025-11-10 02:43:14] [Ep 21500] avg_return=36.093  ε=0.062  buf=50000  opt=214873
+[2025-11-10 02:43:53] [Ep 22000] avg_return=35.381  ε=0.061  buf=50000  opt=219873
+[2025-11-10 02:44:32] [Ep 22500] avg_return=34.364  ε=0.060  buf=50000  opt=224873
+[2025-11-10 02:45:11] [Ep 23000] avg_return=35.947  ε=0.059  buf=50000  opt=229873
+[2025-11-10 02:45:49] [Ep 23500] avg_return=34.817  ε=0.058  buf=50000  opt=234873
+[2025-11-10 02:46:27] [Ep 24000] avg_return=35.200  ε=0.058  buf=50000  opt=239873
+[2025-11-10 02:47:05] [Ep 24500] avg_return=34.286  ε=0.057  buf=50000  opt=244873
+[2025-11-10 02:47:44] [Ep 25000] avg_return=34.911  ε=0.056  buf=50000  opt=249873
+[2025-11-10 02:47:45] ✓ Saved: evaluation_part_B_ep25000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 02:47:45] ✓ Saved: evaluation_part_B_ep25000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 02:47:46] ✓ Saved: evaluation_part_B_ep25000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 02:47:46] ======================================================================
+[2025-11-10 02:47:46] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 02:47:46] ======================================================================
+[2025-11-10 02:47:46] Mean Total Wealth at t=10       : 32.8900
+[2025-11-10 02:47:46] Std of Total Wealth at t=10     : 14.5514
+[2025-11-10 02:47:46] Variance of Total Wealth at t=10: 211.7429
+[2025-11-10 02:47:46] Ratio (Mean/Std) at t=10        : 2.2603
+[2025-11-10 02:47:46] ----------------------------------------------------------------------
+[2025-11-10 02:47:46] Overall Mean (all steps & seeds): 40.9000
+[2025-11-10 02:47:46] Overall Std (all steps & seeds) : 14.4203
+[2025-11-10 02:47:46] Overall Var (all steps & seeds) : 207.9445
+[2025-11-10 02:47:46] Overall Ratio (Mean/Std)        : 2.8363
+[2025-11-10 02:47:46] ======================================================================
+
+[2025-11-10 02:47:46] ✓ Saved wealth stats: evaluation_part_B_ep25000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 02:48:24] [Ep 25500] avg_return=33.882  ε=0.056  buf=50000  opt=254873
+[2025-11-10 02:49:01] [Ep 26000] avg_return=33.369  ε=0.055  buf=50000  opt=259873
+[2025-11-10 02:49:39] [Ep 26500] avg_return=36.337  ε=0.055  buf=50000  opt=264873
+[2025-11-10 02:50:16] [Ep 27000] avg_return=34.486  ε=0.054  buf=50000  opt=269873
+[2025-11-10 02:50:54] [Ep 27500] avg_return=34.305  ε=0.054  buf=50000  opt=274873
+[2025-11-10 02:51:32] [Ep 28000] avg_return=34.969  ε=0.053  buf=50000  opt=279873
+[2025-11-10 02:52:10] [Ep 28500] avg_return=34.588  ε=0.053  buf=50000  opt=284873
+[2025-11-10 02:52:48] [Ep 29000] avg_return=34.486  ε=0.053  buf=50000  opt=289873
+[2025-11-10 02:53:26] [Ep 29500] avg_return=33.045  ε=0.052  buf=50000  opt=294873
+[2025-11-10 02:56:40] ======================================================================
+[2025-11-10 02:56:40] Logging started at 2025-11-10 02:56:40
+[2025-11-10 02:56:40] Log file   : logs/output_q3.txt
+[2025-11-10 02:56:40] Using device: cuda
+[2025-11-10 02:56:40] ======================================================================
+
+[2025-11-10 02:56:40] === TRAINING: TASK B ===
+[2025-11-10 02:57:09] [Ep   500] avg_return=35.107  ε=0.961  buf=5000  opt=4873
+[2025-11-10 02:57:28] [Ep  1000] avg_return=36.502  ε=0.924  buf=10000  opt=9873
+[2025-11-10 02:57:49] [Ep  1500] avg_return=34.200  ε=0.888  buf=15000  opt=14873
+[2025-11-10 02:58:12] [Ep  2000] avg_return=35.276  ε=0.854  buf=20000  opt=19873
+[2025-11-10 02:58:36] [Ep  2500] avg_return=34.698  ε=0.821  buf=25000  opt=24873
+[2025-11-10 02:59:03] [Ep  3000] avg_return=35.522  ε=0.790  buf=30000  opt=29873
+[2025-11-10 02:59:33] [Ep  3500] avg_return=36.417  ε=0.760  buf=35000  opt=34873
+[2025-11-10 03:00:04] [Ep  4000] avg_return=37.270  ε=0.731  buf=40000  opt=39873
+[2025-11-10 03:00:37] [Ep  4500] avg_return=39.638  ε=0.703  buf=45000  opt=44873
+[2025-11-10 03:01:13] [Ep  5000] avg_return=39.677  ε=0.676  buf=50000  opt=49873
+[2025-11-10 03:01:14] ✓ Saved: evaluation_part_B_ep5000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 03:01:14] ✓ Saved: evaluation_part_B_ep5000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 03:01:14] ✓ Saved: evaluation_part_B_ep5000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 03:01:14] ======================================================================
+[2025-11-10 03:01:14] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 03:01:14] ======================================================================
+[2025-11-10 03:01:14] Mean Total Wealth at t=10       : 47.2900
+[2025-11-10 03:01:14] Std of Total Wealth at t=10     : 15.1739
+[2025-11-10 03:01:14] Variance of Total Wealth at t=10: 230.2459
+[2025-11-10 03:01:14] Ratio (Mean/Std) at t=10        : 3.1165
+[2025-11-10 03:01:14] ----------------------------------------------------------------------
+[2025-11-10 03:01:14] Overall Mean (all steps & seeds): 50.9245
+[2025-11-10 03:01:14] Overall Std (all steps & seeds) : 12.3891
+[2025-11-10 03:01:14] Overall Var (all steps & seeds) : 153.4891
+[2025-11-10 03:01:14] Overall Ratio (Mean/Std)        : 4.1104
+[2025-11-10 03:01:14] ======================================================================
+
+[2025-11-10 03:01:14] ✓ Saved wealth stats: evaluation_part_B_ep5000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 03:01:50] [Ep  5500] avg_return=40.089  ε=0.648  buf=50000  opt=54873
+[2025-11-10 03:02:27] [Ep  6000] avg_return=41.567  ε=0.624  buf=50000  opt=59873
+[2025-11-10 03:03:04] [Ep  6500] avg_return=41.858  ε=0.600  buf=50000  opt=64873
+[2025-11-10 03:03:40] [Ep  7000] avg_return=41.499  ε=0.578  buf=50000  opt=69873
+[2025-11-10 03:04:17] [Ep  7500] avg_return=41.234  ε=0.556  buf=50000  opt=74873
+[2025-11-10 03:04:54] [Ep  8000] avg_return=42.249  ε=0.536  buf=50000  opt=79873
+[2025-11-10 03:05:32] [Ep  8500] avg_return=41.072  ε=0.516  buf=50000  opt=84873
+[2025-11-10 03:06:10] [Ep  9000] avg_return=40.672  ε=0.497  buf=50000  opt=89873
+[2025-11-10 03:06:48] [Ep  9500] avg_return=41.703  ε=0.479  buf=50000  opt=94873
+[2025-11-10 03:07:25] [Ep 10000] avg_return=42.171  ε=0.461  buf=50000  opt=99873
+[2025-11-10 03:07:26] ✓ Saved: evaluation_part_B_ep10000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 03:07:26] ✓ Saved: evaluation_part_B_ep10000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 03:07:26] ✓ Saved: evaluation_part_B_ep10000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 03:07:26] ======================================================================
+[2025-11-10 03:07:26] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 03:07:26] ======================================================================
+[2025-11-10 03:07:26] Mean Total Wealth at t=10       : 40.2700
+[2025-11-10 03:07:26] Std of Total Wealth at t=10     : 11.3013
+[2025-11-10 03:07:26] Variance of Total Wealth at t=10: 127.7196
+[2025-11-10 03:07:26] Ratio (Mean/Std) at t=10        : 3.5633
+[2025-11-10 03:07:26] ----------------------------------------------------------------------
+[2025-11-10 03:07:26] Overall Mean (all steps & seeds): 45.4350
+[2025-11-10 03:07:26] Overall Std (all steps & seeds) : 11.1805
+[2025-11-10 03:07:26] Overall Var (all steps & seeds) : 125.0038
+[2025-11-10 03:07:26] Overall Ratio (Mean/Std)        : 4.0638
+[2025-11-10 03:07:26] ======================================================================
+
+[2025-11-10 03:07:26] ✓ Saved wealth stats: evaluation_part_B_ep10000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 03:08:04] [Ep 10500] avg_return=39.106  ε=0.443  buf=50000  opt=104873
+[2025-11-10 03:08:42] [Ep 11000] avg_return=41.446  ε=0.427  buf=50000  opt=109873
+[2025-11-10 03:09:20] [Ep 11500] avg_return=42.984  ε=0.411  buf=50000  opt=114873
+[2025-11-10 03:09:58] [Ep 12000] avg_return=40.179  ε=0.397  buf=50000  opt=119873
+[2025-11-10 03:10:35] [Ep 12500] avg_return=40.545  ε=0.382  buf=50000  opt=124873
+[2025-11-10 03:11:12] [Ep 13000] avg_return=42.663  ε=0.369  buf=50000  opt=129873
+[2025-11-10 03:11:49] [Ep 13500] avg_return=41.709  ε=0.356  buf=50000  opt=134873
+[2025-11-10 03:12:25] [Ep 14000] avg_return=42.406  ε=0.343  buf=50000  opt=139873
+[2025-11-10 03:13:01] [Ep 14500] avg_return=42.225  ε=0.331  buf=50000  opt=144873
+[2025-11-10 03:13:41] [Ep 15000] avg_return=42.968  ε=0.320  buf=50000  opt=149873
+[2025-11-10 03:13:42] ✓ Saved: evaluation_part_B_ep15000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 03:13:42] ✓ Saved: evaluation_part_B_ep15000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 03:13:42] ✓ Saved: evaluation_part_B_ep15000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 03:13:42] ======================================================================
+[2025-11-10 03:13:42] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 03:13:42] ======================================================================
+[2025-11-10 03:13:42] Mean Total Wealth at t=10       : 46.2850
+[2025-11-10 03:13:42] Std of Total Wealth at t=10     : 13.8951
+[2025-11-10 03:13:42] Variance of Total Wealth at t=10: 193.0750
+[2025-11-10 03:13:42] Ratio (Mean/Std) at t=10        : 3.3310
+[2025-11-10 03:13:42] ----------------------------------------------------------------------
+[2025-11-10 03:13:42] Overall Mean (all steps & seeds): 50.1836
+[2025-11-10 03:13:42] Overall Std (all steps & seeds) : 12.4786
+[2025-11-10 03:13:42] Overall Var (all steps & seeds) : 155.7156
+[2025-11-10 03:13:42] Overall Ratio (Mean/Std)        : 4.0216
+[2025-11-10 03:13:42] ======================================================================
+
+[2025-11-10 03:13:42] ✓ Saved wealth stats: evaluation_part_B_ep15000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 03:14:20] [Ep 15500] avg_return=42.258  ε=0.308  buf=50000  opt=154873
+[2025-11-10 03:15:02] [Ep 16000] avg_return=40.626  ε=0.297  buf=50000  opt=159873
+[2025-11-10 03:15:45] [Ep 16500] avg_return=41.447  ε=0.287  buf=50000  opt=164873
+[2025-11-10 03:16:24] [Ep 17000] avg_return=40.659  ε=0.278  buf=50000  opt=169873
+[2025-11-10 03:17:08] [Ep 17500] avg_return=40.454  ε=0.268  buf=50000  opt=174873
+[2025-11-10 03:17:50] [Ep 18000] avg_return=41.452  ε=0.259  buf=50000  opt=179873
+[2025-11-10 03:18:34] [Ep 18500] avg_return=40.107  ε=0.251  buf=50000  opt=184873
+[2025-11-10 03:19:20] [Ep 19000] avg_return=38.849  ε=0.243  buf=50000  opt=189873
+[2025-11-10 03:19:59] [Ep 19500] avg_return=38.925  ε=0.235  buf=50000  opt=194873
+[2025-11-10 03:20:37] [Ep 20000] avg_return=41.246  ε=0.227  buf=50000  opt=199873
+[2025-11-10 03:20:37] ✓ Saved: evaluation_part_B_ep20000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 03:20:38] ✓ Saved: evaluation_part_B_ep20000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 03:20:38] ✓ Saved: evaluation_part_B_ep20000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 03:20:38] ======================================================================
+[2025-11-10 03:20:38] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 03:20:38] ======================================================================
+[2025-11-10 03:20:38] Mean Total Wealth at t=10       : 38.9300
+[2025-11-10 03:20:38] Std of Total Wealth at t=10     : 13.7760
+[2025-11-10 03:20:38] Variance of Total Wealth at t=10: 189.7776
+[2025-11-10 03:20:38] Ratio (Mean/Std) at t=10        : 2.8259
+[2025-11-10 03:20:38] ----------------------------------------------------------------------
+[2025-11-10 03:20:38] Overall Mean (all steps & seeds): 44.7377
+[2025-11-10 03:20:38] Overall Std (all steps & seeds) : 12.7688
+[2025-11-10 03:20:38] Overall Var (all steps & seeds) : 163.0425
+[2025-11-10 03:20:38] Overall Ratio (Mean/Std)        : 3.5037
+[2025-11-10 03:20:38] ======================================================================
+
+[2025-11-10 03:20:38] ✓ Saved wealth stats: evaluation_part_B_ep20000/task_b_terminal_wealth_wealth_stats.json
+[2025-11-10 03:21:25] [Ep 20500] avg_return=41.171  ε=0.219  buf=50000  opt=204873
+[2025-11-10 03:22:13] [Ep 21000] avg_return=42.214  ε=0.212  buf=50000  opt=209873
+[2025-11-10 03:22:59] [Ep 21500] avg_return=41.539  ε=0.206  buf=50000  opt=214873
+[2025-11-10 03:23:44] [Ep 22000] avg_return=42.667  ε=0.199  buf=50000  opt=219873
+[2025-11-10 03:24:29] [Ep 22500] avg_return=41.472  ε=0.193  buf=50000  opt=224873
+[2025-11-10 03:25:13] [Ep 23000] avg_return=42.130  ε=0.187  buf=50000  opt=229873
+[2025-11-10 03:25:59] [Ep 23500] avg_return=41.855  ε=0.182  buf=50000  opt=234873
+[2025-11-10 03:26:42] [Ep 24000] avg_return=42.027  ε=0.176  buf=50000  opt=239873
+[2025-11-10 03:27:27] [Ep 24500] avg_return=39.864  ε=0.171  buf=50000  opt=244873
+[2025-11-10 03:28:11] [Ep 25000] avg_return=38.150  ε=0.166  buf=50000  opt=249873
+[2025-11-10 03:28:11] ✓ Saved: evaluation_part_B_ep25000/task_b_terminal_wealth_wealth_mean_std.png
+[2025-11-10 03:28:11] ✓ Saved: evaluation_part_B_ep25000/task_b_terminal_wealth_trajectories.png
+[2025-11-10 03:28:12] ✓ Saved: evaluation_part_B_ep25000/task_b_terminal_wealth_std_over_time.png
+
+[2025-11-10 03:28:12] ======================================================================
+[2025-11-10 03:28:12] Task B Terminal Wealth - EVALUATION RESULTS (50 seeds)
+[2025-11-10 03:28:12] ======================================================================
+[2025-11-10 03:28:12] Mean Total Wealth at t=10       : 33.5650
+[2025-11-10 03:28:12] Std of Total Wealth at t=10     : 15.2803
+[2025-11-10 03:28:12] Variance of Total Wealth at t=10: 233.4870
+[2025-11-10 03:28:12] Ratio (Mean/Std) at t=10        : 2.1966
+[2025-11-10 03:28:12] ----------------------------------------------------------------------
+[2025-11-10 03:28:12] Overall Mean (all steps & seeds): 42.0591
+[2025-11-10 03:28:12] Overall Std (all steps & seeds) : 14.6931
+[2025-11-10 03:28:12] Overall Var (all steps & seeds) : 215.8883
+[2025-11-10 03:28:12] Overall Ratio (Mean/Std)        : 2.8625
+[2025-11-10 03:28:12] ======================================================================
+
+[2025-11-10 03:28:12] ✓ Saved wealth stats: evaluation_part_B_ep25000/task_b_terminal_wealth_wealth_stats.json
